@@ -1,0 +1,905 @@
+[
+  {
+    "spanish": "Estar",
+    "english": "To Be",
+    "tag": "Key Verbs",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive",
+      "present",
+      "past"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Necesitar",
+    "english": "To Need",
+    "tag": "Key Verbs",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive",
+      "present"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Tener",
+    "english": "To Have",
+    "tag": "Key Verbs",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive",
+      "present",
+      "past"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Poder",
+    "english": "To Be Able To",
+    "tag": "Key Verbs",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive",
+      "present"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Ir",
+    "english": "To Go",
+    "tag": "Key Verbs",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive",
+      "present"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Querer",
+    "english": "To Want",
+    "tag": "Key Verbs",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive",
+      "present"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Ser",
+    "english": "To Be",
+    "tag": "Key Verbs",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive",
+      "present",
+      "past"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Hacer",
+    "english": "To Do/To Make",
+    "tag": "Key Verbs",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive",
+      "past"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Decir",
+    "english": "To Say",
+    "tag": "Key Verbs",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive",
+      "past"
+    ],
+    "drill_all_forms": true,
+    "unlocked": true
+  },
+  {
+    "spanish": "Aprender",
+    "english": "to learn",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Banar",
+    "english": "to bathe / to bathe someone",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Beber",
+    "english": "to drink",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Caminar",
+    "english": "to walk",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Comer",
+    "english": "to eat",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Correr",
+    "english": "to run",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Dar",
+    "english": "to give",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Decir",
+    "english": "to say / to tell",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Dejar",
+    "english": "to leave / to let",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Dormir",
+    "english": "to sleep",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Escribir",
+    "english": "to write",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Ganar",
+    "english": "to win",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Hablar",
+    "english": "to speak / to talk",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Hacer",
+    "english": "to do / to make",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Ignorar",
+    "english": "to ignore",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Jugar",
+    "english": "to play",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Lavar",
+    "english": "to wash",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Leer",
+    "english": "to read",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Mirar",
+    "english": "to look / to watch",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Nadar",
+    "english": "to swim",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Practicar",
+    "english": "to practice",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Preguntar",
+    "english": "to ask",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Saber",
+    "english": "to know",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Saltar",
+    "english": "to jump",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Sufrir",
+    "english": "to suffer",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Trabajar",
+    "english": "to work",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Venir",
+    "english": "to come",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Bailar",
+    "english": "to dance",
+    "tag": "Verb Set 1",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Ver",
+    "english": "to see",
+    "tag": "Verb Set 1",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Vivir",
+    "english": "to live",
+    "tag": "Verb Set 1",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": true
+  },
+  {
+    "spanish": "Pensar",
+    "english": "To Think",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Escuchar",
+    "english": "To Listen",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Entender",
+    "english": "To Understand",
+    "tag": "Verb Set 2",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Cocinar",
+    "english": "To cook",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Romper",
+    "english": "To Break",
+    "tag": "Verb Set 2",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Volver",
+    "english": "To REturn",
+    "tag": "Verb Set 2",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Practicar",
+    "english": "To Practice",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Traer",
+    "english": "To Bring",
+    "tag": "Verb Set 2",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Sentir",
+    "english": "To Feel",
+    "tag": "Verb Set 2",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Estudiar",
+    "english": "To Study",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Enseñar",
+    "english": "To Show/Teach",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Celebrar",
+    "english": "To Celebrate",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Entrar",
+    "english": "To Enter",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Pasar",
+    "english": "To Pass By",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Abrazar",
+    "english": "To Hug",
+    "tag": "Verb Set 2",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Mover",
+    "english": "To Move",
+    "tag": "Verb Set 2",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Abrir",
+    "english": "to open",
+    "tag": "Verb Set 3",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Ayudar",
+    "english": "to help",
+    "tag": "Verb Set 3",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Bajar",
+    "english": "to lower",
+    "tag": "Verb Set 3",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Buscar",
+    "english": "to look for",
+    "tag": "Verb Set 3",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Caer",
+    "english": "to fall",
+    "tag": "Verb Set 3",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Cerrar",
+    "english": "to close",
+    "tag": "Verb Set 3",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Oir",
+    "english": "to hear",
+    "tag": "Verb Set 3",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Pedir",
+    "english": "To ask",
+    "tag": "Verb Set 3",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Perder",
+    "english": "to lose",
+    "tag": "Verb Set 3",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Poner",
+    "english": "to put",
+    "tag": "Verb Set 3",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Salir",
+    "english": "to leave",
+    "tag": "Verb Set 3",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Subir",
+    "english": "to go up",
+    "tag": "Verb Set 3",
+    "verb_class": "IR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Terminar",
+    "english": "to finish",
+    "tag": "Verb Set 3",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Usar",
+    "english": "to use",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Funcionar",
+    "english": "to function",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Tomar",
+    "english": "to drink",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Creer",
+    "english": "to believe",
+    "tag": "Verb Set 4",
+    "verb_class": "ER",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Empezar",
+    "english": "to start",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Disfrutar",
+    "english": "to enjoy",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Parar",
+    "english": "to stop",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Olivdar",
+    "english": "to forget",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Esperar",
+    "english": "to wait",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Llegar",
+    "english": "to arrive",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Llevar",
+    "english": "to take",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Limpiar",
+    "english": "to clean",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  },
+  {
+    "spanish": "Cambiar",
+    "english": "to change",
+    "tag": "Verb Set 4",
+    "verb_class": "AR",
+    "enabled_tenses": [
+      "infinitive"
+    ],
+    "drill_all_forms": false,
+    "unlocked": false
+  }
+]

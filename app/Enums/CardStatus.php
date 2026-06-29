@@ -1,0 +1,9 @@
+<?php
+
+namespace App\Enums;
+
+enum CardStatus: string
+{
+    case Active = 'active';
+    case Retired = 'retired';
+}

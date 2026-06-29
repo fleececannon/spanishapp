@@ -1,0 +1,730 @@
+[
+  {
+    "spanish": "esto/esta",
+    "english": "this/this thing",
+    "category": "pronoun",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "eso/esa",
+    "english": "that/that thing",
+    "category": "pronoun",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "hoy",
+    "english": "today",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "mañana",
+    "english": "tomorrow / morning",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "siempre",
+    "english": "always",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "ya",
+    "english": "already / now / yet",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "que",
+    "english": "that / which / than",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "quién",
+    "english": "who",
+    "category": "question",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "dónde",
+    "english": "where",
+    "category": "question",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "cuánto",
+    "english": "how much / how many",
+    "category": "question",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "y",
+    "english": "and",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "si",
+    "english": "if",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "sí",
+    "english": "yes",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "de",
+    "english": "of / from",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "después",
+    "english": "after / later",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "todo",
+    "english": "all / everything",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "por qué",
+    "english": "why",
+    "category": "question",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "porque",
+    "english": "because",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "con",
+    "english": "with",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "otra",
+    "english": "another / other",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "solo",
+    "english": "alone / only",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "a",
+    "english": "to / at",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "en",
+    "english": "in / on",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "aquí",
+    "english": "here",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "ahora",
+    "english": "now",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "luego",
+    "english": "later / then",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "antes",
+    "english": "before",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "nunca",
+    "english": "never",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "todavía",
+    "english": "still / yet",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "también",
+    "english": "also / too",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "muy",
+    "english": "very",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "allí",
+    "english": "there / over there",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "pero",
+    "english": "but",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "o",
+    "english": "or",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "ni",
+    "english": "nor",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "mal",
+    "english": "badly / wrong",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "como",
+    "english": "like / as",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "cómo",
+    "english": "how",
+    "category": "question",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "para",
+    "english": "for",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "por",
+    "english": "for",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "sin",
+    "english": "without",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "tampoco",
+    "english": "neither / not either",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "más",
+    "english": "more",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "menos",
+    "english": "less",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "mucho",
+    "english": "a lot / much",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "poco",
+    "english": "little / not much",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "bien",
+    "english": "well",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "ahí",
+    "english": "there",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "allá",
+    "english": "over there",
+    "category": "adverb",
+    "gender": null,
+    "role": "target",
+    "unlocked": false
+  },
+  {
+    "spanish": "bueno",
+    "english": "good",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "malo",
+    "english": "bad",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "feliz",
+    "english": "happy",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "triste",
+    "english": "sad",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "grande",
+    "english": "big",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "pequeño",
+    "english": "small",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "rápido",
+    "english": "fast",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "cansado",
+    "english": "tired",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "amable",
+    "english": "kind",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "fuerte",
+    "english": "strong",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "listo",
+    "english": "ready",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "nuevo",
+    "english": "new",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": false
+  },
+  {
+    "spanish": "agua",
+    "english": "water",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "comida",
+    "english": "food",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "ropa",
+    "english": "clothes",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "perro",
+    "english": "dog",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "gato",
+    "english": "cat",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "escuela",
+    "english": "school",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "casa",
+    "english": "house",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "fruta",
+    "english": "fruit",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "pelota",
+    "english": "ball",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "libro",
+    "english": "book",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "puerta",
+    "english": "door",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "cuarto",
+    "english": "room",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "amigo",
+    "english": "friend",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "mamá",
+    "english": "mom",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "papá",
+    "english": "dad",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "canción",
+    "english": "song",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "clase",
+    "english": "class",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "postre",
+    "english": "dessert",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "pan",
+    "english": "bread",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "leche",
+    "english": "milk",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "mesa",
+    "english": "table",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "silla",
+    "english": "chair",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "coche",
+    "english": "car",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "calle",
+    "english": "street",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "parque",
+    "english": "park",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "juego",
+    "english": "game",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "tarea",
+    "english": "homework",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "noche",
+    "english": "night",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "día",
+    "english": "day",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "familia",
+    "english": "family",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  }
+]
