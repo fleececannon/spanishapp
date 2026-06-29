@@ -34,7 +34,7 @@ class AdminPhase2Test extends TestCase
 
     public function test_all_admin_pages_render(): void
     {
-        foreach (['admin.verbs', 'admin.words', 'admin.patterns', 'admin.cards', 'admin.generate', 'admin.progress', 'admin.settings'] as $route) {
+        foreach (['admin.verbs', 'admin.words', 'admin.patterns', 'admin.cards', 'admin.generate', 'admin.coverage', 'admin.progress', 'admin.settings'] as $route) {
             $this->get(route($route))->assertOk();
         }
     }

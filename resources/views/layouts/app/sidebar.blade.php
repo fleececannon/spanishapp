@@ -33,6 +33,9 @@
                     <flux:sidebar.item icon="sparkles" :href="route('admin.generate')" :current="request()->routeIs('admin.generate')" wire:navigate>
                         {{ __('Generate') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="check-circle" :href="route('admin.coverage')" :current="request()->routeIs('admin.coverage')" wire:navigate>
+                        {{ __('Coverage') }}
+                    </flux:sidebar.item>
                     <flux:sidebar.item icon="chart-bar" :href="route('admin.progress')" :current="request()->routeIs('admin.progress')" wire:navigate>
                         {{ __('Progress') }}
                     </flux:sidebar.item>

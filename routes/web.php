@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\Cards;
+use App\Livewire\Admin\Coverage;
 use App\Livewire\Admin\Generation;
 use App\Livewire\Admin\Patterns;
 use App\Livewire\Admin\Progress;
@@ -19,6 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('admin/patterns', Patterns::class)->name('admin.patterns');
     Route::livewire('admin/cards', Cards::class)->name('admin.cards');
     Route::livewire('admin/generate', Generation::class)->name('admin.generate');
+    Route::livewire('admin/coverage', Coverage::class)->name('admin.coverage');
     Route::livewire('admin/progress', Progress::class)->name('admin.progress');
     Route::livewire('admin/settings', Settings::class)->name('admin.settings');
 });
