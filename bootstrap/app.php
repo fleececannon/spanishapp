@@ -12,7 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Send unauthenticated visitors to the right login: kids to their
+        // simple picker, everyone else (admin) to the Fortify login.
+        $middleware->redirectGuestsTo(function (Request $request) {
+            if ($request->routeIs('kid.*') || $request->is('play')) {
+                return route('kid.login');
+            }
+
+            return route('login');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

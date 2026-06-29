@@ -16,6 +16,15 @@
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('Admin')" class="grid">
+                    <flux:sidebar.item icon="table-cells" :href="route('admin.verbs')" :current="request()->routeIs('admin.verbs')" wire:navigate>
+                        {{ __('Verbs') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="sparkles" :href="route('admin.generate')" :current="request()->routeIs('admin.generate')" wire:navigate>
+                        {{ __('Generate') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />
