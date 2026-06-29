@@ -21,8 +21,23 @@
                     <flux:sidebar.item icon="table-cells" :href="route('admin.verbs')" :current="request()->routeIs('admin.verbs')" wire:navigate>
                         {{ __('Verbs') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="language" :href="route('admin.words')" :current="request()->routeIs('admin.words')" wire:navigate>
+                        {{ __('Words') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="adjustments-horizontal" :href="route('admin.patterns')" :current="request()->routeIs('admin.patterns')" wire:navigate>
+                        {{ __('Patterns') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="rectangle-stack" :href="route('admin.cards')" :current="request()->routeIs('admin.cards')" wire:navigate>
+                        {{ __('Cards') }}
+                    </flux:sidebar.item>
                     <flux:sidebar.item icon="sparkles" :href="route('admin.generate')" :current="request()->routeIs('admin.generate')" wire:navigate>
                         {{ __('Generate') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="chart-bar" :href="route('admin.progress')" :current="request()->routeIs('admin.progress')" wire:navigate>
+                        {{ __('Progress') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="cog-6-tooth" :href="route('admin.settings')" :current="request()->routeIs('admin.settings')" wire:navigate>
+                        {{ __('Settings') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>

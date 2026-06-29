@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             VerbSeeder::class,
             WordSeeder::class,
+            PatternSeeder::class,
         ]);
     }
 }

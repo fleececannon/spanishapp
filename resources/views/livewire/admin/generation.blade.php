@@ -6,19 +6,30 @@
         </flux:text>
     </div>
 
-    <flux:card>
-        <form wire:submit="generate" class="space-y-4">
-            <div class="flex flex-wrap items-end gap-4">
-                <flux:input type="number" wire:model="count" label="How many" min="1" max="20" class="w-32" />
-                <flux:input wire:model="emphasis" label="Emphasis (optional)" placeholder="e.g. lean on the past tense" class="flex-1 min-w-64" />
-                <flux:button type="submit" variant="primary" icon="sparkles">
-                    <span wire:loading.remove wire:target="generate">Generate</span>
-                    <span wire:loading wire:target="generate">Generating…</span>
-                </flux:button>
-            </div>
-        </form>
-        <div wire:loading wire:target="generate" class="mt-3">
-            <flux:text class="text-zinc-500">Asking Claude for fresh sentences — this can take a few seconds.</flux:text>
+    <flux:card class="space-y-4">
+        <div class="flex flex-wrap items-end gap-4">
+            <flux:input type="number" wire:model="count" label="How many" min="1" max="20" class="w-32" />
+            <flux:input wire:model="emphasis" label="Emphasis (optional)" placeholder="e.g. lean on the past tense" class="flex-1 min-w-64" />
+            <flux:button wire:click="generate" variant="primary" icon="sparkles">
+                <span wire:loading.remove wire:target="generate,refresh,rebuild">Generate more</span>
+                <span wire:loading wire:target="generate,refresh,rebuild">Working…</span>
+            </flux:button>
+        </div>
+
+        <flux:separator />
+
+        <div class="flex flex-wrap items-center gap-3">
+            <flux:button wire:click="refresh" variant="subtle" icon="arrow-path">Refresh weak cards</flux:button>
+            <flux:text class="text-zinc-500 text-sm">Retires cards the kids keep missing and backfills the same number. Progress on the rest is kept.</flux:text>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+            <flux:button wire:click="rebuild" wire:confirm="This deletes EVERY card and resets ALL of the kids' progress. Continue?" variant="danger" icon="trash">Rebuild deck</flux:button>
+            <flux:text class="text-zinc-500 text-sm">Nuclear reset — wipes all cards and schedules, then builds a fresh batch of the size above.</flux:text>
+        </div>
+
+        <div wire:loading wire:target="generate,refresh,rebuild">
+            <flux:text class="text-zinc-500">Asking Claude — this can take a few seconds.</flux:text>
         </div>
     </flux:card>
 

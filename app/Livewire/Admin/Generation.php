@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Admin;
 
+use App\Enums\CardStatus;
 use App\Models\Card;
+use App\Models\ReviewState;
 use App\Models\Verb;
 use App\Services\Claude\CardGenerator;
 use App\Services\Claude\ClaudeException;
@@ -32,6 +34,60 @@ class Generation extends Component
             return;
         }
 
+        $this->toastCreated($created);
+    }
+
+    /** Retire cards the kids keep missing, then backfill the same number. Progress on survivors is untouched. */
+    public function refresh(CardGenerator $generator): void
+    {
+        $weakIds = Card::active()
+            ->withSum('reviewStates as total_lapses', 'lapses')
+            ->withSum('reviewStates as total_reps', 'reps')
+            ->withCount('reviewStates')
+            ->get()
+            ->filter(fn ($c) => $c->review_states_count > 0 && (int) $c->total_lapses > (int) $c->total_reps)
+            ->pluck('id');
+
+        if ($weakIds->isEmpty()) {
+            Flux::toast(variant: 'warning', text: 'No weak cards to refresh right now.');
+
+            return;
+        }
+
+        Card::whereIn('id', $weakIds)->update(['status' => CardStatus::Retired]);
+
+        try {
+            $created = $generator->generate($weakIds->count());
+        } catch (ClaudeException $e) {
+            Flux::toast(variant: 'danger', text: 'Retired '.$weakIds->count().' weak cards, but backfill failed: '.$e->getMessage());
+
+            return;
+        }
+
+        Flux::toast(variant: 'success', text: "Retired {$weakIds->count()} weak card(s) and added {$created} fresh one(s).");
+    }
+
+    /** Nuclear: wipe every card AND all kids' schedules, then build a fresh batch. */
+    public function rebuild(CardGenerator $generator): void
+    {
+        $this->validate();
+
+        ReviewState::query()->delete();
+        Card::query()->delete();
+
+        try {
+            $created = $generator->generate($this->count);
+        } catch (ClaudeException $e) {
+            Flux::toast(variant: 'danger', text: 'Deck cleared, but generation failed: '.$e->getMessage());
+
+            return;
+        }
+
+        Flux::toast(variant: 'success', text: "Rebuilt the deck — {$created} new card(s). All schedules were reset.");
+    }
+
+    private function toastCreated(int $created): void
+    {
         Flux::toast(
             variant: $created > 0 ? 'success' : 'warning',
             text: $created > 0
