@@ -12,23 +12,64 @@ use Livewire\Component;
 #[Title('Coverage')]
 class Coverage extends Component
 {
-    public function fillGaps(CoverageGenerator $generator): void
+    /** Whether the auto-stepping fill loop is active. */
+    public bool $running = false;
+
+    /** Rounds in a row that produced no new coverage (safety to stop). */
+    public int $idleSteps = 0;
+
+    public int $createdThisRun = 0;
+
+    public function start(): void
     {
+        $this->running = true;
+        $this->idleSteps = 0;
+        $this->createdThisRun = 0;
+    }
+
+    public function stop(): void
+    {
+        $this->running = false;
+    }
+
+    /**
+     * One short round per call (a single Claude request), driven by wire:poll
+     * so the dev server is never tied up in a long multi-call request.
+     */
+    public function step(CoverageGenerator $generator): void
+    {
+        if (! $this->running) {
+            return;
+        }
+
         try {
-            $result = $generator->fill();
+            $result = $generator->fill(maxRounds: 1, batchSize: 12);
         } catch (ClaudeException $e) {
+            $this->running = false;
             Flux::toast(variant: 'danger', text: $e->getMessage());
 
             return;
         }
 
+        $this->createdThisRun += $result['created'];
+
         if ($result['done']) {
-            Flux::toast(variant: 'success', text: "Full coverage! Added {$result['created']} card(s).");
-        } elseif ($result['created'] > 0) {
-            Flux::toast(variant: 'success', text: "Added {$result['created']} card(s) — {$result['remaining']} slot(s) still uncovered. Click again to continue.");
-        } else {
-            Flux::toast(variant: 'warning', text: "Couldn't cover the remaining {$result['remaining']} slot(s). Try adjusting the unlocked set.");
+            $this->running = false;
+            Flux::toast(variant: 'success', text: "Full coverage! Added {$this->createdThisRun} card(s) this run.");
+
+            return;
         }
+
+        if ($result['created'] === 0) {
+            if (++$this->idleSteps >= 2) {
+                $this->running = false;
+                Flux::toast(variant: 'warning', text: "Couldn't cover the remaining {$result['remaining']} slot(s). Try adjusting the unlocked set.");
+            }
+
+            return;
+        }
+
+        $this->idleSteps = 0;
     }
 
     public function render(CoverageService $coverage)

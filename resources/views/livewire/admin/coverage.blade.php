@@ -4,11 +4,19 @@
             <flux:heading size="xl">Coverage</flux:heading>
             <flux:text class="mt-1">Every unlocked verb-tense (key verbs across all persons) and target word should appear in at least one card.</flux:text>
         </div>
-        <flux:button wire:click="fillGaps" variant="primary" icon="sparkles">
-            <span wire:loading.remove wire:target="fillGaps">Fill gaps</span>
-            <span wire:loading wire:target="fillGaps">Filling…</span>
-        </flux:button>
+        @if ($running)
+            <flux:button wire:click="stop" variant="danger" icon="stop">Stop</flux:button>
+        @else
+            <flux:button wire:click="start" variant="primary" icon="sparkles" :disabled="$summary['gap_count'] === 0">
+                {{ $summary['gap_count'] === 0 ? 'Fully covered' : 'Fill gaps' }}
+            </flux:button>
+        @endif
     </div>
+
+    {{-- While running, each poll fires one short round (a single Claude call). --}}
+    @if ($running)
+        <div wire:poll.750ms="step"></div>
+    @endif
 
     <flux:card>
         <div class="flex items-center justify-between mb-2">
@@ -16,11 +24,13 @@
             <flux:text class="text-zinc-500">{{ $summary['covered_slots'] }} / {{ $summary['total_slots'] }} slots · {{ $summary['gap_count'] }} missing</flux:text>
         </div>
         <div class="h-3 rounded-full bg-zinc-200 dark:bg-zinc-700 overflow-hidden">
-            <div class="h-full rounded-full bg-green-500" style="width: {{ $summary['percent'] }}%"></div>
+            <div class="h-full rounded-full bg-green-500 transition-all duration-500" style="width: {{ $summary['percent'] }}%"></div>
         </div>
-        <div wire:loading wire:target="fillGaps" class="mt-3">
-            <flux:text class="text-zinc-500">Asking Claude to cover the missing pieces — this runs several rounds and can take a bit.</flux:text>
-        </div>
+        @if ($running)
+            <flux:text class="mt-3 text-zinc-500">
+                Filling… added {{ $createdThisRun }} card(s) so far. This runs one short round at a time — leave the page open; it stops on its own at 100%.
+            </flux:text>
+        @endif
     </flux:card>
 
     @foreach ($summary['groups'] as $tense => $g)
