@@ -12,21 +12,41 @@
         </flux:card>
     @elseif ($card)
         <flux:card class="space-y-5">
-            <flux:text class="text-zinc-500 text-sm">{{ $remaining }} to go · Read it, then type what it means in English.</flux:text>
+            <div class="flex items-center justify-between">
+                <flux:text class="text-zinc-500 text-sm">{{ $remaining }} to go</flux:text>
+                <flux:switch wire:model.live="outLoud" label="Out loud" align="left" />
+            </div>
 
             <div class="rounded-xl bg-zinc-100 dark:bg-zinc-800 p-6 text-center">
                 <span class="text-2xl font-semibold">{{ $card->spanish }}</span>
             </div>
 
             @if (! $showResult)
-                <form wire:submit="submit" class="space-y-3">
-                    <flux:textarea wire:model="answer" placeholder="In English…" rows="3" autofocus />
-                    <flux:error name="answer" />
-                    <flux:button type="submit" variant="primary" class="w-full">
-                        <span wire:loading.remove wire:target="submit">Check</span>
-                        <span wire:loading wire:target="submit">Checking…</span>
-                    </flux:button>
-                </form>
+                @if ($outLoud)
+                    {{-- Out-loud mode: say it together, reveal, then a grown-up marks it. --}}
+                    @if (! $revealed)
+                        <flux:button wire:click="reveal" variant="primary" class="w-full">Show answer</flux:button>
+                    @else
+                        <div class="text-center">
+                            <flux:text class="text-zinc-500 text-sm">It means</flux:text>
+                            <div class="font-medium text-lg">{{ $card->english }}</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <flux:button wire:click="mark(false)" variant="danger" icon="x-mark">Missed it</flux:button>
+                            <flux:button wire:click="mark(true)" variant="primary" icon="check">Got it</flux:button>
+                        </div>
+                    @endif
+                @else
+                    <flux:text class="text-zinc-500 text-sm">Type what it means in English.</flux:text>
+                    <form wire:submit="submit" class="space-y-3">
+                        <flux:textarea wire:model="answer" placeholder="In English…" rows="3" autofocus />
+                        <flux:error name="answer" />
+                        <flux:button type="submit" variant="primary" class="w-full">
+                            <span wire:loading.remove wire:target="submit">Check</span>
+                            <span wire:loading wire:target="submit">Checking…</span>
+                        </flux:button>
+                    </form>
+                @endif
             @else
                 <div class="space-y-4">
                     @if ($lastPassed)

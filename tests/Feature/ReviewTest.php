@@ -69,6 +69,44 @@ class ReviewTest extends TestCase
         $this->assertSame(ReviewResult::Pass, $state->last_result);
     }
 
+    public function test_out_loud_got_it_marks_pass_without_ai(): void
+    {
+        $kid = $this->kid();
+        $card = $this->card();
+        // No grader mock — out-loud must not call the AI.
+        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
+        $this->actingAs($kid, 'kid');
+
+        Livewire::test(Review::class)
+            ->set('outLoud', true)
+            ->call('reveal')
+            ->assertSet('revealed', true)
+            ->call('mark', true)
+            ->assertSet('showResult', true)
+            ->assertSet('lastPassed', true);
+
+        $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
+        $this->assertSame(1, $state->reps);
+        $this->assertSame(ReviewResult::Pass, $state->last_result);
+    }
+
+    public function test_out_loud_missed_it_requeues_and_penalizes(): void
+    {
+        $kid = $this->kid();
+        $card = $this->card();
+        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
+        $this->actingAs($kid, 'kid');
+
+        $component = Livewire::test(Review::class)
+            ->set('outLoud', true)
+            ->call('mark', false)
+            ->assertSet('lastPassed', false);
+
+        $this->assertContains($card->id, $component->get('queue'));
+        $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
+        $this->assertSame(1, $state->lapses);
+    }
+
     public function test_miss_requeues_card_and_penalizes_ease(): void
     {
         $kid = $this->kid(pace: 1);

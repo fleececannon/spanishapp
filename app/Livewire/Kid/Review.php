@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Kid;
 
+use App\Enums\ReviewResult;
 use App\Models\Card;
 use App\Models\ReviewState;
 use App\Models\Setting;
@@ -24,6 +25,11 @@ class Review extends Component
     public ?int $currentId = null;
 
     public string $answer = '';
+
+    /** "Out loud" mode: reveal + tap correct/incorrect instead of typing. */
+    public bool $outLoud = false;
+
+    public bool $revealed = false;
 
     public bool $showResult = false;
 
@@ -76,6 +82,38 @@ class Review extends Component
         }
     }
 
+    public function reveal(): void
+    {
+        $this->revealed = true;
+    }
+
+    /** Out-loud mode: a grown-up marks the spoken answer right or wrong — no AI call. */
+    public function mark(Scheduler $scheduler, bool $correct): void
+    {
+        if ($this->currentId === null || $this->showResult) {
+            return;
+        }
+
+        $card = Card::find($this->currentId);
+        if (! $card) {
+            $this->advance();
+
+            return;
+        }
+
+        $verdict = $correct ? ReviewResult::Pass : ReviewResult::NeedsWork;
+        $scheduler->apply($this->reviewStateFor($card->id), $verdict);
+
+        $this->showResult = true;
+        $this->lastPassed = $correct;
+        $this->acceptedEnglish = $card->english;
+        $this->nudge = null;
+
+        if (! $correct) {
+            $this->queue[] = $card->id;
+        }
+    }
+
     public function next(): void
     {
         $this->advance();
@@ -83,7 +121,7 @@ class Review extends Component
 
     private function advance(): void
     {
-        $this->reset(['answer', 'showResult', 'lastPassed', 'acceptedEnglish', 'nudge']);
+        $this->reset(['answer', 'revealed', 'showResult', 'lastPassed', 'acceptedEnglish', 'nudge']);
 
         if (empty($this->queue)) {
             $this->currentId = null;
