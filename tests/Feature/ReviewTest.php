@@ -47,7 +47,7 @@ class ReviewTest extends TestCase
 
     public function test_guest_kid_is_redirected_to_kid_login(): void
     {
-        $this->get(route('kid.review'))->assertRedirect(route('kid.login'));
+        $this->get(route('kid.review'))->assertRedirect(route('home'));
     }
 
     public function test_pass_advances_schedule_and_records_state(): void

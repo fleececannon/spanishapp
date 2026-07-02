@@ -12,8 +12,8 @@ class AdminPagesTest extends TestCase
 
     public function test_guests_cannot_reach_admin_pages(): void
     {
-        $this->get(route('admin.verbs'))->assertRedirect(route('login'));
-        $this->get(route('admin.generate'))->assertRedirect(route('login'));
+        $this->get(route('admin.verbs'))->assertRedirect(route('home'));
+        $this->get(route('admin.generate'))->assertRedirect(route('home'));
     }
 
     public function test_admin_can_view_verbs_grid_and_generation(): void

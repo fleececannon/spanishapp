@@ -8,9 +8,10 @@ use App\Livewire\Admin\Progress;
 use App\Livewire\Admin\Settings;
 use App\Livewire\Admin\VerbsGrid;
 use App\Livewire\Admin\WordsLibrary;
+use App\Livewire\Landing;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
+Route::livewire('/', Landing::class)->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
