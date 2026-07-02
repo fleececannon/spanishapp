@@ -1,7 +1,10 @@
 <div class="space-y-6">
     <div class="flex items-center justify-between">
         <flux:heading size="xl">Cards</flux:heading>
-        <flux:button wire:click="openAdd" variant="primary" icon="plus">Add manual card</flux:button>
+        <div class="flex items-center gap-2">
+            <flux:button wire:click="openBulk" variant="ghost" icon="clipboard-document-list">Paste cards</flux:button>
+            <flux:button wire:click="openAdd" variant="primary" icon="plus">Add manual card</flux:button>
+        </div>
     </div>
 
     <flux:radio.group wire:model.live="filter" variant="segmented">
@@ -57,5 +60,22 @@
                 <flux:button type="submit" variant="primary">{{ $editingId ? 'Save' : 'Add' }}</flux:button>
             </div>
         </form>
+    </flux:modal>
+
+    <flux:modal name="card-bulk" class="md:w-[36rem]">
+        <div class="space-y-4">
+            <div>
+                <flux:heading size="lg">Paste cards</flux:heading>
+                <flux:text class="mt-1 text-zinc-500">
+                    One card per line: Spanish, then English, separated by a Tab or a <code class="rounded bg-zinc-100 px-1 dark:bg-zinc-800">|</code>.
+                    Paste straight from a spreadsheet's two columns and it just works.
+                </flux:text>
+            </div>
+            <flux:textarea wire:model="bulkText" rows="10" placeholder="Yo tengo agua | I have water&#10;Ella corre rápido | She runs fast" />
+            <flux:error name="bulkText" />
+            <div class="flex justify-end">
+                <flux:button wire:click="importBulk" variant="primary">Add cards</flux:button>
+            </div>
+        </div>
     </flux:modal>
 </div>

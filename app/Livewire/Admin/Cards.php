@@ -37,8 +37,70 @@ class Cards extends Component
     #[Validate('nullable|string|max:10')]
     public ?string $mmGender = null;
 
+    public string $bulkText = '';
+
     public function updatedFilter(): void
     {
+        $this->resetPage();
+    }
+
+    public function openBulk(): void
+    {
+        $this->reset(['bulkText']);
+        $this->resetValidation();
+        Flux::modal('card-bulk')->show();
+    }
+
+    /** Paste many cards at once: one per line, "Spanish <tab or |> English". */
+    public function importBulk(): void
+    {
+        $created = 0;
+        $skipped = 0;
+
+        foreach (preg_split('/\r\n|\r|\n/', trim($this->bulkText)) as $line) {
+            $line = trim($line);
+            if ($line === '') {
+                continue;
+            }
+
+            $delim = str_contains($line, "\t") ? "\t" : (str_contains($line, '|') ? '|' : null);
+            if ($delim === null) {
+                $skipped++;
+
+                continue;
+            }
+
+            [$spanish, $english] = array_pad(explode($delim, $line, 2), 2, '');
+            $spanish = trim($spanish);
+            $english = trim($english);
+
+            if ($spanish === '' || $english === '') {
+                $skipped++;
+
+                continue;
+            }
+
+            Card::create([
+                'source' => CardSource::Manual,
+                'spanish' => mb_substr($spanish, 0, 300),
+                'english' => mb_substr($english, 0, 300),
+                'test_direction' => 'es_to_en',
+                'uses_concepts' => [],
+                'must_match' => ['tense' => null, 'subject' => null, 'gender' => null],
+                'status' => CardStatus::Active,
+            ]);
+            $created++;
+        }
+
+        if ($created === 0) {
+            $this->addError('bulkText', 'No valid rows found. Put Spanish then English on each line, separated by a Tab or a |.');
+
+            return;
+        }
+
+        Flux::modal('card-bulk')->close();
+        Flux::toast(variant: 'success', text: "{$created} card(s) added.".($skipped ? " {$skipped} line(s) skipped." : ''));
+        $this->filter = 'active';
         $this->resetPage();
     }
 
