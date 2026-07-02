@@ -26,5 +26,10 @@
         </form>
     </flux:card>
 
-    <p class="mt-6 text-center text-sm text-zinc-400">Learn a little every day.</p>
+    <div class="mt-6 text-center">
+        <a href="{{ route('login') }}" wire:navigate
+            class="text-sm font-medium text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200">
+            I'm a grown-up →
+        </a>
+    </div>
 </div>
