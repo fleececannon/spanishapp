@@ -26,7 +26,7 @@ class Landing extends Component
         if (Auth::guard('web')->check()) {
             $this->redirectRoute('dashboard', navigate: true);
         } elseif (Auth::guard('kid')->check()) {
-            $this->redirectRoute('kid.review', navigate: true);
+            $this->redirectRoute('kid.home', navigate: true);
         }
     }
 
@@ -42,7 +42,7 @@ class Landing extends Component
         }
 
         session()->regenerate();
-        $this->redirectRoute('kid.review', navigate: true);
+        $this->redirectRoute('kid.home', navigate: true);
     }
 
     public function render()

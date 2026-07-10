@@ -26,7 +26,7 @@ class LandingTest extends TestCase
             ->set('name', 'Kai')
             ->set('password', 'secret')
             ->call('login')
-            ->assertRedirect(route('kid.review'));
+            ->assertRedirect(route('kid.home'));
 
         $this->assertTrue(auth('kid')->check());
     }

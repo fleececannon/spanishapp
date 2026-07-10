@@ -1,14 +1,15 @@
 <div>
     <div class="mb-4 flex items-center justify-between">
-        <flux:text class="text-zinc-500">¡Hola, {{ auth('kid')->user()->name }}!</flux:text>
+        <flux:button :href="route('kid.home')" wire:navigate variant="ghost" size="sm" icon="home">Home</flux:button>
         <flux:button wire:click="logout" variant="ghost" size="sm" icon="arrow-right-start-on-rectangle">Sign out</flux:button>
     </div>
 
     @if ($done)
-        <flux:card class="text-center space-y-3 py-10">
+        <flux:card class="text-center space-y-4 py-10">
             <div class="text-5xl">🎉</div>
             <flux:heading size="xl">All done for now!</flux:heading>
             <flux:text>You finished every card waiting for you. Come back later for more.</flux:text>
+            <flux:button :href="route('kid.home')" wire:navigate variant="primary" class="!rounded-2xl">Back to home</flux:button>
         </flux:card>
     @elseif ($card)
         <flux:card class="space-y-5">
