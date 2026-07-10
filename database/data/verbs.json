@@ -122,7 +122,7 @@
     "unlocked": true
   },
   {
-    "spanish": "Banar",
+    "spanish": "Bañar",
     "english": "to bathe / to bathe someone",
     "tag": "Verb Set 1",
     "verb_class": "AR",
@@ -497,7 +497,7 @@
   },
   {
     "spanish": "Volver",
-    "english": "To REturn",
+    "english": "To Return",
     "tag": "Verb Set 2",
     "verb_class": "ER",
     "enabled_tenses": [
@@ -837,7 +837,7 @@
     "unlocked": false
   },
   {
-    "spanish": "Olivdar",
+    "spanish": "Olvidar",
     "english": "to forget",
     "tag": "Verb Set 4",
     "verb_class": "AR",
