@@ -29,17 +29,18 @@ class DueCardServiceTest extends TestCase
         ]);
     }
 
-    public function test_new_cards_are_capped_by_pace(): void
+    public function test_whole_deck_is_available_from_day_one(): void
     {
         $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 2]);
         collect(range(1, 5))->each(fn ($n) => $this->makeCard($n));
 
         $queue = app(DueCardService::class)->queueFor($kid);
 
-        $this->assertCount(2, $queue);
+        // No pace cap — every new card is in the queue.
+        $this->assertCount(5, $queue);
     }
 
-    public function test_due_cards_are_included_beyond_the_new_cap(): void
+    public function test_due_reviews_and_all_new_cards_are_included(): void
     {
         $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 2]);
 
@@ -58,9 +59,9 @@ class DueCardServiceTest extends TestCase
 
         $queue = app(DueCardService::class)->queueFor($kid);
 
-        // 1 due + 2 new (capped) = 3
-        $this->assertCount(3, $queue);
-        $this->assertTrue($queue->contains('id', $dueCard->id));
+        // 1 due + 4 new = 5, and the overdue review sorts first.
+        $this->assertCount(5, $queue);
+        $this->assertSame($dueCard->id, $queue->first()->id);
     }
 
     public function test_cards_not_yet_due_are_excluded(): void

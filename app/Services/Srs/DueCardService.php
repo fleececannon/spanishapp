@@ -4,14 +4,14 @@ namespace App\Services\Srs;
 
 use App\Models\Card;
 use App\Models\Kid;
-use App\Models\Setting;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 
 /**
- * Builds a kid's review queue: every card already due today, plus up to
- * daily_new_card_pace brand-new cards they've never seen. This is the only
- * place the new-card pace is enforced.
+ * Builds a kid's review queue: every active card that is either due for review
+ * or has never been seen. The whole deck is available from day one; spaced
+ * repetition pushes passed cards into the future, and anything overdue piles
+ * back up. New cards join the queue as soon as they are created.
  */
 class DueCardService
 {
@@ -20,19 +20,19 @@ class DueCardService
     {
         $today = Carbon::today()->toDateString();
 
-        // Cards with an existing schedule that's due.
+        // Reviews that have come due — most overdue first.
         $due = Card::active()
-            ->whereHas('reviewStates', fn ($q) => $q
-                ->where('kid_id', $kid->id)
-                ->whereDate('due', '<=', $today))
+            ->join('review_states', 'review_states.card_id', '=', 'cards.id')
+            ->where('review_states.kid_id', $kid->id)
+            ->whereDate('review_states.due', '<=', $today)
+            ->orderBy('review_states.due')
+            ->select('cards.*')
             ->get();
 
-        // Fresh cards this kid has never seen, capped by their pace.
-        $startingEase = (float) (Setting::get('srs_tuning', [])['starting_ease'] ?? 2.5);
-
+        // Every card this kid has never seen — oldest first.
         $new = Card::active()
             ->whereDoesntHave('reviewStates', fn ($q) => $q->where('kid_id', $kid->id))
-            ->limit($kid->daily_new_card_pace)
+            ->orderBy('id')
             ->get();
 
         return $due->concat($new)->unique('id')->values();
