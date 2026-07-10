@@ -758,5 +758,29 @@
     "gender": "f",
     "role": "target",
     "unlocked": true
+  },
+  {
+    "spanish": "me",
+    "english": "me",
+    "category": "pronoun",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "te",
+    "english": "you",
+    "category": "pronoun",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "nos",
+    "english": "us",
+    "category": "pronoun",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
   }
 ]

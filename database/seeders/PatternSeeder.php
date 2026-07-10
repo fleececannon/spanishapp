@@ -12,7 +12,7 @@ class PatternSeeder extends Seeder
         $patterns = [
             [
                 'name' => 'Direct-object pronoun placement',
-                'instruction' => "Use direct-object pronouns (lo, la, los, las) when natural: before a conjugated verb, e.g. \"Lo tengo\", or attached to the end of an infinitive, e.g. \"Quiero aprenderlo\". The pronoun must agree in gender and number with the noun it replaces, and only replace nouns that are unlocked.",
+                'instruction' => "Use direct-object pronouns (lo, la, los, las, me, te, nos) when natural: before a conjugated verb, e.g. \"Lo tengo\" or \"Te veo\", or attached to the end of an infinitive, e.g. \"Quiero aprenderlo\". lo/la/los/las must agree in gender and number with the noun they replace, and only replace nouns that are unlocked.",
                 'enabled' => true,
             ],
             [
