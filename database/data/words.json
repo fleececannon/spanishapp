@@ -726,5 +726,37 @@
     "gender": "f",
     "role": "ingredient",
     "unlocked": true
+  },
+  {
+    "spanish": "lo",
+    "english": "it / him",
+    "category": "pronoun",
+    "gender": "m",
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "la",
+    "english": "it / her",
+    "category": "pronoun",
+    "gender": "f",
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "los",
+    "english": "them (masculine)",
+    "category": "pronoun",
+    "gender": "m",
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "las",
+    "english": "them (feminine)",
+    "category": "pronoun",
+    "gender": "f",
+    "role": "target",
+    "unlocked": true
   }
 ]
