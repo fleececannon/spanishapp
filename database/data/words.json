@@ -782,5 +782,53 @@
     "gender": null,
     "role": "target",
     "unlocked": true
+  },
+  {
+    "spanish": "novia",
+    "english": "girlfriend / bride",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "hay",
+    "english": "there is / there are",
+    "category": "connector",
+    "gender": null,
+    "role": "target",
+    "unlocked": true
+  },
+  {
+    "spanish": "culpable",
+    "english": "guilty",
+    "category": "adjective",
+    "gender": null,
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "fiesta",
+    "english": "party",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "beso",
+    "english": "kiss",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": true
+  },
+  {
+    "spanish": "vida",
+    "english": "life",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": true
   }
 ]
