@@ -62,13 +62,17 @@
             <flux:heading size="lg">Add a verb</flux:heading>
             <flux:input wire:model="newSpanish" label="Spanish (infinitive)" placeholder="Hablar" />
             <flux:input wire:model="newEnglish" label="English" placeholder="to speak" />
-            <flux:input wire:model="newTag" label="Tag / set" placeholder="Verb Set 1" />
-            <flux:select wire:model="newClass" label="Class">
-                <flux:select.option value="AR">AR</flux:select.option>
-                <flux:select.option value="ER">ER</flux:select.option>
-                <flux:select.option value="IR">IR</flux:select.option>
-                <flux:select.option value="irregular">Irregular</flux:select.option>
+            <flux:select wire:model.live="newGroup" label="Group" placeholder="Pick a group">
+                @foreach ($groups as $group)
+                    <flux:select.option value="{{ $group }}">{{ $group }}</flux:select.option>
+                @endforeach
+                <flux:select.option value="__new__">＋ New group…</flux:select.option>
             </flux:select>
+            @if ($newGroup === '__new__')
+                <flux:input wire:model="newGroupName" label="New group name" placeholder="Verb Set 5" />
+            @endif
+            <flux:error name="newGroup" />
+            <flux:error name="newGroupName" />
             <div class="flex justify-end">
                 <flux:button type="submit" variant="primary">Add</flux:button>
             </div>

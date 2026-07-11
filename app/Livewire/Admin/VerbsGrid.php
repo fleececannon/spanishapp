@@ -19,11 +19,10 @@ class VerbsGrid extends Component
     #[Validate('required|string|max:120')]
     public string $newEnglish = '';
 
-    #[Validate('required|string|max:60')]
-    public string $newTag = 'Key Verbs';
+    /** Selected existing group, or '__new__' to create one. */
+    public string $newGroup = '';
 
-    #[Validate('required')]
-    public string $newClass = 'AR';
+    public string $newGroupName = '';
 
     /** The tense columns shown in the grid. */
     public function tenses(): array
@@ -60,20 +59,40 @@ class VerbsGrid extends Component
     public function addVerb(): void
     {
         $this->validate();
+        $this->validate([
+            'newGroup' => 'required|string|max:60',
+            'newGroupName' => $this->newGroup === '__new__' ? 'required|string|max:60' : 'nullable',
+        ], [
+            'newGroup.required' => 'Pick a group or create a new one.',
+            'newGroupName.required' => 'Give the new group a name.',
+        ]);
 
         Verb::create([
             'spanish' => trim($this->newSpanish),
             'english' => trim($this->newEnglish),
-            'tag' => trim($this->newTag),
-            'verb_class' => VerbClass::from($this->newClass),
+            'tag' => $this->newGroup === '__new__' ? trim($this->newGroupName) : $this->newGroup,
+            'verb_class' => $this->classFromInfinitive($this->newSpanish),
             'enabled_tenses' => ['infinitive'],
             'drill_all_forms' => false,
             'unlocked' => false,
         ]);
 
-        $this->reset(['newSpanish', 'newEnglish']);
+        $this->reset(['newSpanish', 'newEnglish', 'newGroupName']);
         Flux::modal('add-verb')->close();
         Flux::toast(variant: 'success', text: 'Verb added.');
+    }
+
+    /** AR / ER / IR from the infinitive ending; anything else is irregular. */
+    private function classFromInfinitive(string $spanish): VerbClass
+    {
+        $s = mb_strtolower(trim($spanish));
+
+        return match (true) {
+            str_ends_with($s, 'ar') => VerbClass::AR,
+            str_ends_with($s, 'er') => VerbClass::ER,
+            str_ends_with($s, 'ir') || str_ends_with($s, 'ír') => VerbClass::IR,
+            default => VerbClass::Irregular,
+        };
     }
 
     public function render()
@@ -82,6 +101,7 @@ class VerbsGrid extends Component
 
         return view('livewire.admin.verbs-grid', [
             'verbsByTag' => $verbs,
+            'groups' => Verb::query()->distinct()->orderBy('tag')->pluck('tag'),
             'tenses' => $this->tenses(),
             'unlockedCount' => Verb::unlocked()->count(),
             'totalCount' => Verb::count(),
