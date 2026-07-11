@@ -20,20 +20,21 @@ class DueCardService
     {
         $today = Carbon::today()->toDateString();
 
-        // Reviews that have come due — most overdue first.
+        // Reviews that have come due. Shuffled per session so the order isn't
+        // predictable — but they always come before anything new.
         $due = Card::active()
             ->join('review_states', 'review_states.card_id', '=', 'cards.id')
             ->where('review_states.kid_id', $kid->id)
             ->whereDate('review_states.due', '<=', $today)
-            ->orderBy('review_states.due')
             ->select('cards.*')
-            ->get();
+            ->get()
+            ->shuffle();
 
-        // Every card this kid has never seen — oldest first.
+        // Every card this kid has never seen — also shuffled.
         $new = Card::active()
             ->whereDoesntHave('reviewStates', fn ($q) => $q->where('kid_id', $kid->id))
-            ->orderBy('id')
-            ->get();
+            ->get()
+            ->shuffle();
 
         return $due->concat($new)->unique('id')->values();
     }

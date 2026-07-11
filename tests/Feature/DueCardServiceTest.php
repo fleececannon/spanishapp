@@ -64,6 +64,28 @@ class DueCardServiceTest extends TestCase
         $this->assertSame($dueCard->id, $queue->first()->id);
     }
 
+    public function test_due_reviews_always_come_before_new_cards_despite_shuffle(): void
+    {
+        $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
+
+        $dueIds = collect(range(90, 92))->map(function ($n) use ($kid) {
+            $card = $this->makeCard($n);
+            ReviewState::create([
+                'kid_id' => $kid->id, 'card_id' => $card->id, 'due' => Carbon::yesterday(),
+                'interval_days' => 1, 'ease' => 2.5, 'reps' => 1, 'lapses' => 0,
+            ]);
+
+            return $card->id;
+        });
+
+        collect(range(1, 4))->each(fn ($n) => $this->makeCard($n)); // 4 fresh
+
+        $queue = app(DueCardService::class)->queueFor($kid);
+
+        // The first three slots are exactly the due reviews (in any order).
+        $this->assertEqualsCanonicalizing($dueIds->all(), $queue->take(3)->pluck('id')->all());
+    }
+
     public function test_cards_not_yet_due_are_excluded(): void
     {
         $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 0]);
