@@ -104,14 +104,14 @@ class Review extends Component
         $verdict = $correct ? ReviewResult::Pass : ReviewResult::NeedsWork;
         $scheduler->apply($this->reviewStateFor($card->id), $verdict);
 
-        $this->showResult = true;
-        $this->lastPassed = $correct;
-        $this->acceptedEnglish = $card->english;
-        $this->nudge = null;
-
+        // A miss comes back later this session.
         if (! $correct) {
             $this->queue[] = $card->id;
         }
+
+        // No result screen out loud — the grown-up already saw the answer
+        // and made the call. Straight to the next card.
+        $this->advance();
     }
 
     public function next(): void

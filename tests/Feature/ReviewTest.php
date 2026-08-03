@@ -82,8 +82,9 @@ class ReviewTest extends TestCase
             ->call('reveal')
             ->assertSet('revealed', true)
             ->call('mark', true)
-            ->assertSet('showResult', true)
-            ->assertSet('lastPassed', true);
+            // No result screen out loud — straight to the next card (here: done).
+            ->assertSet('showResult', false)
+            ->assertSet('done', true);
 
         $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
         $this->assertSame(1, $state->reps);
@@ -100,9 +101,11 @@ class ReviewTest extends TestCase
         $component = Livewire::test(Review::class)
             ->set('outLoud', true)
             ->call('mark', false)
-            ->assertSet('lastPassed', false);
+            // Advanced immediately; the missed (only) card cycled back as current.
+            ->assertSet('showResult', false)
+            ->assertSet('currentId', $card->id)
+            ->assertSet('done', false);
 
-        $this->assertContains($card->id, $component->get('queue'));
         $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
         $this->assertSame(1, $state->lapses);
     }
