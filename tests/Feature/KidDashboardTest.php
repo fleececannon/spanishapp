@@ -58,6 +58,33 @@ class KidDashboardTest extends TestCase
             ->assertViewHas('total', 4);
     }
 
+    public function test_upcoming_chart_buckets_reviews_by_day_for_14_days(): void
+    {
+        $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
+
+        $state = fn (Card $card, $due) => ReviewState::create([
+            'kid_id' => $kid->id, 'card_id' => $card->id, 'due' => $due,
+            'interval_days' => 3, 'ease' => 2.5, 'reps' => 1, 'lapses' => 0,
+        ]);
+
+        $state($this->makeCard(1), Carbon::today()->addDays(3));
+        $state($this->makeCard(2), Carbon::today()->addDays(3));
+        $state($this->makeCard(3), Carbon::today()->addDays(14));
+        $state($this->makeCard(4), Carbon::today());               // today: not "upcoming"
+        $state($this->makeCard(5), Carbon::today()->addDays(15));  // beyond window
+
+        $upcoming = Livewire::actingAs($kid, 'kid')
+            ->test(Dashboard::class)
+            ->viewData('upcoming');
+
+        $this->assertCount(14, $upcoming);
+        $byDate = $upcoming->keyBy('date');
+        $this->assertSame(2, $byDate[Carbon::today()->addDays(3)->toDateString()]['count']);
+        $this->assertSame(1, $byDate[Carbon::today()->addDays(14)->toDateString()]['count']);
+        $this->assertSame(0, $byDate[Carbon::today()->addDays(1)->toDateString()]['count']);
+        $this->assertSame(3, $upcoming->sum('count'));
+    }
+
     public function test_start_learning_goes_to_the_review_screen(): void
     {
         $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);

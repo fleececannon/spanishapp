@@ -44,7 +44,26 @@ class Dashboard extends Component
         $totalActive = Card::active()->count();
         $newCount = $totalActive - $seen;
 
+        // Reviews landing in the next 14 days (tomorrow onward), one bucket per day.
+        $dueByDay = ReviewState::where('kid_id', $kid->id)
+            ->whereBetween('due', [Carbon::tomorrow(), Carbon::today()->addDays(14)])
+            ->get()
+            ->countBy(fn (ReviewState $s) => $s->due->toDateString());
+
+        $upcoming = collect(range(1, 14))->map(function (int $offset) use ($dueByDay) {
+            $date = Carbon::today()->addDays($offset);
+
+            return [
+                'date' => $date->toDateString(),
+                'dow' => $date->format('D'),
+                'day' => $date->format('j'),
+                'count' => (int) ($dueByDay[$date->toDateString()] ?? 0),
+            ];
+        });
+
         return view('livewire.kid.dashboard', [
+            'upcoming' => $upcoming,
+            'upcomingMax' => max(1, $upcoming->max('count')),
             'name' => $kid->name,
             'todo' => $reviewsDue + $newCount,
             'reviewsDue' => $reviewsDue,

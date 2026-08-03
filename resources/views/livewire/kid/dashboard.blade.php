@@ -67,4 +67,32 @@
             </div>
         </div>
     </flux:card>
+
+    {{-- Reviews coming due, next 14 days --}}
+    <flux:card class="mt-4 space-y-3 rounded-3xl border-none shadow-sm">
+        <flux:heading size="sm" class="text-zinc-500">Reviews coming up · next 14 days</flux:heading>
+        <div class="flex items-end gap-[2px] h-28" role="img"
+            aria-label="Reviews due per day over the next 14 days">
+            @foreach ($upcoming as $day)
+                <div class="flex-1 flex flex-col items-center justify-end gap-1 min-w-0 group"
+                    title="{{ $day['dow'] }} {{ $day['day'] }}: {{ $day['count'] }} review{{ $day['count'] === 1 ? '' : 's' }}">
+                    @if ($day['count'] > 0)
+                        <span class="text-[10px] leading-none font-semibold text-zinc-600 dark:text-zinc-300">{{ $day['count'] }}</span>
+                        <div class="w-full max-w-3 rounded-t-[4px] bg-[#6366f1]"
+                            style="height: {{ max(6, round($day['count'] / $upcomingMax * 76)) }}px"></div>
+                    @else
+                        <div class="w-full max-w-3 h-[2px] rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+        <div class="flex gap-[2px] border-t border-zinc-200 dark:border-zinc-700 pt-1.5">
+            @foreach ($upcoming as $day)
+                <div class="flex-1 text-center min-w-0">
+                    <div class="text-[10px] leading-tight text-zinc-400">{{ substr($day['dow'], 0, 1) }}</div>
+                    <div class="text-[10px] leading-tight text-zinc-400">{{ $day['day'] }}</div>
+                </div>
+            @endforeach
+        </div>
+    </flux:card>
 </div>
