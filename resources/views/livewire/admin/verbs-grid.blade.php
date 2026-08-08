@@ -20,6 +20,7 @@
                         <th class="py-2 pr-4 font-medium">Verb</th>
                         <th class="py-2 px-2 font-medium text-center">Unlocked</th>
                         <th class="py-2 px-2 font-medium text-center">Drill all</th>
+                        <th class="py-2 px-2 font-medium text-center whitespace-nowrap">Vocab card</th>
                         @foreach ($tenses as $tense)
                             <th class="py-2 px-2 font-medium text-center whitespace-nowrap">{{ ucfirst($tense->value) }}</th>
                         @endforeach
@@ -40,6 +41,11 @@
                             <td class="py-2 px-2 text-center">
                                 <input type="checkbox" @checked($verb->drill_all_forms)
                                     wire:click="toggleDrill({{ $verb->id }})"
+                                    class="size-4 rounded border-zinc-300 cursor-pointer" />
+                            </td>
+                            <td class="py-2 px-2 text-center">
+                                <input type="checkbox" @checked($verb->vocab_card)
+                                    wire:click="toggleVocab({{ $verb->id }})"
                                     class="size-4 rounded border-zinc-300 cursor-pointer" />
                             </td>
                             @foreach ($tenses as $tense)
@@ -73,6 +79,7 @@
             @endif
             <flux:error name="newGroup" />
             <flux:error name="newGroupName" />
+            <flux:checkbox wire:model="newVocab" label="Vocab card" description="Adds a simple word → meaning card to the deck right away." />
             <div class="flex justify-end">
                 <flux:button type="submit" variant="primary">Add</flux:button>
             </div>

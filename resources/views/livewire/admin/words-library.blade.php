@@ -33,6 +33,12 @@
                                 {{ $word->role->value }}
                             </flux:badge>
                         </button>
+                        <label class="flex items-center gap-1.5 cursor-pointer text-xs text-zinc-500 whitespace-nowrap">
+                            <input type="checkbox" @checked($word->vocab_card)
+                                wire:click="toggleVocab({{ $word->id }})"
+                                class="size-4 rounded border-zinc-300" />
+                            vocab card
+                        </label>
                         <flux:button wire:click="openEdit({{ $word->id }})" size="xs" variant="ghost" icon="pencil" />
                         <flux:button wire:click="delete({{ $word->id }})" wire:confirm="Remove this word?" size="xs" variant="ghost" icon="trash" />
                     </div>
@@ -59,6 +65,7 @@
                 <flux:select.option value="ingredient">Ingredient (flavor only)</flux:select.option>
             </flux:select>
             <flux:input wire:model="wGender" label="Gender (m / f, optional)" maxlength="1" placeholder="" />
+            <flux:checkbox wire:model="wVocab" label="Vocab card" description="Adds a simple word → meaning card to the deck right away." />
             <div class="flex justify-end">
                 <flux:button type="submit" variant="primary">{{ $editingId ? 'Save' : 'Add' }}</flux:button>
             </div>

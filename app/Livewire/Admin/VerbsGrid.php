@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Enums\Tense;
 use App\Enums\VerbClass;
 use App\Models\Verb;
+use App\Services\Vocab\VocabCardService;
 use Flux\Flux;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
@@ -23,6 +24,8 @@ class VerbsGrid extends Component
     public string $newGroup = '';
 
     public string $newGroupName = '';
+
+    public bool $newVocab = false;
 
     /** The tense columns shown in the grid. */
     public function tenses(): array
@@ -56,7 +59,16 @@ class VerbsGrid extends Component
         $verb->save();
     }
 
-    public function addVerb(): void
+    public function toggleVocab(int $verbId, VocabCardService $vocabCards): void
+    {
+        $verb = Verb::findOrFail($verbId);
+        $verb->vocab_card = ! $verb->vocab_card;
+        $verb->save();
+
+        $vocabCards->sync($verb);
+    }
+
+    public function addVerb(VocabCardService $vocabCards): void
     {
         $this->validate();
         $this->validate([
@@ -67,7 +79,7 @@ class VerbsGrid extends Component
             'newGroupName.required' => 'Give the new group a name.',
         ]);
 
-        Verb::create([
+        $verb = Verb::create([
             'spanish' => trim($this->newSpanish),
             'english' => trim($this->newEnglish),
             'tag' => $this->newGroup === '__new__' ? trim($this->newGroupName) : $this->newGroup,
@@ -75,9 +87,12 @@ class VerbsGrid extends Component
             'enabled_tenses' => ['infinitive'],
             'drill_all_forms' => false,
             'unlocked' => false,
+            'vocab_card' => $this->newVocab,
         ]);
 
-        $this->reset(['newSpanish', 'newEnglish', 'newGroupName']);
+        $vocabCards->sync($verb);
+
+        $this->reset(['newSpanish', 'newEnglish', 'newGroupName', 'newVocab']);
         Flux::modal('add-verb')->close();
         Flux::toast(variant: 'success', text: 'Verb added.');
     }

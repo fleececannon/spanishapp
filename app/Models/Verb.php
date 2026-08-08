@@ -17,6 +17,7 @@ class Verb extends Model
             'enabled_tenses' => 'array',
             'drill_all_forms' => 'boolean',
             'unlocked' => 'boolean',
+            'vocab_card' => 'boolean',
             'verb_class' => VerbClass::class,
         ];
     }

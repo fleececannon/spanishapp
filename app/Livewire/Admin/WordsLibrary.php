@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Enums\WordCategory;
 use App\Enums\WordRole;
 use App\Models\Word;
+use App\Services\Vocab\VocabCardService;
 use Flux\Flux;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
@@ -30,9 +31,11 @@ class WordsLibrary extends Component
     #[Validate('required')]
     public string $wRole = 'target';
 
+    public bool $wVocab = false;
+
     public function openAdd(): void
     {
-        $this->reset(['editingId', 'wSpanish', 'wEnglish', 'wGender']);
+        $this->reset(['editingId', 'wSpanish', 'wEnglish', 'wGender', 'wVocab']);
         $this->wCategory = 'connector';
         $this->wRole = 'target';
         $this->resetValidation();
@@ -48,15 +51,16 @@ class WordsLibrary extends Component
         $this->wCategory = $word->category->value;
         $this->wGender = $word->gender;
         $this->wRole = $word->role->value;
+        $this->wVocab = $word->vocab_card;
         $this->resetValidation();
         Flux::modal('word-form')->show();
     }
 
-    public function save(): void
+    public function save(VocabCardService $vocabCards): void
     {
         $this->validate();
 
-        Word::updateOrCreate(
+        $word = Word::updateOrCreate(
             ['id' => $this->editingId],
             [
                 'spanish' => trim($this->wSpanish),
@@ -64,8 +68,11 @@ class WordsLibrary extends Component
                 'category' => WordCategory::from($this->wCategory),
                 'gender' => $this->wGender ?: null,
                 'role' => WordRole::from($this->wRole),
+                'vocab_card' => $this->wVocab,
             ],
         );
+
+        $vocabCards->sync($word);
 
         Flux::modal('word-form')->close();
         Flux::toast(variant: 'success', text: $this->editingId ? 'Word updated.' : 'Word added.');
@@ -85,9 +92,20 @@ class WordsLibrary extends Component
         $word->save();
     }
 
-    public function delete(int $id): void
+    public function toggleVocab(int $id, VocabCardService $vocabCards): void
     {
-        Word::findOrFail($id)->delete();
+        $word = Word::findOrFail($id);
+        $word->vocab_card = ! $word->vocab_card;
+        $word->save();
+
+        $vocabCards->sync($word);
+    }
+
+    public function delete(int $id, VocabCardService $vocabCards): void
+    {
+        $word = Word::findOrFail($id);
+        $vocabCards->deleteFor($word);
+        $word->delete();
         Flux::toast(variant: 'success', text: 'Word removed.');
     }
 

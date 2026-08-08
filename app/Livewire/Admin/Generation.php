@@ -2,12 +2,14 @@
 
 namespace App\Livewire\Admin;
 
+use App\Enums\CardSource;
 use App\Enums\CardStatus;
 use App\Models\Card;
 use App\Models\ReviewState;
 use App\Models\Verb;
 use App\Services\Claude\CardGenerator;
 use App\Services\Claude\ClaudeException;
+use App\Services\Vocab\VocabCardService;
 use Flux\Flux;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
@@ -40,7 +42,9 @@ class Generation extends Component
     /** Retire cards the kids keep missing, then backfill the same number. Progress on survivors is untouched. */
     public function refresh(CardGenerator $generator): void
     {
+        // Vocab cards are pinned by their checkbox — SRS repeats them; refresh never culls them.
         $weakIds = Card::active()
+            ->where('source', '!=', CardSource::Vocab->value)
             ->withSum('reviewStates as total_lapses', 'lapses')
             ->withSum('reviewStates as total_reps', 'reps')
             ->withCount('reviewStates')
@@ -68,12 +72,15 @@ class Generation extends Component
     }
 
     /** Nuclear: wipe every card AND all kids' schedules, then build a fresh batch. */
-    public function rebuild(CardGenerator $generator): void
+    public function rebuild(CardGenerator $generator, VocabCardService $vocabCards): void
     {
         $this->validate();
 
         ReviewState::query()->delete();
         Card::query()->delete();
+
+        // The vocab-card checkboxes still say these cards should exist — bring them back.
+        $vocabCards->resyncAll();
 
         try {
             $created = $generator->generate($this->count);

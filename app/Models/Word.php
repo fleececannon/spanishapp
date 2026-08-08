@@ -15,6 +15,7 @@ class Word extends Model
     {
         return [
             'unlocked' => 'boolean',
+            'vocab_card' => 'boolean',
             'category' => WordCategory::class,
             'role' => WordRole::class,
         ];

@@ -2,12 +2,12 @@
 
 namespace App\Services\Coverage;
 
+use App\Enums\CardSource;
 use App\Enums\Subject;
 use App\Enums\Tense;
 use App\Models\Card;
 use App\Models\Verb;
 use App\Models\Word;
-use Illuminate\Support\Collection;
 
 /**
  * Works out which (verb x tense [x person]) slots and target words the unlocked
@@ -55,10 +55,13 @@ class CoverageService
         $drill = Verb::query()->pluck('drill_all_forms', 'id');
         $covered = [];
 
-        foreach (Card::active()->get(['uses_concepts']) as $card) {
+        // Vocab cards are bare word drills — only sentence cards count as coverage,
+        // so generation keeps weaving these concepts into real sentences.
+        foreach (Card::active()->where('source', '!=', CardSource::Vocab->value)->get(['uses_concepts']) as $card) {
             foreach ($card->uses_concepts ?? [] as $use) {
                 if (($use['type'] ?? null) === 'word') {
                     $covered["word:{$use['id']}"] = true;
+
                     continue;
                 }
 
