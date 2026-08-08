@@ -830,5 +830,518 @@
     "gender": "f",
     "role": "ingredient",
     "unlocked": true
+  },
+  {
+    "spanish": "hermano",
+    "english": "brother",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "hermana",
+    "english": "sister",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "abuelo",
+    "english": "grandpa",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "abuela",
+    "english": "grandma",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "tío",
+    "english": "uncle",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "tía",
+    "english": "aunt",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "primo",
+    "english": "cousin",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "niño",
+    "english": "boy / child",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "niña",
+    "english": "girl",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "bebé",
+    "english": "baby",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "maestro",
+    "english": "teacher",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "gente",
+    "english": "people",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "desayuno",
+    "english": "breakfast",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "almuerzo",
+    "english": "lunch",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "cena",
+    "english": "dinner",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "jugo",
+    "english": "juice",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "manzana",
+    "english": "apple",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "plátano",
+    "english": "banana",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "queso",
+    "english": "cheese",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "huevo",
+    "english": "egg",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "pollo",
+    "english": "chicken",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "carne",
+    "english": "meat",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "arroz",
+    "english": "rice",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "sopa",
+    "english": "soup",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "galleta",
+    "english": "cookie",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "helado",
+    "english": "ice cream",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "pastel",
+    "english": "cake",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "dulce",
+    "english": "candy",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "cama",
+    "english": "bed",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "baño",
+    "english": "bathroom",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "cocina",
+    "english": "kitchen",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "ventana",
+    "english": "window",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "jardín",
+    "english": "yard / garden",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "llave",
+    "english": "key",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "luz",
+    "english": "light",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "teléfono",
+    "english": "phone",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "computadora",
+    "english": "computer",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "televisión",
+    "english": "TV",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "juguete",
+    "english": "toy",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "regalo",
+    "english": "gift",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "zapato",
+    "english": "shoe",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "camisa",
+    "english": "shirt",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "foto",
+    "english": "photo",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "tiempo",
+    "english": "time / weather",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "hora",
+    "english": "hour / time",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "semana",
+    "english": "week",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "mes",
+    "english": "month",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "año",
+    "english": "year",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "cumpleaños",
+    "english": "birthday",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "hambre",
+    "english": "hunger",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "sed",
+    "english": "thirst",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "miedo",
+    "english": "fear",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "sueño",
+    "english": "sleepiness / dream",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "suerte",
+    "english": "luck",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "cosa",
+    "english": "thing",
+    "category": "noun",
+    "gender": "f",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "dinero",
+    "english": "money",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
+  },
+  {
+    "spanish": "nombre",
+    "english": "name",
+    "category": "noun",
+    "gender": "m",
+    "role": "ingredient",
+    "unlocked": false,
+    "vocab_card": true
   }
 ]
