@@ -16,10 +16,11 @@
             <div class="divide-y divide-zinc-100 dark:divide-zinc-800">
                 @foreach ($words as $word)
                     <div class="flex items-center gap-3 py-2" wire:key="word-{{ $word->id }}">
-                        <label class="flex items-center gap-2 cursor-pointer">
+                        <label class="flex items-center gap-1.5 cursor-pointer text-xs text-zinc-500 whitespace-nowrap">
                             <input type="checkbox" @checked($word->unlocked)
                                 wire:click="toggleUnlocked({{ $word->id }})"
                                 class="size-4 rounded border-zinc-300" />
+                            unlocked
                         </label>
                         <div class="flex-1 min-w-0">
                             <span class="font-medium">{{ $word->spanish }}</span>
