@@ -9,6 +9,7 @@ use App\Livewire\Admin\Settings;
 use App\Livewire\Admin\VerbsGrid;
 use App\Livewire\Admin\WordsLibrary;
 use App\Livewire\Landing;
+use App\Models\Card;
 use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', Landing::class)->name('home');
@@ -24,6 +25,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('admin/coverage', Coverage::class)->name('admin.coverage');
     Route::livewire('admin/progress', Progress::class)->name('admin.progress');
     Route::livewire('admin/settings', Settings::class)->name('admin.settings');
+
+    Route::get('admin/print-cards', function () {
+        $type = in_array(request('type'), ['words', 'verbs'], true) ? request('type') : 'all';
+
+        $cards = Card::active()
+            ->where('source', 'vocab')
+            ->get()
+            ->filter(fn (Card $c) => match ($type) {
+                'words' => ($c->uses_concepts[0]['type'] ?? null) === 'word',
+                'verbs' => ($c->uses_concepts[0]['type'] ?? null) === 'verb',
+                default => true,
+            })
+            ->sortBy('spanish', SORT_NATURAL | SORT_FLAG_CASE)
+            ->values();
+
+        return view('print-cards', ['cards' => $cards, 'type' => $type]);
+    })->name('admin.print-cards');
 });
 
 require __DIR__.'/settings.php';

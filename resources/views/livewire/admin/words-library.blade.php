@@ -7,7 +7,10 @@
                 <span class="font-medium">Ingredient nouns: {{ $ingredientNouns }}</span> (keep this lean).
             </flux:text>
         </div>
-        <flux:button wire:click="openAdd" variant="primary" icon="plus">Add word</flux:button>
+        <div class="flex items-center gap-2">
+            <flux:button href="{{ route('admin.print-cards', ['type' => 'words']) }}" target="_blank" icon="printer">Print vocab cards</flux:button>
+            <flux:button wire:click="openAdd" variant="primary" icon="plus">Add word</flux:button>
+        </div>
     </div>
 
     @foreach ($wordsByCategory as $category => $words)

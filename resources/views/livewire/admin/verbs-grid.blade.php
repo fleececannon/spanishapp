@@ -6,9 +6,12 @@
                 {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. Tick a tense to let the AI use that verb in that form.
             </flux:text>
         </div>
-        <flux:modal.trigger name="add-verb">
-            <flux:button variant="primary" icon="plus">Add verb</flux:button>
-        </flux:modal.trigger>
+        <div class="flex items-center gap-2">
+            <flux:button href="{{ route('admin.print-cards', ['type' => 'verbs']) }}" target="_blank" icon="printer">Print vocab cards</flux:button>
+            <flux:modal.trigger name="add-verb">
+                <flux:button variant="primary" icon="plus">Add verb</flux:button>
+            </flux:modal.trigger>
+        </div>
     </div>
 
     @foreach ($verbsByTag as $tag => $verbs)
