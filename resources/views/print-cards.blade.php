@@ -25,16 +25,12 @@
             gap: 0.12in; justify-content: center;
         }
         .card {
-            width: 2.4in; height: 4in; border: 1px dashed #999;
-            display: flex; flex-direction: column; break-inside: avoid;
-            background: #fff;
-        }
-        .half {
-            height: 50%; display: flex; align-items: center; justify-content: center;
+            width: 2.4in; height: 1.8in; border: 1px dashed #999;
+            display: flex; align-items: center; justify-content: center;
             text-align: center; padding: 0.15in; overflow: hidden;
+            break-inside: avoid; background: #fff;
+            font-size: 22px; font-weight: bold;
         }
-        .front { border-bottom: 1px dotted #bbb; font-size: 21px; font-weight: bold; }
-        .back { transform: rotate(180deg); font-size: 15px; color: #333; }
 
         @media print {
             body { background: #fff; }
@@ -48,7 +44,7 @@
     <div class="toolbar">
         <div>
             <h1>{{ $cards->count() }} vocab cards — {{ $type === 'all' ? 'words & verbs' : $type }}</h1>
-            <p>Print, cut along the dashed lines, then fold each card on the dotted middle line — Spanish ends up on the front, English on the back.</p>
+            <p>Spanish only, one-sided — print, then cut along the dashed lines.</p>
         </div>
         <button onclick="window.print()">Print / Save as PDF</button>
     </div>
@@ -56,10 +52,7 @@
     <div class="sheet">
         <div class="grid">
             @foreach ($cards as $card)
-                <div class="card">
-                    <div class="half front">{{ $card->spanish }}</div>
-                    <div class="half back">{{ $card->english }}</div>
-                </div>
+                <div class="card">{{ $card->spanish }}</div>
             @endforeach
         </div>
     </div>
