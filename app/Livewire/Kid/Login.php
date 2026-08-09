@@ -31,7 +31,9 @@ class Login extends Component
     {
         $this->validate();
 
-        if (! Auth::guard('kid')->attempt(['name' => $this->name, 'password' => $this->password])) {
+        // remember: true keeps the kids signed in across sessions — no more
+        // daily logins on the family devices.
+        if (! Auth::guard('kid')->attempt(['name' => $this->name, 'password' => $this->password], remember: true)) {
             throw ValidationException::withMessages([
                 'password' => 'That name and password don\'t match.',
             ]);
