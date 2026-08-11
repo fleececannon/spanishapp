@@ -16,7 +16,7 @@ class DueCardServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    private function makeCard(int $n): Card
+    private function makeCard(int $n, CardStatus $status = CardStatus::Active): Card
     {
         return Card::create([
             'source' => CardSource::Ai,
@@ -25,8 +25,22 @@ class DueCardServiceTest extends TestCase
             'test_direction' => 'es_to_en',
             'uses_concepts' => [],
             'must_match' => ['tense' => null, 'subject' => null, 'gender' => null],
-            'status' => CardStatus::Active,
+            'status' => $status,
         ]);
+    }
+
+    public function test_draft_and_retired_cards_are_never_served(): void
+    {
+        $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
+
+        $this->makeCard(1);
+        $this->makeCard(2, CardStatus::Draft);
+        $this->makeCard(3, CardStatus::Retired);
+
+        $queue = app(DueCardService::class)->queueFor($kid);
+
+        $this->assertCount(1, $queue);
+        $this->assertSame('Frase 1', $queue->first()->spanish);
     }
 
     public function test_whole_deck_is_available_from_day_one(): void

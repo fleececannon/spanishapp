@@ -68,7 +68,7 @@ class Generation extends Component
             return;
         }
 
-        Flux::toast(variant: 'success', text: "Retired {$weakIds->count()} weak card(s) and added {$created} fresh one(s).");
+        Flux::toast(variant: 'success', text: "Retired {$weakIds->count()} weak card(s) and drafted {$created} replacement(s) — approve them on the Cards page.");
     }
 
     /** Nuclear: wipe every card AND all kids' schedules, then build a fresh batch. */
@@ -90,7 +90,7 @@ class Generation extends Component
             return;
         }
 
-        Flux::toast(variant: 'success', text: "Rebuilt the deck — {$created} new card(s). All schedules were reset.");
+        Flux::toast(variant: 'success', text: "Rebuilt the deck — {$created} new draft card(s) to approve on the Cards page. All schedules were reset.");
     }
 
     private function toastCreated(int $created): void
@@ -98,7 +98,7 @@ class Generation extends Component
         Flux::toast(
             variant: $created > 0 ? 'success' : 'warning',
             text: $created > 0
-                ? "Added {$created} card".($created === 1 ? '' : 's').'.'
+                ? "Added {$created} draft card".($created === 1 ? '' : 's').' — review and approve on the Cards page.'
                 : 'No cards passed the fence — try again or adjust the unlocked set.',
         );
     }
@@ -106,8 +106,9 @@ class Generation extends Component
     public function render()
     {
         return view('livewire.admin.generation', [
-            'recent' => Card::active()->latest()->limit(15)->get(),
+            'recent' => Card::query()->where('status', '!=', CardStatus::Retired->value)->latest()->limit(15)->get(),
             'activeCount' => Card::active()->count(),
+            'draftCount' => Card::draft()->count(),
             'unlockedVerbs' => Verb::unlocked()->count(),
         ]);
     }

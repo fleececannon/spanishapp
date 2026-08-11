@@ -3,6 +3,7 @@
 namespace App\Services\Coverage;
 
 use App\Enums\CardSource;
+use App\Enums\CardStatus;
 use App\Enums\Subject;
 use App\Enums\Tense;
 use App\Models\Card;
@@ -49,15 +50,41 @@ class CoverageService
         return $slots;
     }
 
-    /** @return array<string,bool> set of slot keys covered by active cards */
+    /** @return array<string,bool> set of slot keys covered by active (approved) cards */
     public function coveredKeys(): array
+    {
+        return $this->keysForStatuses([CardStatus::Active]);
+    }
+
+    /**
+     * Slot keys that have an approved OR draft card. Drafts don't count as
+     * coverage, but generation must not re-fill a slot whose card is simply
+     * waiting for review.
+     *
+     * @return array<string,bool>
+     */
+    public function addressedKeys(): array
+    {
+        return $this->keysForStatuses([CardStatus::Active, CardStatus::Draft]);
+    }
+
+    /**
+     * @param  list<CardStatus>  $statuses
+     * @return array<string,bool>
+     */
+    private function keysForStatuses(array $statuses): array
     {
         $drill = Verb::query()->pluck('drill_all_forms', 'id');
         $covered = [];
 
         // Vocab cards are bare word drills — only sentence cards count as coverage,
         // so generation keeps weaving these concepts into real sentences.
-        foreach (Card::active()->where('source', '!=', CardSource::Vocab->value)->get(['uses_concepts']) as $card) {
+        $cards = Card::query()
+            ->whereIn('status', array_map(fn (CardStatus $s) => $s->value, $statuses))
+            ->where('source', '!=', CardSource::Vocab->value)
+            ->get(['uses_concepts']);
+
+        foreach ($cards as $card) {
             foreach ($card->uses_concepts ?? [] as $use) {
                 if (($use['type'] ?? null) === 'word') {
                     $covered["word:{$use['id']}"] = true;
@@ -89,7 +116,7 @@ class CoverageService
         return $covered;
     }
 
-    /** @return array<string, array<string,mixed>> required slots not yet covered */
+    /** @return array<string, array<string,mixed>> required slots not covered by an approved card */
     public function gaps(): array
     {
         $covered = $this->coveredKeys();
@@ -97,6 +124,23 @@ class CoverageService
         return array_filter(
             $this->requiredSlots(),
             fn (string $key) => ! isset($covered[$key]),
+            ARRAY_FILTER_USE_KEY,
+        );
+    }
+
+    /**
+     * Required slots with no card at all — neither approved nor draft. These
+     * are the only slots generation should still write cards for.
+     *
+     * @return array<string, array<string,mixed>>
+     */
+    public function openGaps(): array
+    {
+        $addressed = $this->addressedKeys();
+
+        return array_filter(
+            $this->requiredSlots(),
+            fn (string $key) => ! isset($addressed[$key]),
             ARRAY_FILTER_USE_KEY,
         );
     }
@@ -111,7 +155,7 @@ class CoverageService
         $verbUses = [];
         $words = [];
 
-        foreach ($this->gaps() as $slot) {
+        foreach ($this->openGaps() as $slot) {
             if (count($verbUses) + count($words) >= $limit) {
                 break;
             }
@@ -132,32 +176,47 @@ class CoverageService
         return ['verbUses' => $verbUses, 'words' => $words];
     }
 
-    /** A display-friendly breakdown for the coverage dashboard. */
+    /**
+     * A display-friendly breakdown for the coverage dashboard. Only approved
+     * cards count as covered; slots whose card is a draft awaiting review are
+     * reported separately (drafted), and "missing" means no card at all.
+     */
     public function summary(): array
     {
         $required = $this->requiredSlots();
         $covered = $this->coveredKeys();
+        $addressed = $this->addressedKeys();
 
-        $groups = []; // tense => ['total'=>, 'covered'=>, 'missing'=>[]]
+        $groups = []; // tense => ['total'=>, 'covered'=>, 'drafted'=>, 'missing'=>[]]
         $wordTotal = 0;
         $wordCovered = 0;
+        $wordDrafted = 0;
         $wordMissing = [];
 
         foreach ($required as $key => $slot) {
             $isCovered = isset($covered[$key]);
+            $isDrafted = ! $isCovered && isset($addressed[$key]);
 
             if ($slot['kind'] === 'word') {
                 $wordTotal++;
-                $isCovered ? $wordCovered++ : $wordMissing[] = $slot['word']->spanish;
+                if ($isCovered) {
+                    $wordCovered++;
+                } elseif ($isDrafted) {
+                    $wordDrafted++;
+                } else {
+                    $wordMissing[] = $slot['word']->spanish;
+                }
 
                 continue;
             }
 
             $tense = $slot['tense'];
-            $groups[$tense] ??= ['total' => 0, 'covered' => 0, 'missing' => []];
+            $groups[$tense] ??= ['total' => 0, 'covered' => 0, 'drafted' => 0, 'missing' => []];
             $groups[$tense]['total']++;
             if ($isCovered) {
                 $groups[$tense]['covered']++;
+            } elseif ($isDrafted) {
+                $groups[$tense]['drafted']++;
             } else {
                 $label = $slot['verb']->spanish.($slot['person'] ? ' ('.Subject::from($slot['person'])->label().')' : '');
                 $groups[$tense]['missing'][] = $label;
@@ -166,14 +225,17 @@ class CoverageService
 
         $totalSlots = count($required);
         $coveredSlots = count(array_intersect_key($covered, $required));
+        $draftSlots = count(array_intersect_key($addressed, $required)) - $coveredSlots;
 
         return [
             'groups' => $groups,
-            'words' => ['total' => $wordTotal, 'covered' => $wordCovered, 'missing' => $wordMissing],
+            'words' => ['total' => $wordTotal, 'covered' => $wordCovered, 'drafted' => $wordDrafted, 'missing' => $wordMissing],
             'total_slots' => $totalSlots,
             'covered_slots' => $coveredSlots,
+            'draft_slots' => $draftSlots,
             'percent' => $totalSlots > 0 ? (int) round($coveredSlots / $totalSlots * 100) : 100,
             'gap_count' => $totalSlots - $coveredSlots,
+            'open_gap_count' => $totalSlots - $coveredSlots - $draftSlots,
         ];
     }
 }

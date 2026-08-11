@@ -27,7 +27,8 @@
                     <flux:sidebar.item icon="adjustments-horizontal" :href="route('admin.patterns')" :current="request()->routeIs('admin.patterns')" wire:navigate>
                         {{ __('Patterns') }}
                     </flux:sidebar.item>
-                    <flux:sidebar.item icon="rectangle-stack" :href="route('admin.cards')" :current="request()->routeIs('admin.cards')" wire:navigate>
+                    @php $cardDraftCount = \App\Models\Card::query()->where('status', \App\Enums\CardStatus::Draft->value)->count(); @endphp
+                    <flux:sidebar.item icon="rectangle-stack" :href="route('admin.cards')" :current="request()->routeIs('admin.cards')" :badge="$cardDraftCount > 0 ? $cardDraftCount : null" badge-color="amber" wire:navigate>
                         {{ __('Cards') }}
                     </flux:sidebar.item>
                     <flux:sidebar.item icon="sparkles" :href="route('admin.generate')" :current="request()->routeIs('admin.generate')" wire:navigate>

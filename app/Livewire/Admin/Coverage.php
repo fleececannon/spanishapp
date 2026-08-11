@@ -55,7 +55,12 @@ class Coverage extends Component
 
         if ($result['done']) {
             $this->running = false;
-            Flux::toast(variant: 'success', text: "Full coverage! Added {$this->createdThisRun} card(s) this run.");
+            Flux::toast(
+                variant: 'success',
+                text: $result['awaiting_review'] > 0
+                    ? "All gaps have cards — {$this->createdThisRun} new draft(s) this run. Approve them on the Cards page to count them as covered."
+                    : "Full coverage! Added {$this->createdThisRun} card(s) this run.",
+            );
 
             return;
         }

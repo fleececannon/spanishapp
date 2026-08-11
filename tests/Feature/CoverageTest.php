@@ -33,13 +33,13 @@ class CoverageTest extends TestCase
         ]);
     }
 
-    private function cardUsing(array $uses): Card
+    private function cardUsing(array $uses, CardStatus $status = CardStatus::Active): Card
     {
         return Card::create([
             'source' => CardSource::Ai, 'spanish' => 's', 'english' => 'e',
             'test_direction' => 'es_to_en', 'uses_concepts' => $uses,
             'must_match' => ['tense' => null, 'subject' => null, 'gender' => null],
-            'status' => CardStatus::Active,
+            'status' => $status,
         ]);
     }
 
@@ -95,6 +95,41 @@ class CoverageTest extends TestCase
         $this->cardUsing([['type' => 'verb', 'id' => $verb->id]]); // old shape, no tense
 
         $this->assertSame(0, app(CoverageService::class)->summary()['covered_slots']);
+    }
+
+    public function test_draft_cards_do_not_count_as_covered_but_block_regeneration(): void
+    {
+        $verb = $this->setVerb(); // 1 infinitive slot
+        $this->cardUsing(
+            [['type' => 'verb', 'id' => $verb->id, 'tense' => 'infinitive', 'person' => null]],
+            CardStatus::Draft,
+        );
+
+        $summary = app(CoverageService::class)->summary();
+
+        // Not covered until approved…
+        $this->assertSame(0, $summary['covered_slots']);
+        $this->assertSame(1, $summary['gap_count']);
+        // …but the slot is spoken for, so generation must not refill it.
+        $this->assertSame(1, $summary['draft_slots']);
+        $this->assertSame(0, $summary['open_gap_count']);
+        $this->assertSame([], app(CoverageService::class)->openGaps());
+        $this->assertEmpty(app(CoverageService::class)->gapRequirements(12)['verbUses']);
+    }
+
+    public function test_approving_a_draft_makes_the_slot_covered(): void
+    {
+        $verb = $this->setVerb();
+        $card = $this->cardUsing(
+            [['type' => 'verb', 'id' => $verb->id, 'tense' => 'infinitive', 'person' => null]],
+            CardStatus::Draft,
+        );
+
+        $card->update(['status' => CardStatus::Active]);
+
+        $summary = app(CoverageService::class)->summary();
+        $this->assertSame(100, $summary['percent']);
+        $this->assertSame(0, $summary['draft_slots']);
     }
 
     public function test_gap_requirements_are_phrased_for_the_generator(): void

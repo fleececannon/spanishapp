@@ -7,11 +7,19 @@
         </div>
     </div>
 
-    <flux:radio.group wire:model.live="filter" variant="segmented">
-        <flux:radio value="active" label="Active" />
-        <flux:radio value="retired" label="Retired" />
-        <flux:radio value="all" label="All" />
-    </flux:radio.group>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <flux:radio.group wire:model.live="filter" variant="segmented">
+            <flux:radio value="draft" :label="'Drafts'.($draftCount > 0 ? ' ('.$draftCount.')' : '')" />
+            <flux:radio value="active" label="Active" />
+            <flux:radio value="retired" label="Retired" />
+            <flux:radio value="all" label="All" />
+        </flux:radio.group>
+        @if ($filter === 'draft' && $draftCount > 0)
+            <flux:button wire:click="approveAllDrafts" wire:confirm="Approve all {{ $draftCount }} draft card(s)? The kids will start seeing them." size="sm" variant="primary" icon="check">
+                Approve all {{ $draftCount }}
+            </flux:button>
+        @endif
+    </div>
 
     <div class="space-y-2">
         @forelse ($cards as $card)
@@ -22,14 +30,16 @@
                         <div class="text-zinc-500 text-sm">{{ $card->english }}</div>
                         <div class="mt-1 text-xs text-zinc-400">
                             @php $mm = $card->must_match ?? []; @endphp
-                            <flux:badge size="sm" :color="$card->status->value === 'active' ? 'green' : 'zinc'">{{ $card->status->value }}</flux:badge>
+                            <flux:badge size="sm" :color="match ($card->status->value) { 'active' => 'green', 'draft' => 'amber', default => 'zinc' }">{{ $card->status->value }}</flux:badge>
                             <flux:badge size="sm" color="zinc">{{ $card->source->value }}</flux:badge>
                             tense: {{ $mm['tense'] ?? '—' }} · subject: {{ $mm['subject'] ?? '—' }} · gender: {{ $mm['gender'] ?? '—' }}
                         </div>
                     </div>
                     <div class="flex items-center gap-1">
                         <flux:button wire:click="openEdit({{ $card->id }})" size="xs" variant="ghost" icon="pencil" />
-                        @if ($card->status->value === 'active')
+                        @if ($card->status->value === 'draft')
+                            <flux:button wire:click="approve({{ $card->id }})" size="xs" variant="primary" icon="check">Approve</flux:button>
+                        @elseif ($card->status->value === 'active')
                             <flux:button wire:click="retire({{ $card->id }})" size="xs" variant="ghost" icon="archive-box">Retire</flux:button>
                         @else
                             <flux:button wire:click="activate({{ $card->id }})" size="xs" variant="ghost" icon="arrow-uturn-left">Activate</flux:button>

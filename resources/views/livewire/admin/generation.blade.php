@@ -2,7 +2,7 @@
     <div>
         <flux:heading size="xl">Generate cards</flux:heading>
         <flux:text class="mt-1">
-            Builds new AI sentences from the {{ $unlockedVerbs }} unlocked verbs and unlocked words. Cards publish straight to the deck.
+            Builds new AI sentences from the {{ $unlockedVerbs }} unlocked verbs and unlocked words. New cards land as drafts — approve them on the Cards page before the kids see them.
         </flux:text>
     </div>
 
@@ -34,11 +34,21 @@
     </flux:card>
 
     <div>
-        <flux:heading size="lg" class="mb-3">Recent cards ({{ $activeCount }} active)</flux:heading>
+        <div class="mb-3 flex items-center gap-2">
+            <flux:heading size="lg">Recent cards ({{ $activeCount }} active)</flux:heading>
+            @if ($draftCount > 0)
+                <a href="{{ route('admin.cards', ['filter' => 'draft']) }}" wire:navigate><flux:badge color="amber">{{ $draftCount }} draft(s) to review</flux:badge></a>
+            @endif
+        </div>
         <div class="space-y-2">
             @forelse ($recent as $card)
                 <flux:card wire:key="card-{{ $card->id }}" class="py-3">
-                    <div class="font-medium">{{ $card->spanish }}</div>
+                    <div class="flex items-center gap-2">
+                        <div class="font-medium">{{ $card->spanish }}</div>
+                        @if ($card->status->value === 'draft')
+                            <flux:badge size="sm" color="amber">draft</flux:badge>
+                        @endif
+                    </div>
                     <div class="text-zinc-500 text-sm">{{ $card->english }}</div>
                     <div class="mt-1 text-xs text-zinc-400">
                         @php $mm = $card->must_match ?? []; @endphp

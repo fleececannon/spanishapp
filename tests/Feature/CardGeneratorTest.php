@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\CardStatus;
 use App\Models\Card;
 use App\Models\Verb;
 use App\Services\Claude\CardGenerator;
@@ -40,7 +41,7 @@ class CardGeneratorTest extends TestCase
         ];
     }
 
-    public function test_creates_cards_and_stores_tense_and_person(): void
+    public function test_creates_cards_as_drafts_and_stores_tense_and_person(): void
     {
         $verb = $this->unlockedVerb();
         $this->fakeClaude([$this->card($verb->id)]);
@@ -48,7 +49,8 @@ class CardGeneratorTest extends TestCase
         $created = app(CardGenerator::class)->generate(5);
 
         $this->assertSame(1, $created);
-        $stored = Card::active()->first();
+        $stored = Card::first();
+        $this->assertSame(CardStatus::Draft, $stored->status);
         $this->assertSame([
             ['type' => 'verb', 'id' => $verb->id, 'tense' => 'present', 'person' => '1st_singular'],
         ], $stored->uses_concepts);
@@ -84,7 +86,7 @@ class CardGeneratorTest extends TestCase
 
         app(CardGenerator::class)->generate(5);
 
-        $this->assertNull(Card::active()->first()->uses_concepts[0]['person']);
+        $this->assertNull(Card::first()->uses_concepts[0]['person']);
     }
 
     public function test_respects_requested_count(): void

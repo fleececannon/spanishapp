@@ -157,6 +157,18 @@ class Cards extends Component
         Flux::toast(variant: 'success', text: $this->editingId ? 'Card updated.' : 'Card added.');
     }
 
+    public function approve(int $id): void
+    {
+        Card::whereKey($id)->update(['status' => CardStatus::Active]);
+    }
+
+    public function approveAllDrafts(): void
+    {
+        $count = Card::draft()->update(['status' => CardStatus::Active]);
+        Flux::toast(variant: 'success', text: "Approved {$count} draft card(s).");
+        $this->resetPage();
+    }
+
     public function retire(int $id): void
     {
         Card::whereKey($id)->update(['status' => CardStatus::Retired]);
@@ -177,7 +189,9 @@ class Cards extends Component
     {
         $query = Card::query()->latest();
 
-        if ($this->filter === 'active') {
+        if ($this->filter === 'draft') {
+            $query->where('status', CardStatus::Draft->value);
+        } elseif ($this->filter === 'active') {
             $query->where('status', CardStatus::Active->value);
         } elseif ($this->filter === 'retired') {
             $query->where('status', CardStatus::Retired->value);
@@ -185,6 +199,7 @@ class Cards extends Component
 
         return view('livewire.admin.cards', [
             'cards' => $query->paginate(20),
+            'draftCount' => Card::draft()->count(),
         ]);
     }
 }

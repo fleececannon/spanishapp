@@ -33,12 +33,12 @@ class CardGenerator
      * required uses, packing as many as natural into each sentence.
      *
      * @param  list<string>  $requiredVerbUses  human-readable verb-tense-person requirements
-     * @param  list<string>  $requiredWords     words that must appear
+     * @param  list<string>  $requiredWords  words that must appear
      */
     public function generateForGaps(array $requiredVerbUses, array $requiredWords): int
     {
-        $lines = "Write as few natural sentences as possible that TOGETHER cover ALL of the required uses below. ".
-            "Pack multiple required uses into each sentence wherever it still reads naturally to a child.";
+        $lines = 'Write as few natural sentences as possible that TOGETHER cover ALL of the required uses below. '.
+            'Pack multiple required uses into each sentence wherever it still reads naturally to a child.';
 
         if ($requiredVerbUses) {
             $lines .= "\n\nREQUIRED VERB USES (each must appear at least once, in the stated tense and person):\n- ".implode("\n- ", $requiredVerbUses);
@@ -120,7 +120,8 @@ class CardGenerator
                 'subject' => $card['must_match']['subject'] ?? null,
                 'gender' => $card['must_match']['gender'] ?? null,
             ],
-            'status' => CardStatus::Active,
+            // AI cards await manual review before kids can see them.
+            'status' => CardStatus::Draft,
         ]);
 
         return true;

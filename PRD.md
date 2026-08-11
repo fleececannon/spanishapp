@@ -201,7 +201,7 @@ Three distinct actions (the distinction matters because of progress):
 | **Refresh** | Retires weak/stale cards, keeps the good ones, backfills. | **Preserved** on surviving cards. |
 | **Rebuild** | Fresh deck from scratch. | **Wipes schedules.** Clearly labeled as a reset with a confirm step. |
 
-- **Cards auto-publish** — generated cards go straight into the deck (no approval queue). I can prune later via the Cards screen.
+- **Generated cards need approval** — AI-generated cards land as drafts. I review them on the Cards screen and approve (or delete) each one; kids only see approved cards, and coverage only counts approved cards. Manual and vocab cards skip the draft step since I created those deliberately. *(Superseded the original "auto-publish" decision on 2026-08-11.)*
 - Generation can be **targeted** ("emphasize the preterite," "use these new verbs").
 
 ### 6.6 Progress view

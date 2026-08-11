@@ -31,4 +31,9 @@ class Card extends Model
     {
         return $query->where('status', CardStatus::Active->value);
     }
+
+    public function scopeDraft(Builder $query): Builder
+    {
+        return $query->where('status', CardStatus::Draft->value);
+    }
 }
