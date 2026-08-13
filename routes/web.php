@@ -8,6 +8,7 @@ use App\Livewire\Admin\Progress;
 use App\Livewire\Admin\Settings;
 use App\Livewire\Admin\VerbsGrid;
 use App\Livewire\Admin\WordsLibrary;
+use App\Livewire\Dashboard;
 use App\Livewire\Landing;
 use App\Models\Card;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::livewire('/', Landing::class)->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::livewire('dashboard', Dashboard::class)->name('dashboard');
 
     Route::livewire('admin/verbs', VerbsGrid::class)->name('admin.verbs');
     Route::livewire('admin/words', WordsLibrary::class)->name('admin.words');
