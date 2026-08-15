@@ -48,6 +48,11 @@
                         </flux:button>
                     </form>
                 @endif
+
+                {{-- Pass on this one — nothing is marked wrong. --}}
+                <flux:button wire:click="skip" variant="ghost" size="sm" class="w-full" icon="arrow-right">
+                    Skip for now
+                </flux:button>
             @else
                 <div class="space-y-4">
                     @if ($lastPassed)

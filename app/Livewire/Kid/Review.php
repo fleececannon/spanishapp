@@ -114,6 +114,21 @@ class Review extends Component
         $this->advance();
     }
 
+    /**
+     * Pass on a card without judging it: no schedule change, no miss, no rep.
+     * The card keeps whatever due date it already had (a new card stays new),
+     * so it simply comes back in a later session. It does not return later in
+     * this session — skipping has to actually get you past it.
+     */
+    public function skip(): void
+    {
+        if ($this->currentId === null || $this->showResult) {
+            return;
+        }
+
+        $this->advance();
+    }
+
     public function next(): void
     {
         $this->advance();

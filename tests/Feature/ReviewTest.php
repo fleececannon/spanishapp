@@ -12,6 +12,7 @@ use App\Models\ReviewState;
 use App\Services\Claude\AnswerGrader;
 use App\Services\Claude\GradeResult;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Carbon;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -89,6 +90,69 @@ class ReviewTest extends TestCase
         $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
         $this->assertSame(1, $state->reps);
         $this->assertSame(ReviewResult::Pass, $state->last_result);
+    }
+
+    public function test_skip_button_is_offered_in_both_answer_modes(): void
+    {
+        $this->kid();
+        $this->card();
+        $this->actingAs(Kid::first(), 'kid');
+
+        $component = Livewire::test(Review::class)->assertSee('Skip for now');
+
+        $component->set('outLoud', true)->assertSee('Skip for now');
+
+        // ...but not on the result screen, where "Next" is the only way on.
+        $this->fakeGrader(ReviewResult::Pass);
+        Livewire::test(Review::class)
+            ->set('answer', 'I have water')
+            ->call('submit')
+            ->assertSet('showResult', true)
+            ->assertDontSee('Skip for now');
+    }
+
+    public function test_skip_moves_on_without_recording_anything(): void
+    {
+        $kid = $this->kid();
+        $card = $this->card();
+        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
+        $this->actingAs($kid, 'kid');
+
+        Livewire::test(Review::class)
+            ->assertSet('currentId', $card->id)
+            ->call('skip')
+            // Only card in the queue, so skipping finishes the session — and
+            // crucially it is not requeued the way a miss would be.
+            ->assertSet('showResult', false)
+            ->assertSet('currentId', null)
+            ->assertSet('done', true);
+
+        $this->assertNull(
+            ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first(),
+            'skipping must not create a review state',
+        );
+    }
+
+    public function test_skip_leaves_an_existing_schedule_untouched(): void
+    {
+        $kid = $this->kid();
+        $card = $this->card();
+        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
+
+        $state = ReviewState::create([
+            'kid_id' => $kid->id, 'card_id' => $card->id, 'due' => Carbon::yesterday(),
+            'interval_days' => 6, 'ease' => 2.4, 'reps' => 3, 'lapses' => 1,
+        ]);
+
+        $this->actingAs($kid, 'kid');
+        Livewire::test(Review::class)->call('skip');
+
+        $fresh = $state->fresh();
+        $this->assertSame(6, $fresh->interval_days);
+        $this->assertSame(3, $fresh->reps);
+        $this->assertSame(1, $fresh->lapses, 'skipping must not count as a miss');
+        $this->assertSame('2.40', (string) $fresh->ease);
+        $this->assertTrue($fresh->due->isSameDay(Carbon::yesterday()), 'still due, so it returns next session');
     }
 
     public function test_out_loud_missed_it_requeues_and_penalizes(): void
