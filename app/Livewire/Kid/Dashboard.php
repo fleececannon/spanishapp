@@ -35,17 +35,20 @@ class Dashboard extends Component
         $kid = auth('kid')->user();
         $today = Carbon::today()->toDateString();
 
-        $states = ReviewState::where('kid_id', $kid->id);
+        // onActiveCards: history for retired cards is kept but must never be
+        // counted here, or archived cards keep showing up as due and "seen"
+        // can outgrow the deck (which drove the new-card count negative).
+        $states = ReviewState::where('kid_id', $kid->id)->onActiveCards();
 
         $reviewsDue = (clone $states)->whereDate('due', '<=', $today)->count();
         $seen = (clone $states)->count();
         $mastered = (clone $states)->where('interval_days', '>=', self::MASTERED_INTERVAL)->count();
 
         $totalActive = Card::active()->count();
-        $newCount = $totalActive - $seen;
+        $newCount = max(0, $totalActive - $seen);
 
         // Reviews landing in the next 14 days (tomorrow onward), one bucket per day.
-        $dueByDay = ReviewState::where('kid_id', $kid->id)
+        $dueByDay = (clone $states)
             ->whereBetween('due', [Carbon::tomorrow(), Carbon::today()->addDays(14)])
             ->get()
             ->countBy(fn (ReviewState $s) => $s->due->toDateString());

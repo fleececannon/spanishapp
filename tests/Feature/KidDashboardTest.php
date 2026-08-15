@@ -35,6 +35,54 @@ class KidDashboardTest extends TestCase
         $this->get(route('kid.home'))->assertRedirect(route('home'));
     }
 
+    public function test_retired_cards_drop_out_of_the_counts(): void
+    {
+        $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
+
+        $live = $this->makeCard(1);          // never seen -> counts as new
+
+        // Two cards the kid drilled that were then archived. Their history stays
+        // in the table, but nothing here should count it.
+        foreach ([2, 3] as $n) {
+            $gone = $this->makeCard($n);
+            ReviewState::create([
+                'kid_id' => $kid->id, 'card_id' => $gone->id, 'due' => Carbon::yesterday(),
+                'interval_days' => 30, 'ease' => 2.5, 'reps' => 5, 'lapses' => 1,
+            ]);
+            $gone->update(['status' => CardStatus::Retired]);
+        }
+
+        Livewire::actingAs($kid, 'kid')
+            ->test(Dashboard::class)
+            ->assertViewHas('reviewsDue', 0)
+            ->assertViewHas('newCount', 1)
+            ->assertViewHas('todo', 1)
+            ->assertViewHas('seen', 0)
+            ->assertViewHas('mastered', 0)
+            ->assertViewHas('total', 1);
+
+        $this->assertSame(2, ReviewState::where('kid_id', $kid->id)->count(), 'history is preserved');
+        $this->assertNotNull($live->fresh());
+    }
+
+    public function test_upcoming_chart_ignores_retired_cards(): void
+    {
+        $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
+
+        $gone = $this->makeCard(1);
+        ReviewState::create([
+            'kid_id' => $kid->id, 'card_id' => $gone->id, 'due' => Carbon::today()->addDays(3),
+            'interval_days' => 3, 'ease' => 2.5, 'reps' => 1, 'lapses' => 0,
+        ]);
+        $gone->update(['status' => CardStatus::Retired]);
+
+        $upcoming = Livewire::actingAs($kid, 'kid')
+            ->test(Dashboard::class)
+            ->viewData('upcoming');
+
+        $this->assertSame(0, collect($upcoming)->sum('count'));
+    }
+
     public function test_dashboard_shows_new_due_and_mastery_counts(): void
     {
         $kid = Kid::create(['name' => 'Kai', 'password' => 'x', 'daily_new_card_pace' => 5]);
