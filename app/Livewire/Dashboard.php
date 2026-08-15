@@ -41,7 +41,13 @@ class Dashboard extends Component
     {
         $today = Carbon::today();
         $cards = Card::active()->get(['id', 'spanish', 'english', 'uses_concepts']);
-        $states = ReviewState::where('kid_id', $kid->id)->get()->keyBy('card_id');
+
+        // History for cards that have since been retired or sent back to draft
+        // still exists — keep it out, or it inflates every metric below (a
+        // retired card would still read as due, seen, and mastered).
+        $states = ReviewState::where('kid_id', $kid->id)->get()
+            ->keyBy('card_id')
+            ->intersectByKeys($cards->keyBy('id'));
 
         $seen = $states->count();
         $masteredCards = $states->where('interval_days', '>=', self::MASTERED_INTERVAL)->count();

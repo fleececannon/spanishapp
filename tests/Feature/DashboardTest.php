@@ -107,4 +107,31 @@ class DashboardTest extends TestCase
             ->assertViewHas('totalCards', 1)
             ->assertViewHas('newCount', 1);
     }
+
+    public function test_history_on_retired_cards_does_not_inflate_the_metrics(): void
+    {
+        $this->actingAs(User::factory()->create());
+        $kid = Kid::create(['name' => 'Ana', 'password' => 'x', 'daily_new_card_pace' => 2]);
+
+        // One live card the kid has never seen.
+        $this->makeCard('Activa');
+
+        // A card the kid drilled to mastery that has since been retired — its
+        // review history must not count as due, seen, or mastered any more.
+        $retired = $this->makeCard('Retirada', status: CardStatus::Retired);
+        $this->state($kid, $retired, [
+            'due' => Carbon::yesterday(),
+            'interval_days' => 30,
+            'reps' => 6,
+            'lapses' => 2,
+        ]);
+
+        Livewire::test(Dashboard::class, ['kid' => $kid->id])
+            ->assertViewHas('dueToday', 0)
+            ->assertViewHas('seen', 0)
+            ->assertViewHas('masteredCards', 0)
+            ->assertViewHas('accuracy', null)
+            ->assertViewHas('totalCards', 1)
+            ->assertViewHas('newCount', 1);
+    }
 }
