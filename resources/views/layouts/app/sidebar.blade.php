@@ -40,6 +40,9 @@
                     <flux:sidebar.item icon="chart-bar" :href="route('admin.progress')" :current="request()->routeIs('admin.progress')" wire:navigate>
                         {{ __('Progress') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="academic-cap" :href="route('admin.lessons')" :current="request()->routeIs('admin.lessons') || request()->routeIs('admin.lessons.show')" wire:navigate>
+                        {{ __('Lessons') }}
+                    </flux:sidebar.item>
                     <flux:sidebar.item icon="cog-6-tooth" :href="route('admin.settings')" :current="request()->routeIs('admin.settings')" wire:navigate>
                         {{ __('Settings') }}
                     </flux:sidebar.item>

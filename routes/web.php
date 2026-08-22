@@ -3,6 +3,8 @@
 use App\Livewire\Admin\Cards;
 use App\Livewire\Admin\Coverage;
 use App\Livewire\Admin\Generation;
+use App\Livewire\Admin\Lessons;
+use App\Livewire\Admin\LessonView;
 use App\Livewire\Admin\Patterns;
 use App\Livewire\Admin\Progress;
 use App\Livewire\Admin\Settings;
@@ -11,6 +13,7 @@ use App\Livewire\Admin\WordsLibrary;
 use App\Livewire\Dashboard;
 use App\Livewire\Landing;
 use App\Models\Card;
+use App\Models\Lesson;
 use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', Landing::class)->name('home');
@@ -25,6 +28,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('admin/generate', Generation::class)->name('admin.generate');
     Route::livewire('admin/coverage', Coverage::class)->name('admin.coverage');
     Route::livewire('admin/progress', Progress::class)->name('admin.progress');
+    Route::livewire('admin/lessons', Lessons::class)->name('admin.lessons');
+    Route::livewire('admin/lessons/{lesson}', LessonView::class)->name('admin.lessons.show');
+    Route::get('admin/lessons/{lesson}/print', fn (Lesson $lesson) => view('print-lesson', ['lesson' => $lesson]))
+        ->name('admin.lessons.print');
     Route::livewire('admin/settings', Settings::class)->name('admin.settings');
 
     Route::get('admin/print-cards', function () {

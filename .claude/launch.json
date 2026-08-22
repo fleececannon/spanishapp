@@ -4,8 +4,9 @@
     {
       "name": "spanish-dev",
       "runtimeExecutable": "php",
-      "runtimeArgs": ["artisan", "serve", "--port=8090"],
-      "port": 8090
+      "runtimeArgs": ["artisan", "serve", "--port=8471"],
+      "port": 8471,
+      "autoPort": false
     }
   ]
 }
