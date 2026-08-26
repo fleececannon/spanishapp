@@ -47,6 +47,15 @@
                         {{ __('Settings') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('My practice')" class="grid">
+                    <flux:sidebar.item icon="queue-list" :href="route('admin.my-verbs')" :current="request()->routeIs('admin.my-verbs')" wire:navigate>
+                        {{ __('My Verbs') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="play" :href="route('admin.practice')" :current="request()->routeIs('admin.practice')" wire:navigate>
+                        {{ __('Practice') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />

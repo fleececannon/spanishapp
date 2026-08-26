@@ -5,6 +5,8 @@ use App\Livewire\Admin\Coverage;
 use App\Livewire\Admin\Generation;
 use App\Livewire\Admin\Lessons;
 use App\Livewire\Admin\LessonView;
+use App\Livewire\Admin\MyPractice;
+use App\Livewire\Admin\MyVerbs;
 use App\Livewire\Admin\Patterns;
 use App\Livewire\Admin\Progress;
 use App\Livewire\Admin\Settings;
@@ -32,6 +34,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('admin/lessons/{lesson}', LessonView::class)->name('admin.lessons.show');
     Route::get('admin/lessons/{lesson}/print', fn (Lesson $lesson) => view('print-lesson', ['lesson' => $lesson]))
         ->name('admin.lessons.print');
+
+    Route::livewire('admin/my-verbs', MyVerbs::class)->name('admin.my-verbs');
+    Route::livewire('admin/practice', MyPractice::class)->name('admin.practice');
     Route::livewire('admin/settings', Settings::class)->name('admin.settings');
 
     Route::get('admin/print-cards', function () {

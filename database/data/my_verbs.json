@@ -1,0 +1,5787 @@
+[
+    {
+        "spanish": "estar",
+        "english": "to be, to feel, to lie",
+        "frequency_score": 100
+    },
+    {
+        "spanish": "haber",
+        "english": "to have",
+        "frequency_score": 100
+    },
+    {
+        "spanish": "ser",
+        "english": "to be",
+        "frequency_score": 100
+    },
+    {
+        "spanish": "hacer",
+        "english": "to do, to perform",
+        "frequency_score": 99
+    },
+    {
+        "spanish": "ir",
+        "english": "to go",
+        "frequency_score": 99
+    },
+    {
+        "spanish": "tener",
+        "english": "to need, to have",
+        "frequency_score": 99
+    },
+    {
+        "spanish": "decir",
+        "english": "to say",
+        "frequency_score": 98
+    },
+    {
+        "spanish": "poder",
+        "english": "be able, can",
+        "frequency_score": 98
+    },
+    {
+        "spanish": "dar",
+        "english": "to give, to pass",
+        "frequency_score": 97
+    },
+    {
+        "spanish": "ver",
+        "english": "to see, to view",
+        "frequency_score": 97
+    },
+    {
+        "spanish": "querer",
+        "english": "to want, to like",
+        "frequency_score": 96
+    },
+    {
+        "spanish": "saber",
+        "english": "to know, can",
+        "frequency_score": 96
+    },
+    {
+        "spanish": "deber",
+        "english": "to owe, must, should",
+        "frequency_score": 95
+    },
+    {
+        "spanish": "venir",
+        "english": "to come",
+        "frequency_score": 95
+    },
+    {
+        "spanish": "poner",
+        "english": "to put, to place",
+        "frequency_score": 94
+    },
+    {
+        "spanish": "seguir",
+        "english": "to follow, to continue",
+        "frequency_score": 94
+    },
+    {
+        "spanish": "conocer",
+        "english": "to know, to meet",
+        "frequency_score": 93
+    },
+    {
+        "spanish": "parecer",
+        "english": "to seem, appear",
+        "frequency_score": 93
+    },
+    {
+        "spanish": "pensar",
+        "english": "to think, to feel",
+        "frequency_score": 93
+    },
+    {
+        "spanish": "salir",
+        "english": "to leave, to exit",
+        "frequency_score": 93
+    },
+    {
+        "spanish": "llegar",
+        "english": "to arrive, to reach",
+        "frequency_score": 92
+    },
+    {
+        "spanish": "vivir",
+        "english": "to live",
+        "frequency_score": 92
+    },
+    {
+        "spanish": "volver",
+        "english": "to return, to go back",
+        "frequency_score": 92
+    },
+    {
+        "spanish": "creer",
+        "english": "to believe",
+        "frequency_score": 91
+    },
+    {
+        "spanish": "pasar",
+        "english": "to pass, to happen, to spend (time)",
+        "frequency_score": 91
+    },
+    {
+        "spanish": "sentir",
+        "english": "to feel, to sense",
+        "frequency_score": 91
+    },
+    {
+        "spanish": "dejar",
+        "english": "to leave, to allow, to let",
+        "frequency_score": 90
+    },
+    {
+        "spanish": "hablar",
+        "english": "to speak, to talk",
+        "frequency_score": 90
+    },
+    {
+        "spanish": "llevar",
+        "english": "to carry, to take, to wear",
+        "frequency_score": 90
+    },
+    {
+        "spanish": "comer",
+        "english": "to eat",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "contar",
+        "english": "to count, to tell",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "empezar",
+        "english": "to start, to begin",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "esperar",
+        "english": "to wait, to hope, to expect",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "mirar",
+        "english": "to look at, to watch",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "oír",
+        "english": "to hear, to listen to",
+        "frequency_score": 89
+    },
+    {
+        "spanish": "abrir",
+        "english": "to open",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "buscar",
+        "english": "to search, to look for",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "encontrar",
+        "english": "to find, to encounter",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "entrar",
+        "english": "to enter, to go in",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "escribir",
+        "english": "to write",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "existir",
+        "english": "to exist",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "gustar",
+        "english": "to like, to be pleasing",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "llamar",
+        "english": "to call, to name",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "pedir",
+        "english": "to ask, to request",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "perder",
+        "english": "to lose",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "recordar",
+        "english": "to remember, to recall",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "trabajar",
+        "english": "to work",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "tratar",
+        "english": "to try, to treat",
+        "frequency_score": 88
+    },
+    {
+        "spanish": "entender",
+        "english": "to understand, to see",
+        "frequency_score": 87
+    },
+    {
+        "spanish": "quedar",
+        "english": "to stay, to remain, to be left",
+        "frequency_score": 87
+    },
+    {
+        "spanish": "recibir",
+        "english": "to receive",
+        "frequency_score": 87
+    },
+    {
+        "spanish": "tomar",
+        "english": "to take, to drink",
+        "frequency_score": 87
+    },
+    {
+        "spanish": "aparecer",
+        "english": "to appear, show up",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "cambiar",
+        "english": "to change",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "comenzar",
+        "english": "to start, to begin",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "jugar",
+        "english": "to play",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "leer",
+        "english": "to read",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "necesitar",
+        "english": "to need",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "terminar",
+        "english": "to finish, to end",
+        "frequency_score": 86
+    },
+    {
+        "spanish": "acabar",
+        "english": "to finish, to end",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "aprender",
+        "english": "to learn",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "ayudar",
+        "english": "to help",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "caer",
+        "english": "to fall, to drop",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "crear",
+        "english": "to create",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "ganar",
+        "english": "to win, to earn, to gain",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "mantener",
+        "english": "to maintain, to keep",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "morir",
+        "english": "to die, to pass away",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "mostrar",
+        "english": "to show, to display",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "permitir",
+        "english": "to permit, allow",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "preguntar",
+        "english": "to ask",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "sacar",
+        "english": "to take out, to remove",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "servir",
+        "english": "to help, to serve",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "traer",
+        "english": "to bring, to carry",
+        "frequency_score": 85
+    },
+    {
+        "spanish": "comprender",
+        "english": "to understand",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "considerar",
+        "english": "to consider",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "dormir",
+        "english": "to sleep, to rest",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "escuchar",
+        "english": "to listen",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "explicar",
+        "english": "to explain",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "intentar",
+        "english": "to try, to attempt",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "pagar",
+        "english": "to pay",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "presentar",
+        "english": "to present, to introduce",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "usar",
+        "english": "to use",
+        "frequency_score": 84
+    },
+    {
+        "spanish": "aceptar",
+        "english": "to accept",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "correr",
+        "english": "to run",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "decidir",
+        "english": "to decide",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "estudiar",
+        "english": "to study",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "formar",
+        "english": "to form, to shape",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "lograr",
+        "english": "to achieve, to manage to",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "ocurrir",
+        "english": "to occur, happen",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "reconocer",
+        "english": "to recognize",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "tocar",
+        "english": "to touch, to play (an instrument)",
+        "frequency_score": 83
+    },
+    {
+        "spanish": "alcanzar",
+        "english": "to reach, to catch up, to achieve",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "comprar",
+        "english": "to buy",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "nacer",
+        "english": "to be born",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "ofrecer",
+        "english": "to offer",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "partir",
+        "english": "to leave, divide",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "responder",
+        "english": "to respond, answer",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "subir",
+        "english": "to go up, to climb, to upload",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "utilizar",
+        "english": "to use, to utilize",
+        "frequency_score": 82
+    },
+    {
+        "spanish": "cumplir",
+        "english": "to fulfill, accomplish",
+        "frequency_score": 81
+    },
+    {
+        "spanish": "descubrir",
+        "english": "to discover",
+        "frequency_score": 81
+    },
+    {
+        "spanish": "levantar",
+        "english": "to lift, to raise",
+        "frequency_score": 81
+    },
+    {
+        "spanish": "suponer",
+        "english": "to assume, to suppose",
+        "frequency_score": 81
+    },
+    {
+        "spanish": "andar",
+        "english": "to step, to go",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "beber",
+        "english": "to drink",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "dirigir",
+        "english": "to direct, manage",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "echar",
+        "english": "to throw, to pour, to expel",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "elegir",
+        "english": "to choose, to select",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "producir",
+        "english": "to produce, to cause",
+        "frequency_score": 80
+    },
+    {
+        "spanish": "incluir",
+        "english": "to include, to incorporate",
+        "frequency_score": 79
+    },
+    {
+        "spanish": "mover",
+        "english": "to move, to shift",
+        "frequency_score": 79
+    },
+    {
+        "spanish": "preferir",
+        "english": "to prefer",
+        "frequency_score": 79
+    },
+    {
+        "spanish": "compartir",
+        "english": "to share",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "crecer",
+        "english": "to grow",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "obtener",
+        "english": "to obtain, get",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "resolver",
+        "english": "to resolve, to solve",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "romper",
+        "english": "to break",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "valer",
+        "english": "to avail, to cost",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "vender",
+        "english": "to sell",
+        "frequency_score": 78
+    },
+    {
+        "spanish": "sufrir",
+        "english": "to suffer",
+        "frequency_score": 77
+    },
+    {
+        "spanish": "repetir",
+        "english": "to repeat, to replicate",
+        "frequency_score": 76
+    },
+    {
+        "spanish": "soler",
+        "english": "to usually do, to tend to",
+        "frequency_score": 76
+    },
+    {
+        "spanish": "caminar",
+        "english": "to walk",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "coger",
+        "english": "to take, catch",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "doler",
+        "english": "to hurt, ache",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "meter",
+        "english": "to put, insert",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "proponer",
+        "english": "to propose, to suggest",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "reducir",
+        "english": "to reduce",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "viajar",
+        "english": "to travel",
+        "frequency_score": 74
+    },
+    {
+        "spanish": "cantar",
+        "english": "to sing",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "depender",
+        "english": "to depend",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "divertir",
+        "english": "to entertain, to amuse",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "establecer",
+        "english": "to establish",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "llorar",
+        "english": "to cry",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "suceder",
+        "english": "to happen, succeed\/follow",
+        "frequency_score": 72
+    },
+    {
+        "spanish": "advertir",
+        "english": "to warn",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "caber",
+        "english": "to fit",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "cocinar",
+        "english": "to cook",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "introducir",
+        "english": "to introduce, to enter",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "llover",
+        "english": "to rain",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "sugerir",
+        "english": "to suggest",
+        "frequency_score": 70
+    },
+    {
+        "spanish": "adquirir",
+        "english": "to acquire, to buy",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "atender",
+        "english": "to attend to, assist",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "añadir",
+        "english": "to add",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "bailar",
+        "english": "to dance",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "desaparecer",
+        "english": "to disappear",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "detener",
+        "english": "to stop, to halt",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "impedir",
+        "english": "to prevent, to block",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "limpiar",
+        "english": "to clean",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "mentir",
+        "english": "to lie, to cheat",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "pretender",
+        "english": "to intend, pretend, claim",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "recoger",
+        "english": "to pick up, collect",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "referir",
+        "english": "to refer",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "resistir",
+        "english": "to resist",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "traducir",
+        "english": "to translate, to interpret",
+        "frequency_score": 68
+    },
+    {
+        "spanish": "consistir",
+        "english": "to consist of",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "cubrir",
+        "english": "to cover",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "defender",
+        "english": "to defend",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "despedir",
+        "english": "to dismiss, to fire",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "devolver",
+        "english": "to return something",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "exigir",
+        "english": "to demand",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "huir",
+        "english": "to flee, to escape",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "influir",
+        "english": "to influence, to affect",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "invitar",
+        "english": "to invite",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "medir",
+        "english": "to measure, to gauge",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "oler",
+        "english": "to smell, to sniff",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "prometer",
+        "english": "to promise",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "proteger",
+        "english": "to protect",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "requerir",
+        "english": "to require",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "surgir",
+        "english": "to arise, emerge",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "vestir",
+        "english": "to dress, to wear",
+        "frequency_score": 66
+    },
+    {
+        "spanish": "distinguir",
+        "english": "to distinguish, to differentiate",
+        "frequency_score": 65
+    },
+    {
+        "spanish": "agradecer",
+        "english": "to thank, be grateful for",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "apagar",
+        "english": "to turn off, to extinguish",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "asumir",
+        "english": "to assume, take on",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "atraer",
+        "english": "to attract, to draw",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "cenar",
+        "english": "to have dinner",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "convencer",
+        "english": "to convince",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "corresponder",
+        "english": "to correspond",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "definir",
+        "english": "to define",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "discutir",
+        "english": "to discuss, argue",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "encender",
+        "english": "to turn on, ignite",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "escoger",
+        "english": "to choose",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "intervenir",
+        "english": "to intervene, to speak",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "merecer",
+        "english": "to deserve",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "nadar",
+        "english": "to swim",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "permanecer",
+        "english": "to remain, stay",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "pertenecer",
+        "english": "to belong",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "prevenir",
+        "english": "to prevent",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "reunir",
+        "english": "to gather, reunite",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "temer",
+        "english": "to fear",
+        "frequency_score": 64
+    },
+    {
+        "spanish": "acudir",
+        "english": "to go, attend",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "admitir",
+        "english": "to admit",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "asistir",
+        "english": "to attend, assist",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "desayunar",
+        "english": "to have breakfast",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "esconder",
+        "english": "to hide",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "evitar",
+        "english": "to avoid, to prevent",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "firmar",
+        "english": "to sign",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "insistir",
+        "english": "to insist",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "morder",
+        "english": "to bite",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "sostener",
+        "english": "to sustain, to support",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "unir",
+        "english": "to unite, join",
+        "frequency_score": 62
+    },
+    {
+        "spanish": "almorzar",
+        "english": "to have lunch",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "consumir",
+        "english": "to consume",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "describir",
+        "english": "to describe",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "destruir",
+        "english": "to destroy",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "freír",
+        "english": "to fry, to cook",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "hervir",
+        "english": "to boil",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "realizar",
+        "english": "to carry out, to perform, to achieve",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "saludar",
+        "english": "to greet, to salute",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "satisfacer",
+        "english": "to satisfy, to meet",
+        "frequency_score": 60
+    },
+    {
+        "spanish": "resultar",
+        "english": "to result, to turn out",
+        "frequency_score": 59
+    },
+    {
+        "spanish": "confundir",
+        "english": "to confuse",
+        "frequency_score": 58
+    },
+    {
+        "spanish": "constituir",
+        "english": "to constitute",
+        "frequency_score": 58
+    },
+    {
+        "spanish": "contribuir",
+        "english": "to contribute",
+        "frequency_score": 58
+    },
+    {
+        "spanish": "prohibir",
+        "english": "to prohibit, forbid",
+        "frequency_score": 58
+    },
+    {
+        "spanish": "sobrevivir",
+        "english": "to survive",
+        "frequency_score": 58
+    },
+    {
+        "spanish": "dividir",
+        "english": "to divide",
+        "frequency_score": 56
+    },
+    {
+        "spanish": "joder",
+        "english": "to annoy, bother",
+        "frequency_score": 55
+    },
+    {
+        "spanish": "señalar",
+        "english": "to point out, to indicate",
+        "frequency_score": 55
+    },
+    {
+        "spanish": "envolver",
+        "english": "to wrap, involve",
+        "frequency_score": 54
+    },
+    {
+        "spanish": "imprimir",
+        "english": "to print",
+        "frequency_score": 54
+    },
+    {
+        "spanish": "interrumpir",
+        "english": "to interrupt",
+        "frequency_score": 54
+    },
+    {
+        "spanish": "sustituir",
+        "english": "to substitute, replace",
+        "frequency_score": 54
+    },
+    {
+        "spanish": "afirmar",
+        "english": "to affirm, to assert, to state",
+        "frequency_score": 52
+    },
+    {
+        "spanish": "significar",
+        "english": "to mean, to signify",
+        "frequency_score": 49
+    },
+    {
+        "spanish": "disolver",
+        "english": "to dissolve",
+        "frequency_score": 48
+    },
+    {
+        "spanish": "poseer",
+        "english": "to possess, own",
+        "frequency_score": 48
+    },
+    {
+        "spanish": "asegurar",
+        "english": "to assure, to secure, to ensure",
+        "frequency_score": 46
+    },
+    {
+        "spanish": "contener",
+        "english": "to contain",
+        "frequency_score": 46
+    },
+    {
+        "spanish": "declarar",
+        "english": "to declare, to state",
+        "frequency_score": 45
+    },
+    {
+        "spanish": "informar",
+        "english": "to inform, to report",
+        "frequency_score": 45
+    },
+    {
+        "spanish": "manifestar",
+        "english": "to express, to show, to state",
+        "frequency_score": 44
+    },
+    {
+        "spanish": "olvidar",
+        "english": "to forget",
+        "frequency_score": 44
+    },
+    {
+        "spanish": "representar",
+        "english": "to represent",
+        "frequency_score": 44
+    },
+    {
+        "spanish": "anunciar",
+        "english": "to announce",
+        "frequency_score": 43
+    },
+    {
+        "spanish": "imponer",
+        "english": "to impose",
+        "frequency_score": 43
+    },
+    {
+        "spanish": "disponer",
+        "english": "to arrange, dispose",
+        "frequency_score": 42
+    },
+    {
+        "spanish": "indicar",
+        "english": "to indicate, to point out",
+        "frequency_score": 42
+    },
+    {
+        "spanish": "importar",
+        "english": "to matter, to import",
+        "frequency_score": 41
+    },
+    {
+        "spanish": "mejorar",
+        "english": "to improve, to get better",
+        "frequency_score": 41
+    },
+    {
+        "spanish": "adherir",
+        "english": "to adhere, to attach",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "aferrar",
+        "english": "to cling to",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "aplicar",
+        "english": "to apply",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "conmover",
+        "english": "to move, to stir",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "contender",
+        "english": "to fight, to quarrel",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "contraer",
+        "english": "to contract, to get",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "demoler",
+        "english": "to demolish, to tear down",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "derretir",
+        "english": "to melt, to dissolve",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "desarrollar",
+        "english": "to develop",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "desatender",
+        "english": "to neglect, to disregard",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "deshacer",
+        "english": "to undo, to dissolve",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "digerir",
+        "english": "to digest, to absorb",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "distraer",
+        "english": "to distract, to divert",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "extraer",
+        "english": "to remove, to extract",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "gemir",
+        "english": "to groan, to moan",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "inferir",
+        "english": "to infer, to conclude",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "infringir",
+        "english": "to infringe, to break",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "instituir",
+        "english": "to institute",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "malentender",
+        "english": "to misunderstand",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "negar",
+        "english": "to deny, to reject",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "ocluir",
+        "english": "to occlude",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "posponer",
+        "english": "to postpone, to put off",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "predisponer",
+        "english": "to predispose, to prejudice",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "presentir",
+        "english": "to sense",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "recalentar",
+        "english": "to reheat, to overheat",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "rendir",
+        "english": "to render, to pay",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "reponer",
+        "english": "to replenish, to replace",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "resentir",
+        "english": "to resent",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "retraer",
+        "english": "to retract",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "reñir",
+        "english": "to quarrel, to dispute",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "rugir",
+        "english": "to roar",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "sentar",
+        "english": "to sit, to seat",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "sobreponer",
+        "english": "to superimpose",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "soldar",
+        "english": "to weld, to solder",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "sosegar",
+        "english": "to calm",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "soterrar",
+        "english": "to underground, to conceal",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "tentar",
+        "english": "to tempt, to entice",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "teñir",
+        "english": "to dye, to stain",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "transigir",
+        "english": "to compromise",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "ungir",
+        "english": "to anoint",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "urgir",
+        "english": "to urge, to hustle",
+        "frequency_score": 40
+    },
+    {
+        "spanish": "actuar",
+        "english": "to act, to perform",
+        "frequency_score": 39
+    },
+    {
+        "spanish": "combatir",
+        "english": "to combat, fight",
+        "frequency_score": 39
+    },
+    {
+        "spanish": "ejercer",
+        "english": "to exercise, practice",
+        "frequency_score": 39
+    },
+    {
+        "spanish": "matar",
+        "english": "to kill",
+        "frequency_score": 39
+    },
+    {
+        "spanish": "participar",
+        "english": "to participate",
+        "frequency_score": 39
+    },
+    {
+        "spanish": "abandonar",
+        "english": "to abandon, to leave",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "acceder",
+        "english": "to access, agree",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "continuar",
+        "english": "to continue",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "enfrentar",
+        "english": "to face, to confront",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "observar",
+        "english": "to observe",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "tender",
+        "english": "to tend, stretch out",
+        "frequency_score": 38
+    },
+    {
+        "spanish": "aumentar",
+        "english": "to increase, to raise",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "comprobar",
+        "english": "to verify, to check, to confirm",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "demostrar",
+        "english": "to demonstrate, to show",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "promover",
+        "english": "to promote",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "recuperar",
+        "english": "to recover, to get back",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "recurrir",
+        "english": "to resort to, recur",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "vencer",
+        "english": "to defeat, overcome",
+        "frequency_score": 37
+    },
+    {
+        "spanish": "agregar",
+        "english": "to add",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "colocar",
+        "english": "to place, to put",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "comentar",
+        "english": "to comment, to remark",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "iniciar",
+        "english": "to initiate, to start",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "recorrer",
+        "english": "to travel through, go across",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "someter",
+        "english": "to submit, subdue",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "superar",
+        "english": "to overcome, to surpass",
+        "frequency_score": 36
+    },
+    {
+        "spanish": "bajar",
+        "english": "to go down, to lower, to download",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "carecer",
+        "english": "to lack",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "controlar",
+        "english": "to control, to monitor",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "determinar",
+        "english": "to determine, to establish",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "extender",
+        "english": "to extend",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "faltar",
+        "english": "to lack, to miss",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "interesar",
+        "english": "to interest",
+        "frequency_score": 35
+    },
+    {
+        "spanish": "coincidir",
+        "english": "to coincide, agree",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "desear",
+        "english": "to wish, to desire",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "disminuir",
+        "english": "to diminish, decrease",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "expresar",
+        "english": "to express",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "imaginar",
+        "english": "to imagine",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "implicar",
+        "english": "to imply, to involve",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "ocupar",
+        "english": "to occupy, to take up",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "preparar",
+        "english": "to prepare",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "proceder",
+        "english": "to proceed",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "sorprender",
+        "english": "to surprise",
+        "frequency_score": 34
+    },
+    {
+        "spanish": "afectar",
+        "english": "to affect",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "analizar",
+        "english": "to analyze",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "ceder",
+        "english": "to yield, give in",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "componer",
+        "english": "to compose, fix",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "contestar",
+        "english": "to answer, to reply",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "entregar",
+        "english": "to deliver, to hand over",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "exponer",
+        "english": "to expose, exhibit",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "percibir",
+        "english": "to perceive",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "quitar",
+        "english": "to remove, to take away",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "regresar",
+        "english": "to return, to go back",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "salvar",
+        "english": "to save, to rescue",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "transmitir",
+        "english": "to transmit, broadcast",
+        "frequency_score": 33
+    },
+    {
+        "spanish": "acercar",
+        "english": "to bring closer, to approach",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "bastar",
+        "english": "to be enough, to suffice",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "celebrar",
+        "english": "to celebrate",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "conceder",
+        "english": "to grant, concede",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "desprender",
+        "english": "to detach, release",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "destacar",
+        "english": "to highlight, to emphasize",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "eliminar",
+        "english": "to eliminate, to remove",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "emprender",
+        "english": "to undertake, start",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "favorecer",
+        "english": "to favor",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "plantear",
+        "english": "to propose, to suggest, to raise (an issue)",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "retirar",
+        "english": "to withdraw, to remove",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "visitar",
+        "english": "to visit",
+        "frequency_score": 32
+    },
+    {
+        "spanish": "apoyar",
+        "english": "to support, to back",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "aprovechar",
+        "english": "to take advantage of, to make the most of",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "citar",
+        "english": "to quote, to cite, to summon",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "cometer",
+        "english": "to commit",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "efectuar",
+        "english": "to carry out, to execute",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "equivaler",
+        "english": "to be equivalent",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "fallecer",
+        "english": "to pass away, die",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "garantizar",
+        "english": "to guarantee, to ensure",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "parar",
+        "english": "to stop",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "presidir",
+        "english": "to preside over, chair",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "provocar",
+        "english": "to provoke, to cause",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "relacionar",
+        "english": "to relate, to connect",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "residir",
+        "english": "to reside, live",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "suspender",
+        "english": "to suspend, fail an exam",
+        "frequency_score": 31
+    },
+    {
+        "spanish": "atribuir",
+        "english": "to attribute",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "emitir",
+        "english": "to emit, issue",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "escapar",
+        "english": "to escape",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "facilitar",
+        "english": "to facilitate, to provide",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "fortalecer",
+        "english": "to strengthen",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "identificar",
+        "english": "to identify",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "invertir",
+        "english": "to invest, invert",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "modificar",
+        "english": "to modify, to change",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "obligar",
+        "english": "to force, to oblige",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "ordenar",
+        "english": "to order, to arrange",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "organizar",
+        "english": "to organize",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "situar",
+        "english": "to place, to locate",
+        "frequency_score": 30
+    },
+    {
+        "spanish": "adoptar",
+        "english": "to adopt",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "confirmar",
+        "english": "to confirm",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "contemplar",
+        "english": "to contemplate, to consider",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "cortar",
+        "english": "to cut",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "enviar",
+        "english": "to send",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "hallar",
+        "english": "to find, to discover",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "herir",
+        "english": "to injure, hurt",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "incorporar",
+        "english": "to incorporate, to include",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "luchar",
+        "english": "to fight, to struggle",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "negociar",
+        "english": "to negotiate",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "obedecer",
+        "english": "to obey",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "oponer",
+        "english": "to oppose",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "provenir",
+        "english": "to originate, come from",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "publicar",
+        "english": "to publish",
+        "frequency_score": 29
+    },
+    {
+        "spanish": "acompañar",
+        "english": "to accompany",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "ascender",
+        "english": "to ascend, promote",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "casar",
+        "english": "to marry",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "comunicar",
+        "english": "to communicate",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "conservar",
+        "english": "to preserve, to conserve",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "dedicar",
+        "english": "to dedicate, to devote",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "desconocer",
+        "english": "to not know, ignore",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "estimar",
+        "english": "to estimate, to appreciate",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "interpretar",
+        "english": "to interpret, to perform",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "padecer",
+        "english": "to suffer, endure",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "perseguir",
+        "english": "to pursue, chase",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "reflejar",
+        "english": "to reflect",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "reproducir",
+        "english": "to reproduce, replicate",
+        "frequency_score": 28
+    },
+    {
+        "spanish": "aclarar",
+        "english": "to clarify, to clear up",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "acoger",
+        "english": "to welcome, receive",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "ampliar",
+        "english": "to expand, to enlarge",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "apreciar",
+        "english": "to appreciate, to value",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "atrever",
+        "english": "to dare",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "comprometer",
+        "english": "to compromise, commit",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "concebir",
+        "english": "to conceive, imagine",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "deducir",
+        "english": "to deduce, infer",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "descender",
+        "english": "to descend, go down",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "fijar",
+        "english": "to set, to fix",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "funcionar",
+        "english": "to function, to work",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "justificar",
+        "english": "to justify",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "lanzar",
+        "english": "to throw, to launch",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "ocultar",
+        "english": "to hide, to conceal",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "probar",
+        "english": "to try, to test",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "reconstruir",
+        "english": "to reconstruct, rebuild",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "retener",
+        "english": "to retain, hold back",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "solicitar",
+        "english": "to request, to apply for",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "soportar",
+        "english": "to endure, to tolerate",
+        "frequency_score": 27
+    },
+    {
+        "spanish": "absorber",
+        "english": "to absorb",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "aprobar",
+        "english": "to approve, to pass",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "avanzar",
+        "english": "to advance, to move forward",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "calificar",
+        "english": "to grade, to qualify",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "caracterizar",
+        "english": "to characterize",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "cocer",
+        "english": "to cook, boil",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "despertar",
+        "english": "to wake up",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "difundir",
+        "english": "to spread, disseminate",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "disfrutar",
+        "english": "to enjoy",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "esclarecer",
+        "english": "to clarify, shed light",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "figurar",
+        "english": "to appear, to figure",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "gritar",
+        "english": "to shout, to scream",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "guardar",
+        "english": "to keep, to save",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "preocupar",
+        "english": "to worry",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "prescindir",
+        "english": "to do without, dispense with",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "repartir",
+        "english": "to distribute, hand out",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "restablecer",
+        "english": "to restore, reestablish",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "separar",
+        "english": "to separate",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "suprimir",
+        "english": "to suppress, delete",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "transformar",
+        "english": "to transform",
+        "frequency_score": 26
+    },
+    {
+        "spanish": "basar",
+        "english": "to base",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "constar",
+        "english": "to consist of, to be recorded",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "cruzar",
+        "english": "to cross",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "durar",
+        "english": "to last",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "enriquecer",
+        "english": "to enrich",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "enseñar",
+        "english": "to teach, to show",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "entrever",
+        "english": "to glimpse, suspect",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "generar",
+        "english": "to generate",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "hundir",
+        "english": "to sink",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "integrar",
+        "english": "to integrate",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "investigar",
+        "english": "to investigate",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "juzgar",
+        "english": "to judge",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "mencionar",
+        "english": "to mention",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "prestar",
+        "english": "to lend",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "proseguir",
+        "english": "to continue, proceed",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "proveer",
+        "english": "to provide, supply",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "regir",
+        "english": "to govern, rule",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "remover",
+        "english": "to remove, stir",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "respetar",
+        "english": "to respect",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "retroceder",
+        "english": "to go back, retreat",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "revelar",
+        "english": "to reveal",
+        "frequency_score": 25
+    },
+    {
+        "spanish": "acometer",
+        "english": "to undertake, attack",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "acontecer",
+        "english": "to happen, occur",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "afrontar",
+        "english": "to face, to confront",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "aludir",
+        "english": "to allude, refer",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "apetecer",
+        "english": "to crave, feel like",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "cobrar",
+        "english": "to charge, to collect",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "comparecer",
+        "english": "to appear in court, attend formally",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "denominar",
+        "english": "to call, to name",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "distribuir",
+        "english": "to distribute",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "elaborar",
+        "english": "to develop, to elaborate",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "eludir",
+        "english": "to elude, avoid",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "instalar",
+        "english": "to install",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "llenar",
+        "english": "to fill",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "manejar",
+        "english": "to handle, to drive",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "marchar",
+        "english": "to march, to go",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "notar",
+        "english": "to notice, to note",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "ofender",
+        "english": "to offend",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "renunciar",
+        "english": "to resign, to give up",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "resumir",
+        "english": "to summarize",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "solucionar",
+        "english": "to solve",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "suscribir",
+        "english": "to subscribe",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "tirar",
+        "english": "to throw, to pull",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "trasladar",
+        "english": "to transfer, to move",
+        "frequency_score": 24
+    },
+    {
+        "spanish": "acusar",
+        "english": "to accuse, to charge",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "apuntar",
+        "english": "to aim, to point, to write down",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "asentir",
+        "english": "to agree, assent",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "atener",
+        "english": "to abide by, adhere",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "batir",
+        "english": "to beat, whisk",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "complacer",
+        "english": "to please",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "completar",
+        "english": "to complete",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "concernir",
+        "english": "to concern, affect",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "conferir",
+        "english": "to confer, bestow",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "coser",
+        "english": "to sew",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "cuidar",
+        "english": "to take care of",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "elevar",
+        "english": "to raise, to elevate",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "emerger",
+        "english": "to emerge",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "emplear",
+        "english": "to employ, to use",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "entretener",
+        "english": "to entertain",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "exhibir",
+        "english": "to exhibit, display",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "gobernar",
+        "english": "to govern, to rule",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "incrementar",
+        "english": "to increase",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "marcar",
+        "english": "to mark, to dial, to score",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "moler",
+        "english": "to grind, mill",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "nombrar",
+        "english": "to name, to appoint",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "persistir",
+        "english": "to persist",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "precisar",
+        "english": "to specify, to need",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "prender",
+        "english": "to catch, arrest, turn on",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "proporcionar",
+        "english": "to provide, to supply",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "subrayar",
+        "english": "to underline, to emphasize",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "votar",
+        "english": "to vote",
+        "frequency_score": 23
+    },
+    {
+        "spanish": "abordar",
+        "english": "to board, to tackle, to approach",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "adaptar",
+        "english": "to adapt, to adjust",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "aportar",
+        "english": "to contribute, to provide",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "asesinar",
+        "english": "to murder, to assassinate",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "atañer",
+        "english": "to concern, pertain",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "consultar",
+        "english": "to consult, to check with",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "debatir",
+        "english": "to debate, discuss",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "denunciar",
+        "english": "to report, to denounce",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "destinar",
+        "english": "to assign, to allocate, to send",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "detectar",
+        "english": "to detect, to spot",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "encoger",
+        "english": "to shrink",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "evaluar",
+        "english": "to evaluate, to assess",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "excluir",
+        "english": "to exclude",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "finalizar",
+        "english": "to finish, to end",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "mandar",
+        "english": "to send, to command",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "preceder",
+        "english": "to precede",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "predecir",
+        "english": "to predict",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "prevalecer",
+        "english": "to prevail",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "pronunciar",
+        "english": "to pronounce, to declare",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "rechazar",
+        "english": "to reject, to turn down",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "recomponer",
+        "english": "to recompose, mend",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "revisar",
+        "english": "to review, to check, to revise",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "rodear",
+        "english": "to surround, to encircle",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "sonar",
+        "english": "to sound, to ring",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "sumar",
+        "english": "to add, to amount to",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "transcurrir",
+        "english": "to elapse, pass",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "trascender",
+        "english": "to transcend",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "yacer",
+        "english": "to lie down",
+        "frequency_score": 22
+    },
+    {
+        "spanish": "abstener",
+        "english": "to abstain",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "acordar",
+        "english": "to agree, to remember",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "alejar",
+        "english": "to move away, to distance",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "arreglar",
+        "english": "to fix, to arrange",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "atravesar",
+        "english": "to cross, to go through",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "averiguar",
+        "english": "to find out, to inquire",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "comparar",
+        "english": "to compare",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "condenar",
+        "english": "to condemn, to convict",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "convivir",
+        "english": "to coexist, live together",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "dimitir",
+        "english": "to resign",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "enterar",
+        "english": "to find out, to inform — often used reflexively",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "exceder",
+        "english": "to exceed",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "exclamar",
+        "english": "to exclaim, to shout",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "fumar",
+        "english": "to smoke",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "inducir",
+        "english": "to induce, lead",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "inscribir",
+        "english": "to enroll, register",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "lavar",
+        "english": "to wash",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "montar",
+        "english": "to ride, to mount, to assemble",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "presuponer",
+        "english": "to presuppose, assume",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "reaparecer",
+        "english": "to reappear",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "recaer",
+        "english": "to relapse, fall again",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "registrar",
+        "english": "to record, to register, to search",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "remitir",
+        "english": "to remit, send",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "reprimir",
+        "english": "to repress, suppress",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "saltar",
+        "english": "to jump, to leap",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "subyacer",
+        "english": "to underlie",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "sustraer",
+        "english": "to subtract, remove",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "titular",
+        "english": "to title, to headline",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "verter",
+        "english": "to pour, spill",
+        "frequency_score": 21
+    },
+    {
+        "spanish": "abastecer",
+        "english": "to supply, provide",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "amar",
+        "english": "to love",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "atacar",
+        "english": "to attack",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "barrer",
+        "english": "to sweep",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "captar",
+        "english": "to capture, to grasp",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "colaborar",
+        "english": "to collaborate, to contribute",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "descansar",
+        "english": "to rest, to relax",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "dominar",
+        "english": "to dominate, to master",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "ejecutar",
+        "english": "to execute, to carry out",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "financiar",
+        "english": "to finance, to fund",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "frenar",
+        "english": "to brake, to slow down, to stop",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "ingerir",
+        "english": "to ingest, consume",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "ingresar",
+        "english": "to enter, to join, to deposit",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "invadir",
+        "english": "to invade",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "liberar",
+        "english": "to free, to liberate",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "limitar",
+        "english": "to limit, to restrict",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "lucir",
+        "english": "to shine, look good",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "operar",
+        "english": "to operate",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "otorgar",
+        "english": "to grant, to award",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "practicar",
+        "english": "to practice",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "presumir",
+        "english": "to presume, show off",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "recomendar",
+        "english": "to recommend, to advise",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "reforzar",
+        "english": "to reinforce, to strengthen",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "rehacer",
+        "english": "to re-do",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "revivir",
+        "english": "to revive, relive",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "revolver",
+        "english": "to stir, scramble",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "sacudir",
+        "english": "to shake",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "seducir",
+        "english": "to seduce",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "valorar",
+        "english": "to value, to assess",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "volar",
+        "english": "to fly",
+        "frequency_score": 20
+    },
+    {
+        "spanish": "calcular",
+        "english": "to calculate, to estimate",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "causar",
+        "english": "to cause",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "concretar",
+        "english": "to specify, to settle, to materialize",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "consolidar",
+        "english": "to consolidate, to strengthen",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "convocar",
+        "english": "to convene, to call, to summon",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "curar",
+        "english": "to heal, to cure",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "desmentir",
+        "english": "to deny, refute",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "diferir",
+        "english": "to differ, defer",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "evadir",
+        "english": "to evade, avoid",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "examinar",
+        "english": "to examine, to inspect",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "generalizar",
+        "english": "to generalize",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "impartir",
+        "english": "to impart, give",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "impulsar",
+        "english": "to promote, to boost, to propel",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "incidir",
+        "english": "to influence, affect",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "mezclar",
+        "english": "to mix",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "opinar",
+        "english": "to give an opinion, to think",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "picar",
+        "english": "to sting, to bite, to chop, to snack on",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "pintar",
+        "english": "to paint",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "radicar",
+        "english": "to lie in, to be rooted in — often used with 'en'",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "reiterar",
+        "english": "to reiterate, to repeat",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "respirar",
+        "english": "to breathe",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "restringir",
+        "english": "to restrict, limit",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "sumir",
+        "english": "to plunge, sink",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "variar",
+        "english": "to vary, to change",
+        "frequency_score": 19
+    },
+    {
+        "spanish": "abarcar",
+        "english": "to cover, to span, to include",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "acostar",
+        "english": "to lay down, to put to bed",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "adelantar",
+        "english": "to advance, to overtake, to bring forward",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "aguantar",
+        "english": "to endure, to tolerate, to hold on",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "alimentar",
+        "english": "to feed, to nourish",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "arrancar",
+        "english": "to start up, to pull out, to tear off",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "besar",
+        "english": "to kiss",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "cansar",
+        "english": "to tire, to get tired",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "concentrar",
+        "english": "to concentrate, to focus",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "concurrir",
+        "english": "to concur, attend",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "confesar",
+        "english": "to confess, to admit",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "conformar",
+        "english": "to make up, to form, to comply",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "desplazar",
+        "english": "to move, to displace",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "destituir",
+        "english": "to dismiss, remove from office",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "discurrir",
+        "english": "to reflect, pass by",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "engañar",
+        "english": "to deceive, to trick, to cheat",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "estimular",
+        "english": "to stimulate, to encourage",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "fabricar",
+        "english": "to manufacture, to make",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "formular",
+        "english": "to formulate, to pose (a question)",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "fundir",
+        "english": "to melt, fuse",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "jurar",
+        "english": "to swear, to take an oath",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "penetrar",
+        "english": "to penetrate, to go into",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "preservar",
+        "english": "to preserve, to protect",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "reclamar",
+        "english": "to claim, to demand, to complain",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "relucir",
+        "english": "to shine, sparkle",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "robar",
+        "english": "to steal, to rob",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "seleccionar",
+        "english": "to select, to choose",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "sumergir",
+        "english": "to submerge, immerse",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "transferir",
+        "english": "to transfer",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "ubicar",
+        "english": "to locate, to place",
+        "frequency_score": 18
+    },
+    {
+        "spanish": "administrar",
+        "english": "to manage, to administer",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "alterar",
+        "english": "to alter, to upset",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "amenazar",
+        "english": "to threaten",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "aplaudir",
+        "english": "to applaud, clap",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "borrar",
+        "english": "to erase, to delete",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "callar",
+        "english": "to be quiet, to silence",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "cargar",
+        "english": "to load, to charge",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "confiar",
+        "english": "to trust, to confide",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "conquistar",
+        "english": "to conquer, to win over",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "contradecir",
+        "english": "to contradict",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "derivar",
+        "english": "to derive, to result in",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "disparar",
+        "english": "to shoot, to fire",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "dudar",
+        "english": "to doubt",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "encargar",
+        "english": "to put in charge, to order",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "escurrir",
+        "english": "to drain, drip",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "expandir",
+        "english": "to expand",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "fomentar",
+        "english": "to encourage, to promote",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "golpear",
+        "english": "to hit, to strike",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "ignorar",
+        "english": "to ignore, to not know",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "incurrir",
+        "english": "to incur, commit",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "inventar",
+        "english": "to invent, to make up",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "orientar",
+        "english": "to guide, to orient",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "pasear",
+        "english": "to stroll, to take a walk",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "pegar",
+        "english": "to hit, to stick, to glue",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "reflexionar",
+        "english": "to reflect, to think over",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "rescatar",
+        "english": "to rescue, to recover",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "revertir",
+        "english": "to revert",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "revestir",
+        "english": "to cover, coat",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "soltar",
+        "english": "to let go, to release",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "subsistir",
+        "english": "to subsist, survive",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "tardar",
+        "english": "to delay, to take time",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "vincular",
+        "english": "to link, to connect",
+        "frequency_score": 17
+    },
+    {
+        "spanish": "apartar",
+        "english": "to move away, to separate",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "aspirar",
+        "english": "to aspire, to vacuum",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "brindar",
+        "english": "to offer, to give, to toast",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "clasificar",
+        "english": "to classify, to sort",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "compensar",
+        "english": "to compensate, to make up for",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "conllevar",
+        "english": "to entail, to involve",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "criticar",
+        "english": "to criticize",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "desempeñar",
+        "english": "to perform, to carry out",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "designar",
+        "english": "to designate, to appoint",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "diferenciar",
+        "english": "to differentiate, to distinguish",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "discernir",
+        "english": "to discern",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "disimular",
+        "english": "to hide, to conceal",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "entreabrir",
+        "english": "to half-open, open slightly",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "especializar",
+        "english": "to specialize",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "explotar",
+        "english": "to exploit, to explode",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "fingir",
+        "english": "to pretend, fake",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "fluir",
+        "english": "to flow",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "fundar",
+        "english": "to found, to establish",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "girar",
+        "english": "to turn, to spin",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "gozar",
+        "english": "to enjoy",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "inquirir",
+        "english": "to inquire",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "interferir",
+        "english": "to interfere",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "intuir",
+        "english": "to intuit, sense",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "localizar",
+        "english": "to locate, to find",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "perdonar",
+        "english": "to forgive, to pardon",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "profundizar",
+        "english": "to deepen, to go deeper into",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "quemar",
+        "english": "to burn",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "reaccionar",
+        "english": "to react",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "regular",
+        "english": "to regulate, to control",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "renovar",
+        "english": "to renew, to renovate",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "reparar",
+        "english": "to repair, to fix",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "sospechar",
+        "english": "to suspect",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "soñar",
+        "english": "to dream",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "suplir",
+        "english": "to supply, replace",
+        "frequency_score": 16
+    },
+    {
+        "spanish": "abatir",
+        "english": "to knock down, depress",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "adivinar",
+        "english": "to guess, to predict",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "ajustar",
+        "english": "to adjust, to tighten",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "aliviar",
+        "english": "to relieve, to ease",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "anotar",
+        "english": "to note down, to score",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "arrastrar",
+        "english": "to drag, to pull",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "centrar",
+        "english": "to focus, to center",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "confluir",
+        "english": "to converge, flow together",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "contratar",
+        "english": "to hire, to contract",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "conversar",
+        "english": "to converse, to talk",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "descartar",
+        "english": "to discard, to rule out",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "dotar",
+        "english": "to equip, to provide",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "entrevistar",
+        "english": "to interview",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "estallar",
+        "english": "to burst, to explode",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "forzar",
+        "english": "to force",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "gastar",
+        "english": "to spend, to waste",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "inaugurar",
+        "english": "to inaugurate, to open",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "molestar",
+        "english": "to bother, to annoy",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "nutrir",
+        "english": "to nourish",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "optar",
+        "english": "to choose, to opt",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "originar",
+        "english": "to originate, to cause",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "pelear",
+        "english": "to fight, to argue",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "persuadir",
+        "english": "to persuade",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "pesar",
+        "english": "to weigh, to regret",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "procurar",
+        "english": "to try, to make sure",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "prolongar",
+        "english": "to prolong, to extend",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "proyectar",
+        "english": "to project, to plan",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "replicar",
+        "english": "to reply, to replicate",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "rodar",
+        "english": "to roll, to shoot a film",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "sobresalir",
+        "english": "to stand out, excel",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "vengar",
+        "english": "to avenge",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "verificar",
+        "english": "to verify, to check",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "vigilar",
+        "english": "to watch, to guard",
+        "frequency_score": 15
+    },
+    {
+        "spanish": "acelerar",
+        "english": "to accelerate, to speed up",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "alzar",
+        "english": "to raise, to lift",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "armar",
+        "english": "to arm, to assemble",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "asomar",
+        "english": "to appear, to peek out",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "avisar",
+        "english": "to warn, to inform",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "beneficiar",
+        "english": "to benefit",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "calmar",
+        "english": "to calm",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "cesar",
+        "english": "to cease, to stop",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "comportar",
+        "english": "to entail, to involve",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "conectar",
+        "english": "to connect",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "constatar",
+        "english": "to confirm, to verify",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "derrotar",
+        "english": "to defeat",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "encabezar",
+        "english": "to lead, to head",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "encerrar",
+        "english": "to lock up, to enclose",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "experimentar",
+        "english": "to experience, to experiment",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "expulsar",
+        "english": "to expel, to kick out",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "extrañar",
+        "english": "to miss, to surprise",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "grabar",
+        "english": "to record, to engrave",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "imitar",
+        "english": "to imitate",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "involucrar",
+        "english": "to involve",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "librar",
+        "english": "to free, to fight",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "murmurar",
+        "english": "to murmur, to whisper",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "potenciar",
+        "english": "to strengthen, to promote",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "presionar",
+        "english": "to press, to pressure",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "protestar",
+        "english": "to protest",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "puntualizar",
+        "english": "to specify, to point out",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "rallar",
+        "english": "to grate",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "resaltar",
+        "english": "to highlight, to emphasize",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "secar",
+        "english": "to dry",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "tapar",
+        "english": "to cover",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "transportar",
+        "english": "to transport, to carry",
+        "frequency_score": 14
+    },
+    {
+        "spanish": "abrazar",
+        "english": "to hug, to embrace",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "acariciar",
+        "english": "to caress",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "acomodar",
+        "english": "to accommodate, to arrange",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "aconsejar",
+        "english": "to advise",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "ahorrar",
+        "english": "to save (money, time)",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "aproximar",
+        "english": "to bring closer, to approach",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "arrojar",
+        "english": "to throw, to fling",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "calentar",
+        "english": "to heat",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "castigar",
+        "english": "to punish",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "circular",
+        "english": "to circulate",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "combinar",
+        "english": "to combine",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "contrarrestar",
+        "english": "to counteract",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "coordinar",
+        "english": "to coordinate",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "cultivar",
+        "english": "to cultivate",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "diseñar",
+        "english": "to design",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "disputar",
+        "english": "to dispute, to contest",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "encantar",
+        "english": "to love, to enchant",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "enfriar",
+        "english": "to cool down",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "enterrar",
+        "english": "to bury",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "explorar",
+        "english": "to explore",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "industrializar",
+        "english": "to industrialize",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "multiplicar",
+        "english": "to multiply",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "narrar",
+        "english": "to narrate, to tell",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "reformar",
+        "english": "to reform",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "regalar",
+        "english": "to give (a gift)",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "relatar",
+        "english": "to recount, to tell",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "restar",
+        "english": "to subtract, to diminish",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "secuestrar",
+        "english": "to kidnap",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "sembrar",
+        "english": "to sow, to plant",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "tragar",
+        "english": "to swallow",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "velar",
+        "english": "to watch over, to stay awake",
+        "frequency_score": 13
+    },
+    {
+        "spanish": "abundar",
+        "english": "to abound, to be abundant",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "acumular",
+        "english": "to accumulate",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "admirar",
+        "english": "to admire",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "agarrar",
+        "english": "to grab",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "agrupar",
+        "english": "to group, to gather",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "animar",
+        "english": "to encourage, to cheer up",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "arriesgar",
+        "english": "to risk",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "asociar",
+        "english": "to associate",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "bañar",
+        "english": "to bathe",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "cazar",
+        "english": "to hunt",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "conciliar",
+        "english": "to reconcile",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "depositar",
+        "english": "to deposit",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "desviar",
+        "english": "to divert, to deviate",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "dialogar",
+        "english": "to converse, to dialogue",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "dictar",
+        "english": "to dictate",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "encarar",
+        "english": "to confront, to face",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "equivocar",
+        "english": "to make a mistake",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "estrenar",
+        "english": "to debut, to use for the first time",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "habitar",
+        "english": "to inhabit",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "iluminar",
+        "english": "to illuminate, to light up",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "inclinar",
+        "english": "to tilt, to lean",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "lamentar",
+        "english": "to regret, to lament",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "ligar",
+        "english": "to tie, to flirt",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "oscilar",
+        "english": "to oscillate, to swing",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "paliar",
+        "english": "to alleviate, to ease",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "pisar",
+        "english": "to step on",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "presenciar",
+        "english": "to witness, to be present at",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "propiciar",
+        "english": "to foster, to promote",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "quejar",
+        "english": "to complain",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "ratificar",
+        "english": "to ratify",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "reanudar",
+        "english": "to resume",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "recalcar",
+        "english": "to emphasize, to stress",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "reemplazar",
+        "english": "to replace",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "rezar",
+        "english": "to pray",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "sentenciar",
+        "english": "to sentence, to declare",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "triunfar",
+        "english": "to triumph, to succeed",
+        "frequency_score": 12
+    },
+    {
+        "spanish": "adecuar",
+        "english": "to adapt",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "agotar",
+        "english": "to exhaust",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "aislar",
+        "english": "to isolate",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "anular",
+        "english": "to cancel",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "apretar",
+        "english": "to press, to tighten",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "asustar",
+        "english": "to scare, to frighten",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "atar",
+        "english": "to tie",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "autorizar",
+        "english": "to authorize",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "colgar",
+        "english": "to hang",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "contrastar",
+        "english": "to contrast",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "culminar",
+        "english": "to culminate",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "datar",
+        "english": "to date",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "dibujar",
+        "english": "to draw",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "doblar",
+        "english": "to fold",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "educar",
+        "english": "to educate, to raise",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "empujar",
+        "english": "to push",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "enamorar",
+        "english": "to make someone fall in love",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "enfatizar",
+        "english": "to emphasize",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "entrenar",
+        "english": "to train",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "fallar",
+        "english": "to fail",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "flotar",
+        "english": "to float",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "implantar",
+        "english": "to implant, to establish",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "juntar",
+        "english": "to join",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "manipular",
+        "english": "to manipulate",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "motivar",
+        "english": "to motivate",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "rebajar",
+        "english": "to reduce, to lower",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "recobrar",
+        "english": "to recover",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "redactar",
+        "english": "to draft",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "reposar",
+        "english": "to rest",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "rogar",
+        "english": "to beg",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "sacrificar",
+        "english": "to sacrifice",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "sobrar",
+        "english": "to be left over",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "temblar",
+        "english": "to tremble",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "tornar",
+        "english": "to become, to turn",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "tranquilizar",
+        "english": "to reassure, to calm down",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "trazar",
+        "english": "to trace, to draw",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "violar",
+        "english": "to violate, to rape",
+        "frequency_score": 11
+    },
+    {
+        "spanish": "accionar",
+        "english": "to activate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "acentuar",
+        "english": "to accentuate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "acostumbrar",
+        "english": "to get used to",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "aguardar",
+        "english": "to await",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "alegar",
+        "english": "to allege",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "almacenar",
+        "english": "to store",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "arbitrar",
+        "english": "to arbitrate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "articular",
+        "english": "to articulate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "aseverar",
+        "english": "to assert",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "asimilar",
+        "english": "to assimilate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "cancelar",
+        "english": "to cancel",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "capturar",
+        "english": "to capture",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "condicionar",
+        "english": "to condition",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "configurar",
+        "english": "to configure",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "cuestionar",
+        "english": "to question",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "dañar",
+        "english": "to damage",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "demandar",
+        "english": "to demand",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "derribar",
+        "english": "to knock down",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "descifrar",
+        "english": "to decipher",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "dificultar",
+        "english": "to hinder",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "erradicar",
+        "english": "to eradicate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "estribar",
+        "english": "to be based on",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "evidenciar",
+        "english": "to evidence",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "felicitar",
+        "english": "to congratulate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "guiar",
+        "english": "to guide",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "ilustrar",
+        "english": "to illustrate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "liquidar",
+        "english": "to liquidate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "movilizar",
+        "english": "to mobilize",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "perjudicar",
+        "english": "to harm",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "predominar",
+        "english": "to predominate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "proclamar",
+        "english": "to proclaim",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "programar",
+        "english": "to schedule",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "refugiar",
+        "english": "to shelter",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "remontar",
+        "english": "to overcome",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "reservar",
+        "english": "to reserve",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "restaurar",
+        "english": "to restore",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "retornar",
+        "english": "to return",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "retrasar",
+        "english": "to delay",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "sujetar",
+        "english": "to hold",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "tolerar",
+        "english": "to tolerate",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "torear",
+        "english": "to bullfight",
+        "frequency_score": 10
+    },
+    {
+        "spanish": "albergar",
+        "english": "to shelter",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "alegrar",
+        "english": "to cheer up",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "anticipar",
+        "english": "to anticipate",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "argumentar",
+        "english": "to argue",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "arrebatar",
+        "english": "to snatch",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "atrapar",
+        "english": "to catch",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "brillar",
+        "english": "to shine",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "burlar",
+        "english": "to mock",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "chocar",
+        "english": "to crash",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "complicar",
+        "english": "to complicate",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "consolar",
+        "english": "to comfort",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "copiar",
+        "english": "to copy",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "desatar",
+        "english": "to untie",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "despejar",
+        "english": "to clear",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "editar",
+        "english": "to edit",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "emocionar",
+        "english": "to excite",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "ensayar",
+        "english": "to rehearse",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "entrañar",
+        "english": "to entail",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "evocar",
+        "english": "to evoke",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "exportar",
+        "english": "to export",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "frustrar",
+        "english": "to frustrate",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "gestionar",
+        "english": "to manage",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "indagar",
+        "english": "to inquire",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "infectar",
+        "english": "to infect",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "inspirar",
+        "english": "to inspire",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "intercambiar",
+        "english": "to exchange",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "interrogar",
+        "english": "to interrogate",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "meditar",
+        "english": "to meditate",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "modernizar",
+        "english": "to modernize",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "navegar",
+        "english": "to sail",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "ocasionar",
+        "english": "to cause",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "pactar",
+        "english": "to agree",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "perfeccionar",
+        "english": "to perfect",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "pescar",
+        "english": "to fish",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "procesar",
+        "english": "to process",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "promocionar",
+        "english": "to promote",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "quebrar",
+        "english": "to break",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "rectificar",
+        "english": "to rectify",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "rellenar",
+        "english": "to fill",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "remediar",
+        "english": "to remedy",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "retomar",
+        "english": "to resume",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "suministrar",
+        "english": "to supply",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "suscitar",
+        "english": "to provoke",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "sustentar",
+        "english": "to sustain",
+        "frequency_score": 9
+    },
+    {
+        "spanish": "abonar",
+        "english": "to pay\/fertilize",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "adjudicar",
+        "english": "to award",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "afeitar",
+        "english": "to shave",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "agitar",
+        "english": "to shake",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "ahogar",
+        "english": "to drown",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "alternar",
+        "english": "to alternate",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "apoderar",
+        "english": "to empower",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "apostar",
+        "english": "to bet",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "apresurar",
+        "english": "to hurry",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "asentar",
+        "english": "to settle",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "asignar",
+        "english": "to assign",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "bloquear",
+        "english": "to block",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "colar",
+        "english": "to strain\/filter",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "descargar",
+        "english": "to unload\/download",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "despegar",
+        "english": "to take off",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "disfrazar",
+        "english": "to disguise",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "encarcelar",
+        "english": "to imprison",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "encarnar",
+        "english": "to embody",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "equilibrar",
+        "english": "to balance",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "estrechar",
+        "english": "to narrow",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "filmar",
+        "english": "to film",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "fracasar",
+        "english": "to fail",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "hornear",
+        "english": "to bake",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "igualar",
+        "english": "to equalize",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "implementar",
+        "english": "to implement",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "insertar",
+        "english": "to insert",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "mediar",
+        "english": "to mediate",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "minimizar",
+        "english": "to minimize",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "neutralizar",
+        "english": "to neutralize",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "obrar",
+        "english": "to act\/work",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "orinar",
+        "english": "to urinate",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "ostentar",
+        "english": "to hold\/boast",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "paralizar",
+        "english": "to paralyze",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "planear",
+        "english": "to plan",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "planificar",
+        "english": "to plan",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "plantar",
+        "english": "to plant",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "recaudar",
+        "english": "to collect\/raise funds",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "recortar",
+        "english": "to trim",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "recrear",
+        "english": "to recreate",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "reivindicar",
+        "english": "to reclaim\/demand",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "rematar",
+        "english": "to finish off",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "respaldar",
+        "english": "to back\/support",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "reventar",
+        "english": "to burst",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "sancionar",
+        "english": "to sanction",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "sintetizar",
+        "english": "to synthesize",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "susurrar",
+        "english": "to whisper",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "traspasar",
+        "english": "to transfer\/pass through",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "vaciar",
+        "english": "to empty",
+        "frequency_score": 8
+    },
+    {
+        "spanish": "acertar",
+        "english": "to get right",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "activar",
+        "english": "to activate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "actualizar",
+        "english": "to update",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "agravar",
+        "english": "to worsen\/aggravate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "alargar",
+        "english": "to lengthen",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "alentar",
+        "english": "to encourage",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "alquilar",
+        "english": "to rent",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "apelar",
+        "english": "to appeal",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "aplazar",
+        "english": "to postpone",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "canalizar",
+        "english": "to channel",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "charlar",
+        "english": "to chat",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "clavar",
+        "english": "to nail",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "complementar",
+        "english": "to complement",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "congelar",
+        "english": "to freeze",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "debilitar",
+        "english": "to weaken",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "decretar",
+        "english": "to decree",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "desembocar",
+        "english": "to flow into\/lead to",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "desencadenar",
+        "english": "to unleash",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "deslizar",
+        "english": "to slide",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "desnudar",
+        "english": "to undress",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "desplegar",
+        "english": "to deploy\/unfold",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "desvelar",
+        "english": "to reveal\/stay awake",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "ejercitar",
+        "english": "to exercise",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "embarcar",
+        "english": "to embark",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "encaminar",
+        "english": "to direct\/set on a path",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "enfocar",
+        "english": "to focus",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "entablar",
+        "english": "to initiate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "esforzar",
+        "english": "to strive",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "especificar",
+        "english": "to specify",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "estirar",
+        "english": "to stretch",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "estrellar",
+        "english": "to crash",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "festejar",
+        "english": "to celebrate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "fotografiar",
+        "english": "to photograph",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "fundamentar",
+        "english": "to base\/found",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "impresionar",
+        "english": "to impress",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "instar",
+        "english": "to urge",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "lesionar",
+        "english": "to injure",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "odiar",
+        "english": "to hate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "perfilar",
+        "english": "to outline\/profile",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "perpetuar",
+        "english": "to perpetuate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "plasmar",
+        "english": "to express\/embody",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "poblar",
+        "english": "to populate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "posibilitar",
+        "english": "to enable",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "protagonizar",
+        "english": "to star\/play the leading role",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "reactivar",
+        "english": "to reactivate",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "regar",
+        "english": "to water",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "reinar",
+        "english": "to reign",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "resucitar",
+        "english": "to resurrect",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "sobrepasar",
+        "english": "to exceed",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "suspirar",
+        "english": "to sigh",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "transitar",
+        "english": "to transit",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "unificar",
+        "english": "to unify",
+        "frequency_score": 7
+    },
+    {
+        "spanish": "acarrear",
+        "english": "to carry\/lead to",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "acatar",
+        "english": "to comply with",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "acotar",
+        "english": "to delimit\/narrow down",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "afianzar",
+        "english": "to strengthen",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "aplastar",
+        "english": "to crush",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "asombrar",
+        "english": "to amaze",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "atentar",
+        "english": "to attempt\/attack",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "brotar",
+        "english": "to sprout\/emerge",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "confeccionar",
+        "english": "to make\/manufacture",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "consagrar",
+        "english": "to consecrate",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "contentar",
+        "english": "to please\/satisfy",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "delimitar",
+        "english": "to delimit",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "derrocar",
+        "english": "to overthrow",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "desentrañar",
+        "english": "to unravel",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "despojar",
+        "english": "to deprive\/strip",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "diagnosticar",
+        "english": "to diagnose",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "dilucidar",
+        "english": "to clarify",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "emigrar",
+        "english": "to emigrate",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "empatar",
+        "english": "to tie\/draw",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "empeñar",
+        "english": "to pawn",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "encajar",
+        "english": "to fit",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "entusiasmar",
+        "english": "to excite\/enthuse",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "estabilizar",
+        "english": "to stabilize",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "evolucionar",
+        "english": "to evolve",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "fiar",
+        "english": "to trust\/sell on credit",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "indignar",
+        "english": "to outrage",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "intensificar",
+        "english": "to intensify",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "internar",
+        "english": "to intern\/admit",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "liderar",
+        "english": "to lead",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "matizar",
+        "english": "to nuance\/qualify",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "percatar",
+        "english": "to notice",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "posar",
+        "english": "to pose",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "postular",
+        "english": "to nominate\/apply",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "precipitar",
+        "english": "to hasten",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "privar",
+        "english": "to deprive",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "privatizar",
+        "english": "to privatize",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "progresar",
+        "english": "to progress",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "reafirmar",
+        "english": "to reaffirm",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "recabar",
+        "english": "to gather\/collect",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "relajar",
+        "english": "to relax",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "repasar",
+        "english": "to review",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "replantear",
+        "english": "to reconsider",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "reportar",
+        "english": "to report",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "reprochar",
+        "english": "to reproach",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "rondar",
+        "english": "to patrol\/hover around",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "rozar",
+        "english": "to graze\/touch lightly",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "simbolizar",
+        "english": "to symbolize",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "simplificar",
+        "english": "to simplify",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "solventar",
+        "english": "to solve",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "sortear",
+        "english": "to raffle\/navigate",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "tostar",
+        "english": "to toast",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "traicionar",
+        "english": "to betray",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "vislumbrar",
+        "english": "to glimpse",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "visualizar",
+        "english": "to visualize",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "volcar",
+        "english": "to overturn",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "vomitar",
+        "english": "to vomit",
+        "frequency_score": 6
+    },
+    {
+        "spanish": "adornar",
+        "english": "to decorate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "agilizar",
+        "english": "to expedite",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "atajar",
+        "english": "to intercept",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "aterrizar",
+        "english": "to land",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "clarificar",
+        "english": "to clarify",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "comercializar",
+        "english": "to commercialize",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "conmemorar",
+        "english": "to commemorate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "contactar",
+        "english": "to contact",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "cooperar",
+        "english": "to cooperate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "debutar",
+        "english": "to debut",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "desalojar",
+        "english": "to evict",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "desmontar",
+        "english": "to dismantle",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "devorar",
+        "english": "to devour",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "disipar",
+        "english": "to dispel",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "duplicar",
+        "english": "to duplicate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "edificar",
+        "english": "to build",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "englobar",
+        "english": "to encompass",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "enlazar",
+        "english": "to link",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "enmarcar",
+        "english": "to frame",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "escalar",
+        "english": "to climb",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "exagerar",
+        "english": "to exaggerate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "formalizar",
+        "english": "to formalize",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "insultar",
+        "english": "to insult",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "mojar",
+        "english": "to wet",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "perpetrar",
+        "english": "to perpetrate",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "portar",
+        "english": "to carry",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "razonar",
+        "english": "to reason",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "resignar",
+        "english": "to resign",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "salvaguardar",
+        "english": "to safeguard",
+        "frequency_score": 5
+    },
+    {
+        "spanish": "tumbar",
+        "english": "to knock down",
+        "frequency_score": 5
+    }
+]

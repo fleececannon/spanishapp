@@ -3,8 +3,16 @@
   "configurations": [
     {
       "name": "spanish-dev",
-      "runtimeExecutable": "php",
-      "runtimeArgs": ["artisan", "serve", "--port=8471"],
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "PHP_INI_SCAN_DIR=",
+        "PHPRC=",
+        "HERD_PHP_84_INI_SCAN_DIR=",
+        "/Users/amani/Library/Application Support/Herd/bin/php",
+        "artisan",
+        "serve",
+        "--port=8471"
+      ],
       "port": 8471,
       "autoPort": false
     }
