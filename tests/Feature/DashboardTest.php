@@ -108,6 +108,34 @@ class DashboardTest extends TestCase
             ->assertViewHas('newCount', 1);
     }
 
+    public function test_me_tab_shows_the_parents_verb_project(): void
+    {
+        $this->actingAs(User::factory()->create());
+        Kid::create(['name' => 'Ana', 'password' => 'x', 'daily_new_card_pace' => 2]);
+
+        \App\Models\MyVerb::where('spanish', 'ser')->update(['mastered' => true]);
+        \App\Models\MyVerb::where('spanish', 'estar')->update([
+            'unlocked' => true, 'due' => Carbon::yesterday(), 'interval_days' => 1,
+            'ease' => 2.5, 'reps' => 3, 'lapses' => 1,
+        ]);
+
+        Livewire::test(Dashboard::class, ['kid' => 'me'])
+            ->assertSet('kid', 'me')
+            ->assertViewHas('mode', 'me')
+            ->assertViewHas('myKnown', 1)
+            ->assertViewHas('myTraining', 1)
+            ->assertViewHas('myDueToday', 1)
+            ->assertViewHas('myAccuracy', 75)
+            ->assertSee('verbs known')
+            ->assertSee('estar'); // trickiest list
+
+        // Switching back to a kid restores the kid metrics.
+        Livewire::test(Dashboard::class, ['kid' => 'me'])
+            ->set('kid', (string) Kid::first()->id)
+            ->assertViewHas('mode', 'kid')
+            ->assertViewHas('totalCards', 0);
+    }
+
     public function test_history_on_retired_cards_does_not_inflate_the_metrics(): void
     {
         $this->actingAs(User::factory()->create());
