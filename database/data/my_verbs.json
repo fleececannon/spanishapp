@@ -245,8 +245,8 @@
         "frequency_score": 87
     },
     {
-        "spanish": "quedar",
-        "english": "to stay, to remain, to be left",
+        "spanish": "quedarse",
+        "english": "to stay, to remain",
         "frequency_score": 87
     },
     {
@@ -760,8 +760,8 @@
         "frequency_score": 68
     },
     {
-        "spanish": "referir",
-        "english": "to refer",
+        "spanish": "referirse",
+        "english": "to refer to",
         "frequency_score": 68
     },
     {
@@ -1360,8 +1360,8 @@
         "frequency_score": 40
     },
     {
-        "spanish": "sentar",
-        "english": "to sit, to seat",
+        "spanish": "sentarse",
+        "english": "to sit down",
         "frequency_score": 40
     },
     {
@@ -1950,8 +1950,8 @@
         "frequency_score": 28
     },
     {
-        "spanish": "casar",
-        "english": "to marry",
+        "spanish": "casarse",
+        "english": "to get married",
         "frequency_score": 28
     },
     {
@@ -2025,7 +2025,7 @@
         "frequency_score": 27
     },
     {
-        "spanish": "atrever",
+        "spanish": "atreverse",
         "english": "to dare",
         "frequency_score": 27
     },
@@ -2130,7 +2130,7 @@
         "frequency_score": 26
     },
     {
-        "spanish": "despertar",
+        "spanish": "despertarse",
         "english": "to wake up",
         "frequency_score": 26
     },
@@ -2165,7 +2165,7 @@
         "frequency_score": 26
     },
     {
-        "spanish": "preocupar",
+        "spanish": "preocuparse",
         "english": "to worry",
         "frequency_score": 26
     },
@@ -2435,8 +2435,8 @@
         "frequency_score": 23
     },
     {
-        "spanish": "atener",
-        "english": "to abide by, adhere",
+        "spanish": "atenerse",
+        "english": "to abide by, to stick to",
         "frequency_score": 23
     },
     {
@@ -2695,8 +2695,8 @@
         "frequency_score": 22
     },
     {
-        "spanish": "abstener",
-        "english": "to abstain",
+        "spanish": "abstenerse",
+        "english": "to abstain, to refrain",
         "frequency_score": 21
     },
     {
@@ -2745,8 +2745,8 @@
         "frequency_score": 21
     },
     {
-        "spanish": "enterar",
-        "english": "to find out, to inform — often used reflexively",
+        "spanish": "enterarse",
+        "english": "to find out, to learn about",
         "frequency_score": 21
     },
     {
@@ -3115,8 +3115,8 @@
         "frequency_score": 18
     },
     {
-        "spanish": "acostar",
-        "english": "to lay down, to put to bed",
+        "spanish": "acostarse",
+        "english": "to go to bed, to lie down",
         "frequency_score": 18
     },
     {
@@ -3145,12 +3145,12 @@
         "frequency_score": 18
     },
     {
-        "spanish": "cansar",
-        "english": "to tire, to get tired",
+        "spanish": "cansarse",
+        "english": "to get tired",
         "frequency_score": 18
     },
     {
-        "spanish": "concentrar",
+        "spanish": "concentrarse",
         "english": "to concentrate, to focus",
         "frequency_score": 18
     },
@@ -3485,7 +3485,7 @@
         "frequency_score": 16
     },
     {
-        "spanish": "especializar",
+        "spanish": "especializarse",
         "english": "to specialize",
         "frequency_score": 16
     },
@@ -4105,8 +4105,8 @@
         "frequency_score": 12
     },
     {
-        "spanish": "bañar",
-        "english": "to bathe",
+        "spanish": "bañarse",
+        "english": "to take a bath, to bathe",
         "frequency_score": 12
     },
     {
@@ -4145,8 +4145,8 @@
         "frequency_score": 12
     },
     {
-        "spanish": "equivocar",
-        "english": "to make a mistake",
+        "spanish": "equivocarse",
+        "english": "to make a mistake, to be wrong",
         "frequency_score": 12
     },
     {
@@ -4205,7 +4205,7 @@
         "frequency_score": 12
     },
     {
-        "spanish": "quejar",
+        "spanish": "quejarse",
         "english": "to complain",
         "frequency_score": 12
     },
@@ -4325,8 +4325,8 @@
         "frequency_score": 11
     },
     {
-        "spanish": "enamorar",
-        "english": "to make someone fall in love",
+        "spanish": "enamorarse",
+        "english": "to fall in love",
         "frequency_score": 11
     },
     {
@@ -4440,7 +4440,7 @@
         "frequency_score": 10
     },
     {
-        "spanish": "acostumbrar",
+        "spanish": "acostumbrarse",
         "english": "to get used to",
         "frequency_score": 10
     },
@@ -4670,8 +4670,8 @@
         "frequency_score": 9
     },
     {
-        "spanish": "burlar",
-        "english": "to mock",
+        "spanish": "burlarse",
+        "english": "to mock, to make fun of",
         "frequency_score": 9
     },
     {
@@ -4865,7 +4865,7 @@
         "frequency_score": 8
     },
     {
-        "spanish": "afeitar",
+        "spanish": "afeitarse",
         "english": "to shave",
         "frequency_score": 8
     },
@@ -4885,8 +4885,8 @@
         "frequency_score": 8
     },
     {
-        "spanish": "apoderar",
-        "english": "to empower",
+        "spanish": "apoderarse",
+        "english": "to seize, to take over",
         "frequency_score": 8
     },
     {
@@ -4895,7 +4895,7 @@
         "frequency_score": 8
     },
     {
-        "spanish": "apresurar",
+        "spanish": "apresurarse",
         "english": "to hurry",
         "frequency_score": 8
     },
@@ -5190,8 +5190,8 @@
         "frequency_score": 7
     },
     {
-        "spanish": "desnudar",
-        "english": "to undress",
+        "spanish": "desnudarse",
+        "english": "to get undressed",
         "frequency_score": 7
     },
     {
@@ -5230,8 +5230,8 @@
         "frequency_score": 7
     },
     {
-        "spanish": "esforzar",
-        "english": "to strive",
+        "spanish": "esforzarse",
+        "english": "to make an effort, to strive",
         "frequency_score": 7
     },
     {
@@ -5505,8 +5505,8 @@
         "frequency_score": 6
     },
     {
-        "spanish": "percatar",
-        "english": "to notice",
+        "spanish": "percatarse",
+        "english": "to notice, to realize",
         "frequency_score": 6
     },
     {
@@ -5550,7 +5550,7 @@
         "frequency_score": 6
     },
     {
-        "spanish": "relajar",
+        "spanish": "relajarse",
         "english": "to relax",
         "frequency_score": 6
     },
@@ -5770,8 +5770,8 @@
         "frequency_score": 5
     },
     {
-        "spanish": "resignar",
-        "english": "to resign",
+        "spanish": "resignarse",
+        "english": "to resign oneself, to accept",
         "frequency_score": 5
     },
     {
