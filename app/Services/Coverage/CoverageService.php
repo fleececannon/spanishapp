@@ -19,6 +19,20 @@ use App\Models\Word;
 class CoverageService
 {
     /**
+     * How often each person should turn up on "sample" cards (verbs that get
+     * one card per tense rather than the full paradigm). Weighted toward the
+     * forms a child hears and says most; nosotros/ellos still appear, just
+     * sparingly, so the deck spreads across all five endings over time.
+     */
+    private const SAMPLE_PERSON_WEIGHTS = [
+        '1st_singular' => 30,   // yo
+        '2nd_singular' => 25,   // tu
+        '3rd_singular' => 25,   // el / ella
+        '1st_plural' => 10,     // nosotros
+        '3rd_plural' => 10,     // ellos / ellas
+    ];
+
+    /**
      * Every slot the curriculum currently requires, keyed by a stable slot key.
      *
      * @return array<string, array<string,mixed>>
@@ -166,8 +180,15 @@ class CoverageService
             } else {
                 $v = $slot['verb'];
                 $tenseLabel = Tense::from($slot['tense'])->label();
-                $personLabel = $slot['person']
-                    ? ' as '.Subject::from($slot['person'])->label().' ('.$slot['person'].')'
+
+                // Key verbs carry their own person (every form gets drilled).
+                // Sample verbs — one card per tense — would otherwise let the
+                // model default to "yo" for the whole deck, so pick a form for
+                // them, weighted toward the persons children actually use.
+                $person = $slot['person'] ?? $this->samplePerson($v->id, $slot['tense']);
+
+                $personLabel = $person
+                    ? ' as '.Subject::from($person)->label().' ('.$person.')'
                     : '';
                 $verbUses[] = "{$v->spanish} ({$v->english}) in {$tenseLabel}{$personLabel}";
             }
@@ -237,5 +258,32 @@ class CoverageService
             'gap_count' => $totalSlots - $coveredSlots,
             'open_gap_count' => $totalSlots - $coveredSlots - $draftSlots,
         ];
+    }
+
+    /**
+     * The person a sample card should use for this verb+tense. Infinitives have
+     * no person. Deterministic on purpose: regenerating a slot asks for the same
+     * form rather than quietly reshuffling the deck, and seeding on the tense as
+     * well as the verb keeps a verb's present and past from landing on the same
+     * person.
+     */
+    public function samplePerson(int $verbId, string $tense): ?string
+    {
+        if ($tense === Tense::Infinitive->value) {
+            return null;
+        }
+
+        // md5 rather than crc32: crc32 clusters badly on short strings like
+        // these and skewed the real deck well off the weights above.
+        $roll = hexdec(substr(md5("{$verbId}:{$tense}"), 0, 8)) % array_sum(self::SAMPLE_PERSON_WEIGHTS);
+
+        foreach (self::SAMPLE_PERSON_WEIGHTS as $person => $weight) {
+            if ($roll < $weight) {
+                return $person;
+            }
+            $roll -= $weight;
+        }
+
+        return array_key_first(self::SAMPLE_PERSON_WEIGHTS);
     }
 }

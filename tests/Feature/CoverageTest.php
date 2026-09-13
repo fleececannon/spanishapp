@@ -141,4 +141,61 @@ class CoverageTest extends TestCase
         $this->assertStringContainsString('Tener', $req['verbUses'][0]);
         $this->assertStringContainsString('present', strtolower($req['verbUses'][0]));
     }
+
+    public function test_sample_verbs_are_asked_for_a_specific_person(): void
+    {
+        // A non-drill verb gets one card per tense. Without a named person the
+        // model defaults to "yo" across the whole deck, so the requirement must
+        // still spell a form out.
+        $verb = $this->setVerb();
+        $verb->update(['enabled_tenses' => ['present']]);
+
+        $req = app(CoverageService::class)->gapRequirements(12);
+
+        $this->assertCount(1, $req['verbUses'], 'sample verbs need exactly one slot per tense');
+        $this->assertStringContainsString('Caminar', $req['verbUses'][0]);
+        $this->assertStringContainsString(' as ', $req['verbUses'][0]);
+    }
+
+    public function test_infinitive_slots_never_name_a_person(): void
+    {
+        $verb = $this->setVerb(); // infinitive only
+
+        $this->assertNull(app(CoverageService::class)->samplePerson($verb->id, 'infinitive'));
+        $this->assertStringNotContainsString(' as ', app(CoverageService::class)->gapRequirements(12)['verbUses'][0]);
+    }
+
+    public function test_sample_person_is_stable_and_varies_by_tense(): void
+    {
+        $coverage = app(CoverageService::class);
+
+        // Stable: regenerating a slot must ask for the same form, not reshuffle.
+        $this->assertSame($coverage->samplePerson(7, 'present'), $coverage->samplePerson(7, 'present'));
+
+        // Seeded on the tense too, so one verb's tenses don't all collapse onto
+        // the same person. (Checked across a spread of ids — any single verb may
+        // legitimately draw the same form twice.)
+        $differing = collect(range(1, 40))
+            ->filter(fn (int $id) => $coverage->samplePerson($id, 'present') !== $coverage->samplePerson($id, 'past'))
+            ->count();
+
+        $this->assertGreaterThan(20, $differing, 'present and past should mostly differ');
+    }
+
+    public function test_sample_persons_lean_on_the_forms_children_use(): void
+    {
+        $coverage = app(CoverageService::class);
+
+        $spread = collect(range(1, 400))
+            ->flatMap(fn (int $id) => [$coverage->samplePerson($id, 'present'), $coverage->samplePerson($id, 'past')])
+            ->countBy();
+
+        // All five forms show up...
+        $this->assertCount(5, $spread);
+
+        // ...but the singular persons carry the deck, and no single form runs away with it.
+        $singulars = $spread['1st_singular'] + $spread['2nd_singular'] + $spread['3rd_singular'];
+        $this->assertGreaterThan(600, $singulars, 'yo/tu/el should be ~80% of 800 picks');
+        $this->assertLessThan(320, $spread->max(), 'no form should dominate');
+    }
 }
