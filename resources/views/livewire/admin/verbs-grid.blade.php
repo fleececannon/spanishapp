@@ -3,7 +3,7 @@
         <div>
             <flux:heading size="xl">Verbs grid</flux:heading>
             <flux:text class="mt-1">
-                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. Click a tense once to turn it on; on drill-all verbs, click again for a dash — one sampled form instead of every person.
+                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. ✓ = every person (5 cards, drill-all verbs) · – = one sampled form (1 card). Click a tense to turn it on; on drill-all verbs, click again to go from ✓ to –.
             </flux:text>
         </div>
         <div class="flex items-center gap-2">
@@ -53,12 +53,15 @@
                             </td>
                             @foreach ($tenses as $tense)
                                 @php
+                                    // One visual language for every row: check = every person (5 cards),
+                                    // dash = one sampled form (1 card). The infinitive has no persons,
+                                    // so it just shows a check when on.
                                     $on = in_array($tense->value, $verb->enabled_tenses ?? [], true);
-                                    $sampled = $on && in_array($tense->value, $verb->sample_tenses ?? [], true);
                                     $every = $on && $verb->drillsEveryForm($tense);
+                                    $sampled = $on && ! $every && $tense !== \App\Enums\Tense::Infinitive;
                                     $title = ! $on ? 'Off — click to turn on'
-                                        : ($sampled ? 'One sampled form — click to turn off'
-                                        : ($every ? 'Every person — click for one sampled form' : 'On (one card) — click to turn off'));
+                                        : ($every ? 'Every person (5 cards) — click for one sampled form'
+                                        : ($sampled ? 'One sampled form (1 card) — click to turn off' : 'On — click to turn off'));
                                 @endphp
                                 <td class="py-2 px-2 text-center">
                                     <button type="button" title="{{ $title }}"

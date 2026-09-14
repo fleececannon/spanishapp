@@ -129,4 +129,25 @@ class VerbsGridTest extends TestCase
         $this->assertSame([], $verb->fresh()->sample_tenses);
         $this->assertContains('present', $verb->fresh()->enabled_tenses, 'the tense itself stays on');
     }
+
+    public function test_cells_use_one_symbol_language_on_every_row(): void
+    {
+        $regular = Verb::first(); // drill off
+        $regular->update(['enabled_tenses' => ['infinitive', 'present']]);
+
+        $key = Verb::create([
+            'spanish' => 'Tener', 'english' => 'to have', 'tag' => 'Key Verbs', 'verb_class' => 'ER',
+            'enabled_tenses' => ['present', 'imperfect'], 'sample_tenses' => ['imperfect'],
+            'drill_all_forms' => true, 'unlocked' => true,
+        ]);
+
+        $html = Livewire::test(VerbsGrid::class)->html();
+
+        // Regular verb, present on: it is one sampled card, so it reads as a dash.
+        $this->assertStringContainsString('One sampled form (1 card)', $html);
+        // Key verb, present on: every person.
+        $this->assertStringContainsString('Every person (5 cards)', $html);
+        // Both dash states share the same label, whichever kind of verb they sit on.
+        $this->assertSame(2, substr_count($html, 'One sampled form (1 card)'));
+    }
 }
