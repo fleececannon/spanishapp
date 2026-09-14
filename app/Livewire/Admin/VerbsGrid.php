@@ -33,15 +33,32 @@ class VerbsGrid extends Component
         return Tense::cases();
     }
 
+    /**
+     * Each click moves the tense cell one step: off -> every form -> one sampled
+     * form -> off. The middle "sampled" stop only exists on drill-all-forms verbs
+     * (and never for the infinitive); everywhere else a tense is simply on or off.
+     */
     public function toggleTense(int $verbId, string $tense): void
     {
         $verb = Verb::findOrFail($verbId);
-        $tenses = $verb->enabled_tenses ?? [];
+        $enabled = $verb->enabled_tenses ?? [];
+        $sampled = $verb->sample_tenses ?? [];
 
-        $verb->enabled_tenses = in_array($tense, $tenses, true)
-            ? array_values(array_diff($tenses, [$tense]))
-            : [...$tenses, $tense];
+        $canSample = $verb->drill_all_forms && $tense !== Tense::Infinitive->value;
+        $isOn = in_array($tense, $enabled, true);
+        $isSampled = in_array($tense, $sampled, true);
 
+        if (! $isOn) {
+            $enabled[] = $tense;                                    // off -> on
+        } elseif ($canSample && ! $isSampled) {
+            $sampled[] = $tense;                                    // on -> sampled
+        } else {
+            $enabled = array_values(array_diff($enabled, [$tense])); // sampled (or on) -> off
+            $sampled = array_values(array_diff($sampled, [$tense]));
+        }
+
+        $verb->enabled_tenses = $enabled;
+        $verb->sample_tenses = $sampled;
         $verb->save();
     }
 
@@ -56,6 +73,9 @@ class VerbsGrid extends Component
     {
         $verb = Verb::findOrFail($verbId);
         $verb->drill_all_forms = ! $verb->drill_all_forms;
+        if (! $verb->drill_all_forms) {
+            $verb->sample_tenses = []; // the dash state only means something with drill on
+        }
         $verb->save();
     }
 

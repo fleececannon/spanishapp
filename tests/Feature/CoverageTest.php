@@ -142,6 +142,39 @@ class CoverageTest extends TestCase
         $this->assertStringContainsString('present', strtolower($req['verbUses'][0]));
     }
 
+    public function test_a_sampled_tense_on_a_key_verb_needs_one_card_not_five(): void
+    {
+        $verb = $this->keyVerb(); // drill_all_forms, present
+        $verb->update(['enabled_tenses' => ['present', 'imperfect'], 'sample_tenses' => ['imperfect']]);
+
+        $slots = app(CoverageService::class)->requiredSlots();
+        $present = array_filter($slots, fn ($s) => $s['kind'] === 'verb' && $s['tense'] === 'present');
+        $imperfect = array_filter($slots, fn ($s) => $s['kind'] === 'verb' && $s['tense'] === 'imperfect');
+
+        $this->assertCount(5, $present, 'un-sampled tense still drills every person');
+        $this->assertCount(1, $imperfect, 'sampled tense wants exactly one card');
+        $this->assertNull(array_values($imperfect)[0]['person']);
+    }
+
+    public function test_any_person_covers_a_sampled_tense_on_a_key_verb(): void
+    {
+        $verb = $this->keyVerb();
+        $verb->update(['enabled_tenses' => ['imperfect'], 'sample_tenses' => ['imperfect']]);
+
+        // The generator was asked for one form; whichever person it used, the slot is filled.
+        $this->cardUsing([['type' => 'verb', 'id' => $verb->id, 'tense' => 'imperfect', 'person' => '3rd_plural']]);
+
+        $summary = app(CoverageService::class)->summary();
+        $this->assertSame(100, $summary['percent']);
+        $this->assertSame(1, $summary['total_slots']);
+
+        // ...and the requirement it was phrased from still named a person.
+        $verb->update(['enabled_tenses' => ['imperfect', 'past'], 'sample_tenses' => ['imperfect', 'past']]);
+        $req = app(CoverageService::class)->gapRequirements(12)['verbUses'];
+        $this->assertCount(1, $req);
+        $this->assertStringContainsString(' as ', $req[0]);
+    }
+
     public function test_sample_verbs_are_asked_for_a_specific_person(): void
     {
         // A non-drill verb gets one card per tense. Without a named person the

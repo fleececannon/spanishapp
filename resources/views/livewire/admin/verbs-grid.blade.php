@@ -3,7 +3,7 @@
         <div>
             <flux:heading size="xl">Verbs grid</flux:heading>
             <flux:text class="mt-1">
-                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. Tick a tense to let the AI use that verb in that form.
+                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. Click a tense once to turn it on; on drill-all verbs, click again for a dash — one sampled form instead of every person.
             </flux:text>
         </div>
         <div class="flex items-center gap-2">
@@ -52,11 +52,21 @@
                                     class="size-4 rounded border-zinc-300 cursor-pointer" />
                             </td>
                             @foreach ($tenses as $tense)
+                                @php
+                                    $on = in_array($tense->value, $verb->enabled_tenses ?? [], true);
+                                    $sampled = $on && in_array($tense->value, $verb->sample_tenses ?? [], true);
+                                    $every = $on && $verb->drillsEveryForm($tense);
+                                    $title = ! $on ? 'Off — click to turn on'
+                                        : ($sampled ? 'One sampled form — click to turn off'
+                                        : ($every ? 'Every person — click for one sampled form' : 'On (one card) — click to turn off'));
+                                @endphp
                                 <td class="py-2 px-2 text-center">
-                                    <input type="checkbox"
-                                        @checked(in_array($tense->value, $verb->enabled_tenses ?? [], true))
+                                    <button type="button" title="{{ $title }}"
                                         wire:click="toggleTense({{ $verb->id }}, '{{ $tense->value }}')"
-                                        class="size-4 rounded border-zinc-300 cursor-pointer" />
+                                        class="inline-flex size-4 items-center justify-center rounded border text-xs font-bold leading-none select-none cursor-pointer
+                                            {{ ! $on ? 'border-zinc-300 dark:border-zinc-600' : ($sampled ? 'border-amber-500 bg-amber-500 text-white' : 'border-indigo-500 bg-indigo-500 text-white') }}">
+                                        @if ($sampled) – @elseif ($on) ✓ @endif
+                                    </button>
                                 </td>
                             @endforeach
                         </tr>

@@ -75,4 +75,58 @@ class VerbsGridTest extends TestCase
             ->call('addVerb')
             ->assertHasErrors('newGroup');
     }
+
+    public function test_tense_cell_cycles_off_on_sampled_off_on_a_drill_verb(): void
+    {
+        $verb = Verb::first();
+        $verb->update(['drill_all_forms' => true]);
+
+        $grid = Livewire::test(VerbsGrid::class);
+
+        $grid->call('toggleTense', $verb->id, 'present');          // off -> on
+        $this->assertContains('present', $verb->fresh()->enabled_tenses);
+        $this->assertNotContains('present', $verb->fresh()->sample_tenses ?? []);
+
+        $grid->call('toggleTense', $verb->id, 'present');          // on -> sampled
+        $this->assertContains('present', $verb->fresh()->enabled_tenses);
+        $this->assertContains('present', $verb->fresh()->sample_tenses);
+
+        $grid->call('toggleTense', $verb->id, 'present');          // sampled -> off
+        $this->assertNotContains('present', $verb->fresh()->enabled_tenses);
+        $this->assertNotContains('present', $verb->fresh()->sample_tenses ?? []);
+    }
+
+    public function test_tense_cell_is_a_plain_on_off_without_drill_all(): void
+    {
+        $verb = Verb::first(); // drill_all_forms = false
+
+        $grid = Livewire::test(VerbsGrid::class);
+        $grid->call('toggleTense', $verb->id, 'present');
+        $this->assertContains('present', $verb->fresh()->enabled_tenses);
+
+        $grid->call('toggleTense', $verb->id, 'present');          // straight back off, no dash stop
+        $this->assertNotContains('present', $verb->fresh()->enabled_tenses);
+        $this->assertEmpty($verb->fresh()->sample_tenses ?? []);
+    }
+
+    public function test_infinitive_never_gets_the_dash_state(): void
+    {
+        $verb = Verb::first();
+        $verb->update(['drill_all_forms' => true, 'enabled_tenses' => ['infinitive']]);
+
+        Livewire::test(VerbsGrid::class)->call('toggleTense', $verb->id, 'infinitive'); // on -> off (no sampled stop)
+        $this->assertNotContains('infinitive', $verb->fresh()->enabled_tenses);
+    }
+
+    public function test_turning_drill_all_off_clears_sampled_tenses(): void
+    {
+        $verb = Verb::first();
+        $verb->update(['drill_all_forms' => true, 'enabled_tenses' => ['present'], 'sample_tenses' => ['present']]);
+
+        Livewire::test(VerbsGrid::class)->call('toggleDrill', $verb->id);
+
+        $this->assertFalse($verb->fresh()->drill_all_forms);
+        $this->assertSame([], $verb->fresh()->sample_tenses);
+        $this->assertContains('present', $verb->fresh()->enabled_tenses, 'the tense itself stays on');
+    }
 }

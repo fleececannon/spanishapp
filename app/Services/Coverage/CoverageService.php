@@ -43,7 +43,7 @@ class CoverageService
 
         foreach (Verb::unlocked()->get() as $verb) {
             foreach ($verb->enabled_tenses ?? [] as $tense) {
-                if ($verb->drill_all_forms && $tense !== Tense::Infinitive->value) {
+                if ($verb->drillsEveryForm($tense)) {
                     foreach (Subject::values() as $person) {
                         $slots["verb:{$verb->id}:{$tense}:{$person}"] = [
                             'kind' => 'verb', 'verb' => $verb, 'tense' => $tense, 'person' => $person,
@@ -88,7 +88,7 @@ class CoverageService
      */
     private function keysForStatuses(array $statuses): array
     {
-        $drill = Verb::query()->pluck('drill_all_forms', 'id');
+        $verbs = Verb::query()->get(['id', 'drill_all_forms', 'sample_tenses'])->keyBy('id');
         $covered = [];
 
         // Vocab cards are bare word drills — only sentence cards count as coverage,
@@ -117,9 +117,9 @@ class CoverageService
                 }
 
                 $person = $use['person'] ?? null;
-                $isDrill = (bool) ($drill[$id] ?? false);
+                $drillsEveryForm = $verbs->get($id)?->drillsEveryForm($tense) ?? false;
 
-                if ($isDrill && $tense !== Tense::Infinitive->value && $person) {
+                if ($drillsEveryForm && $person) {
                     $covered["verb:{$id}:{$tense}:{$person}"] = true;
                 } else {
                     $covered["verb:{$id}:{$tense}:any"] = true;
