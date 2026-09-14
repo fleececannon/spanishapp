@@ -15,7 +15,7 @@ class Verb extends Model
     {
         return [
             'enabled_tenses' => 'array',
-            'sample_tenses' => 'array',
+            'full_tenses' => 'array',
             'drill_all_forms' => 'boolean',
             'unlocked' => 'boolean',
             'vocab_card' => 'boolean',
@@ -29,17 +29,16 @@ class Verb extends Model
     }
 
     /**
-     * Does this tense need a card for every person? True only for drill-all-forms
-     * verbs, never for the infinitive, and not for tenses the grid has switched to
-     * "one sampled form" (the dash state).
+     * Does this tense want a card for every person (the grid's check state)?
+     * Any other enabled conjugated tense gets one sampled form (the dash).
+     * The infinitive has no persons, so never.
      */
     public function drillsEveryForm(Tense|string $tense): bool
     {
         $value = $tense instanceof Tense ? $tense->value : $tense;
 
-        return $this->drill_all_forms
-            && $value !== Tense::Infinitive->value
-            && ! in_array($value, $this->sample_tenses ?? [], true);
+        return $value !== Tense::Infinitive->value
+            && in_array($value, $this->full_tenses ?? [], true);
     }
 
     /** Does this verb permit generation in the given tense? */

@@ -3,7 +3,7 @@
         <div>
             <flux:heading size="xl">Verbs grid</flux:heading>
             <flux:text class="mt-1">
-                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. ✓ = every person (5 cards, drill-all verbs) · – = one sampled form (1 card). Click a tense to turn it on; on drill-all verbs, click again to go from ✓ to –.
+                {{ $unlockedCount }} of {{ $totalCount }} verbs unlocked. Click a tense to cycle it: ✓ every person (5 cards) → – one sampled form (1 card) → off.
             </flux:text>
         </div>
         <div class="flex items-center gap-2">
@@ -22,7 +22,6 @@
                     <tr class="border-b border-zinc-200 dark:border-zinc-700 text-left">
                         <th class="py-2 pr-4 font-medium">Verb</th>
                         <th class="py-2 px-2 font-medium text-center">Unlocked</th>
-                        <th class="py-2 px-2 font-medium text-center">Drill all</th>
                         <th class="py-2 px-2 font-medium text-center whitespace-nowrap">Vocab card</th>
                         @foreach ($tenses as $tense)
                             <th class="py-2 px-2 font-medium text-center whitespace-nowrap">{{ ucfirst($tense->value) }}</th>
@@ -42,20 +41,14 @@
                                     class="size-4 rounded border-zinc-300 cursor-pointer" />
                             </td>
                             <td class="py-2 px-2 text-center">
-                                <input type="checkbox" @checked($verb->drill_all_forms)
-                                    wire:click="toggleDrill({{ $verb->id }})"
-                                    class="size-4 rounded border-zinc-300 cursor-pointer" />
-                            </td>
-                            <td class="py-2 px-2 text-center">
                                 <input type="checkbox" @checked($verb->vocab_card)
                                     wire:click="toggleVocab({{ $verb->id }})"
                                     class="size-4 rounded border-zinc-300 cursor-pointer" />
                             </td>
                             @foreach ($tenses as $tense)
                                 @php
-                                    // One visual language for every row: check = every person (5 cards),
-                                    // dash = one sampled form (1 card). The infinitive has no persons,
-                                    // so it just shows a check when on.
+                                    // check = every person (5 cards), dash = one sampled form (1 card).
+                                    // The infinitive has no persons, so it just shows a check when on.
                                     $on = in_array($tense->value, $verb->enabled_tenses ?? [], true);
                                     $every = $on && $verb->drillsEveryForm($tense);
                                     $sampled = $on && ! $every && $tense !== \App\Enums\Tense::Infinitive;

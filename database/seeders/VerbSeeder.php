@@ -19,6 +19,10 @@ class VerbSeeder extends Seeder
                     'verb_class' => $row['verb_class'],
                     'enabled_tenses' => $row['enabled_tenses'],
                     'drill_all_forms' => $row['drill_all_forms'],
+                    // Key verbs start with every enabled conjugated tense at "every person".
+                    'full_tenses' => $row['drill_all_forms']
+                        ? array_values(array_diff($row['enabled_tenses'], ['infinitive']))
+                        : [],
                     'unlocked' => $row['unlocked'],
                 ],
             );

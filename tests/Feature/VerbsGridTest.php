@@ -76,78 +76,48 @@ class VerbsGridTest extends TestCase
             ->assertHasErrors('newGroup');
     }
 
-    public function test_tense_cell_cycles_off_on_sampled_off_on_a_drill_verb(): void
+    public function test_tense_cell_cycles_off_every_person_one_form_off_on_any_verb(): void
     {
-        $verb = Verb::first();
-        $verb->update(['drill_all_forms' => true]);
-
+        $verb = Verb::first(); // an ordinary Verb Set verb, no drill flag
         $grid = Livewire::test(VerbsGrid::class);
 
-        $grid->call('toggleTense', $verb->id, 'present');          // off -> on
+        $grid->call('toggleTense', $verb->id, 'present');          // off -> every person
         $this->assertContains('present', $verb->fresh()->enabled_tenses);
-        $this->assertNotContains('present', $verb->fresh()->sample_tenses ?? []);
+        $this->assertContains('present', $verb->fresh()->full_tenses);
+        $this->assertTrue($verb->fresh()->drillsEveryForm('present'));
 
-        $grid->call('toggleTense', $verb->id, 'present');          // on -> sampled
+        $grid->call('toggleTense', $verb->id, 'present');          // every person -> one sampled form
         $this->assertContains('present', $verb->fresh()->enabled_tenses);
-        $this->assertContains('present', $verb->fresh()->sample_tenses);
+        $this->assertNotContains('present', $verb->fresh()->full_tenses);
+        $this->assertFalse($verb->fresh()->drillsEveryForm('present'));
 
-        $grid->call('toggleTense', $verb->id, 'present');          // sampled -> off
+        $grid->call('toggleTense', $verb->id, 'present');          // one form -> off
         $this->assertNotContains('present', $verb->fresh()->enabled_tenses);
-        $this->assertNotContains('present', $verb->fresh()->sample_tenses ?? []);
+        $this->assertNotContains('present', $verb->fresh()->full_tenses);
     }
 
-    public function test_tense_cell_is_a_plain_on_off_without_drill_all(): void
+    public function test_infinitive_only_goes_on_and_off(): void
     {
-        $verb = Verb::first(); // drill_all_forms = false
-
+        $verb = Verb::first(); // infinitive already on
         $grid = Livewire::test(VerbsGrid::class);
-        $grid->call('toggleTense', $verb->id, 'present');
-        $this->assertContains('present', $verb->fresh()->enabled_tenses);
 
-        $grid->call('toggleTense', $verb->id, 'present');          // straight back off, no dash stop
-        $this->assertNotContains('present', $verb->fresh()->enabled_tenses);
-        $this->assertEmpty($verb->fresh()->sample_tenses ?? []);
-    }
-
-    public function test_infinitive_never_gets_the_dash_state(): void
-    {
-        $verb = Verb::first();
-        $verb->update(['drill_all_forms' => true, 'enabled_tenses' => ['infinitive']]);
-
-        Livewire::test(VerbsGrid::class)->call('toggleTense', $verb->id, 'infinitive'); // on -> off (no sampled stop)
+        $grid->call('toggleTense', $verb->id, 'infinitive');
         $this->assertNotContains('infinitive', $verb->fresh()->enabled_tenses);
+
+        $grid->call('toggleTense', $verb->id, 'infinitive');
+        $this->assertContains('infinitive', $verb->fresh()->enabled_tenses);
+        $this->assertNotContains('infinitive', $verb->fresh()->full_tenses ?? [], 'the infinitive never drills persons');
     }
 
-    public function test_turning_drill_all_off_clears_sampled_tenses(): void
+    public function test_cells_show_check_for_every_person_and_dash_for_one_form(): void
     {
         $verb = Verb::first();
-        $verb->update(['drill_all_forms' => true, 'enabled_tenses' => ['present'], 'sample_tenses' => ['present']]);
-
-        Livewire::test(VerbsGrid::class)->call('toggleDrill', $verb->id);
-
-        $this->assertFalse($verb->fresh()->drill_all_forms);
-        $this->assertSame([], $verb->fresh()->sample_tenses);
-        $this->assertContains('present', $verb->fresh()->enabled_tenses, 'the tense itself stays on');
-    }
-
-    public function test_cells_use_one_symbol_language_on_every_row(): void
-    {
-        $regular = Verb::first(); // drill off
-        $regular->update(['enabled_tenses' => ['infinitive', 'present']]);
-
-        $key = Verb::create([
-            'spanish' => 'Tener', 'english' => 'to have', 'tag' => 'Key Verbs', 'verb_class' => 'ER',
-            'enabled_tenses' => ['present', 'imperfect'], 'sample_tenses' => ['imperfect'],
-            'drill_all_forms' => true, 'unlocked' => true,
-        ]);
+        $verb->update(['enabled_tenses' => ['infinitive', 'present', 'past'], 'full_tenses' => ['present']]);
 
         $html = Livewire::test(VerbsGrid::class)->html();
 
-        // Regular verb, present on: it is one sampled card, so it reads as a dash.
-        $this->assertStringContainsString('One sampled form (1 card)', $html);
-        // Key verb, present on: every person.
-        $this->assertStringContainsString('Every person (5 cards)', $html);
-        // Both dash states share the same label, whichever kind of verb they sit on.
-        $this->assertSame(2, substr_count($html, 'One sampled form (1 card)'));
+        $this->assertStringContainsString('Every person (5 cards)', $html);      // present
+        $this->assertStringContainsString('One sampled form (1 card)', $html);   // past
+        $this->assertStringNotContainsString('Drill all', $html);
     }
 }

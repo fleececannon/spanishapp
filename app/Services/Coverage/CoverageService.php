@@ -13,8 +13,8 @@ use App\Models\Word;
 /**
  * Works out which (verb x tense [x person]) slots and target words the unlocked
  * curriculum requires, which are already covered by active cards, and what's
- * still missing. Key verbs (drill_all_forms) require every person per conjugated
- * tense; other verbs need only one card per tense.
+ * still missing. A tense in the verb's full_tenses requires every person; any
+ * other enabled tense needs only one card.
  */
 class CoverageService
 {
@@ -88,7 +88,7 @@ class CoverageService
      */
     private function keysForStatuses(array $statuses): array
     {
-        $verbs = Verb::query()->get(['id', 'drill_all_forms', 'sample_tenses'])->keyBy('id');
+        $verbs = Verb::query()->get(['id', 'full_tenses'])->keyBy('id');
         $covered = [];
 
         // Vocab cards are bare word drills — only sentence cards count as coverage,

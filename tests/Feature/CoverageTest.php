@@ -19,7 +19,7 @@ class CoverageTest extends TestCase
     {
         return Verb::create([
             'spanish' => 'Tener', 'english' => 'to have', 'tag' => 'Key Verbs',
-            'verb_class' => 'ER', 'enabled_tenses' => ['present'],
+            'verb_class' => 'ER', 'enabled_tenses' => ['present'], 'full_tenses' => ['present'],
             'drill_all_forms' => true, 'unlocked' => true,
         ]);
     }
@@ -142,10 +142,10 @@ class CoverageTest extends TestCase
         $this->assertStringContainsString('present', strtolower($req['verbUses'][0]));
     }
 
-    public function test_a_sampled_tense_on_a_key_verb_needs_one_card_not_five(): void
+    public function test_a_dashed_tense_needs_one_card_while_a_checked_one_needs_five(): void
     {
-        $verb = $this->keyVerb(); // drill_all_forms, present
-        $verb->update(['enabled_tenses' => ['present', 'imperfect'], 'sample_tenses' => ['imperfect']]);
+        $verb = $this->keyVerb(); // present at "every person"
+        $verb->update(['enabled_tenses' => ['present', 'imperfect'], 'full_tenses' => ['present']]);
 
         $slots = app(CoverageService::class)->requiredSlots();
         $present = array_filter($slots, fn ($s) => $s['kind'] === 'verb' && $s['tense'] === 'present');
@@ -156,10 +156,10 @@ class CoverageTest extends TestCase
         $this->assertNull(array_values($imperfect)[0]['person']);
     }
 
-    public function test_any_person_covers_a_sampled_tense_on_a_key_verb(): void
+    public function test_any_person_covers_a_dashed_tense(): void
     {
         $verb = $this->keyVerb();
-        $verb->update(['enabled_tenses' => ['imperfect'], 'sample_tenses' => ['imperfect']]);
+        $verb->update(['enabled_tenses' => ['imperfect'], 'full_tenses' => []]);
 
         // The generator was asked for one form; whichever person it used, the slot is filled.
         $this->cardUsing([['type' => 'verb', 'id' => $verb->id, 'tense' => 'imperfect', 'person' => '3rd_plural']]);
@@ -169,7 +169,7 @@ class CoverageTest extends TestCase
         $this->assertSame(1, $summary['total_slots']);
 
         // ...and the requirement it was phrased from still named a person.
-        $verb->update(['enabled_tenses' => ['imperfect', 'past'], 'sample_tenses' => ['imperfect', 'past']]);
+        $verb->update(['enabled_tenses' => ['imperfect', 'past'], 'full_tenses' => []]);
         $req = app(CoverageService::class)->gapRequirements(12)['verbUses'];
         $this->assertCount(1, $req);
         $this->assertStringContainsString(' as ', $req[0]);
