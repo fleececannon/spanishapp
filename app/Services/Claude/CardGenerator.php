@@ -37,8 +37,10 @@ class CardGenerator
      */
     public function generateForGaps(array $requiredVerbUses, array $requiredWords): int
     {
-        $lines = 'Write as few natural sentences as possible that TOGETHER cover ALL of the required uses below. '.
-            'Pack multiple required uses into each sentence wherever it still reads naturally to a child.';
+        $lines = 'Write natural sentences that TOGETHER cover ALL of the required uses below. '.
+            'A sentence may combine DIFFERENT verbs and words when it still reads naturally to a child, '.
+            'but use each verb in only ONE person and ONE tense per sentence — never "yo pongo... y tú pones...". '.
+            'Vary the people, places and things across the batch instead of reusing the same few nouns.';
 
         if ($requiredVerbUses) {
             $lines .= "\n\nREQUIRED VERB USES (each must appear at least once, in the stated tense and person):\n- ".implode("\n- ", $requiredVerbUses);
@@ -136,6 +138,7 @@ class CardGenerator
         HARD RULES (the fence — never break these):
         - Use ONLY the verbs in the allowlist, and only in the tenses listed in each verb's enabled_tenses.
         - Use ONLY the words in the allowlist. Never introduce a verb or word that is not in the allowlist.
+        - One form per verb per sentence: never conjugate the same verb in two persons or two tenses inside one sentence. A card drills one form, not a conjugation table.
         - For every verb you use, list it in verbs_used as {id, tense, person} using the allowlist id, the tense you used it in, and the grammatical person (one of: 1st_singular, 2nd_singular, 3rd_singular, 1st_plural, 3rd_plural; use null only for the infinitive). For every allowlist word you use, list its id in word_ids.
 
         For each card also return a must_match object naming the meaning-critical features a grader must enforce:

@@ -96,4 +96,25 @@ class CardGeneratorTest extends TestCase
 
         $this->assertSame(3, app(CardGenerator::class)->generate(3));
     }
+
+    public function test_prompts_forbid_conjugation_table_sentences(): void
+    {
+        $this->unlockedVerb();
+        $captured = [];
+        $this->mock(ClaudeClient::class, function ($mock) use (&$captured) {
+            $mock->shouldReceive('structured')
+                ->withArgs(function ($system, $user) use (&$captured) {
+                    $captured = compact('system', 'user');
+
+                    return true;
+                })
+                ->andReturn(['cards' => []]);
+        });
+
+        app(CardGenerator::class)->generateForGaps(['Tener (to have) in Present as yo (1st_singular)'], []);
+
+        $this->assertStringContainsString('One form per verb per sentence', $captured['system']);
+        $this->assertStringContainsString('only ONE person and ONE tense per sentence', $captured['user']);
+        $this->assertStringNotContainsString('Pack multiple required uses', $captured['user']);
+    }
 }
