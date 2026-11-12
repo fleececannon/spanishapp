@@ -1,0 +1,673 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: app/Livewire/Admin/Cards.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Cards\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Cards.php
+
+		-
+			message: '#^Offset ''gender'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Livewire/Admin/Cards.php
+
+		-
+			message: '#^Offset ''subject'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Livewire/Admin/Cards.php
+
+		-
+			message: '#^Offset ''tense'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Livewire/Admin/Cards.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Coverage\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Coverage.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Card\:\:\$total_lapses\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Admin/Generation.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Card\:\:\$total_reps\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Admin/Generation.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Generation\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Generation.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\LessonView\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/LessonView.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Lessons\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Lessons.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Lessons\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Livewire/Admin/Lessons.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\MyPractice\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/MyPractice.php
+
+		-
+			message: '#^Property App\\Livewire\\Admin\\MyPractice\:\:\$queue type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Livewire/Admin/MyPractice.php
+
+		-
+			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: app/Livewire/Admin/MyVerbs.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\MyVerbs\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/MyVerbs.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, list\<string\>\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Livewire/Admin/MyVerbs.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Patterns\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Patterns.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Progress\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Progress.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\Settings\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/Settings.php
+
+		-
+			message: '#^Cannot assign new offset to array\|string\.$#'
+			identifier: offsetAssign.dimType
+			count: 2
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\VerbsGrid\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\VerbsGrid\:\:tenses\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of function in_array expects array, array\|string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Property App\\Models\\Verb\:\:\$enabled_tenses \(string\) does not accept list\<string\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Property App\\Models\\Verb\:\:\$full_tenses \(string\|null\) does not accept list\<string\>\|string\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Livewire/Admin/VerbsGrid.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Livewire/Admin/WordsLibrary.php
+
+		-
+			message: '#^Method App\\Livewire\\Admin\\WordsLibrary\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Admin/WordsLibrary.php
+
+		-
+			message: '#^Property App\\Models\\Word\:\:\$role \(string\) does not accept App\\Enums\\WordRole\:\:Target\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Livewire/Admin/WordsLibrary.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\WordRole\:\:Target will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Livewire/Admin/WordsLibrary.php
+
+		-
+			message: '#^Unable to resolve the template type TGroupKey in call to method Illuminate\\Support\\Collection\<int,App\\Models\\Word\>\:\:groupBy\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Livewire/Admin/WordsLibrary.php
+
+		-
+			message: '#^Cannot call method isSameDay\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Cannot call method isToday\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Cannot call method lte\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:conceptMastery\(\) has parameter \$cards with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:conceptMastery\(\) has parameter \$states with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:troubleCards\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:troubleCards\(\) has parameter \$cards with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Dashboard\:\:troubleCards\(\) has parameter \$states with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Property App\\Livewire\\Dashboard\:\:\$kid has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: app/Livewire/Dashboard.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Livewire/Kid/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Dashboard\:\:logout\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Dashboard\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Dashboard\:\:startLearning\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Dashboard.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Login\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Login.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Review\:\:kid\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Review.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Review\:\:logout\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Review.php
+
+		-
+			message: '#^Method App\\Livewire\\Kid\\Review\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Kid/Review.php
+
+		-
+			message: '#^Property App\\Livewire\\Kid\\Review\:\:\$queue type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Livewire/Kid/Review.php
+
+		-
+			message: '#^Method App\\Livewire\\Landing\:\:render\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Livewire/Landing.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Kid\|App\\Models\\User\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Settings/Profile.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Kid\|App\\Models\\User\:\:\$email_verified_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Settings/Profile.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Kid\|App\\Models\\User\:\:\$two_factor_confirmed_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Settings/Security.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Kid\|App\\Models\\User\:\:\$two_factor_secret\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Settings/Security.php
+
+		-
+			message: '#^Call to an undefined method App\\Models\\Kid\|App\\Models\\User\:\:hasEnabledTwoFactorAuthentication\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: app/Livewire/Settings/Security.php
+
+		-
+			message: '#^Call to an undefined method App\\Models\\Kid\|App\\Models\\User\:\:passkeys\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: app/Livewire/Settings/Security.php
+
+		-
+			message: '#^Call to an undefined method App\\Models\\Kid\|App\\Models\\User\:\:twoFactorQrCodeSvg\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Settings/Security.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Kid\|App\\Models\\User\:\:\$two_factor_recovery_codes\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Livewire/Settings/TwoFactor/RecoveryCodes.php
+
+		-
+			message: '#^Call to an undefined method App\\Models\\Kid\|App\\Models\\User\:\:hasEnabledTwoFactorAuthentication\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Settings/TwoFactor/RecoveryCodes.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:reviewStates\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeActive\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeActive\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeDirection\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeDirection\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeDraft\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Card\:\:scopeDraft\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Card.php
+
+		-
+			message: '#^Method App\\Models\\Kid\:\:reviewStates\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Kid.php
+
+		-
+			message: '#^Method App\\Models\\MyVerb\:\:scopeInTraining\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/MyVerb.php
+
+		-
+			message: '#^Method App\\Models\\MyVerb\:\:scopeInTraining\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/MyVerb.php
+
+		-
+			message: '#^Method App\\Models\\Pattern\:\:scopeEnabled\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Pattern.php
+
+		-
+			message: '#^Method App\\Models\\Pattern\:\:scopeEnabled\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Pattern.php
+
+		-
+			message: '#^Method App\\Models\\ReviewState\:\:card\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ReviewState.php
+
+		-
+			message: '#^Method App\\Models\\ReviewState\:\:kid\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ReviewState.php
+
+		-
+			message: '#^Method App\\Models\\ReviewState\:\:scopeOnActiveCards\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ReviewState.php
+
+		-
+			message: '#^Method App\\Models\\ReviewState\:\:scopeOnActiveCards\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ReviewState.php
+
+		-
+			message: '#^Method App\\Models\\Verb\:\:scopeUnlocked\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Verb.php
+
+		-
+			message: '#^Method App\\Models\\Verb\:\:scopeUnlocked\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Verb.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of function in_array expects array, array\|string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Models/Verb.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeIngredients\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeIngredients\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeTargets\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeTargets\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeUnlocked\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Method App\\Models\\Word\:\:scopeUnlocked\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Word.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Method App\\Services\\Claude\\CardGenerator\:\:persist\(\) has parameter \$card with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Method App\\Services\\Claude\\CardGenerator\:\:persist\(\) has parameter \$verbs with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Method App\\Services\\Claude\\CardGenerator\:\:persist\(\) has parameter \$words with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Method App\\Services\\Claude\\CardGenerator\:\:userPrompt\(\) has parameter \$verbs with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Method App\\Services\\Claude\\CardGenerator\:\:userPrompt\(\) has parameter \$words with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Parameter \#2 \$patterns of method App\\Services\\Claude\\CardGenerator\:\:systemPrompt\(\) expects list\<string\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<\(int\|string\),array\<string, mixed\>\>\:\:values\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:all\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Services/Claude/CardGenerator.php
+
+		-
+			message: '#^Access to an undefined property Anthropic\\Messages\\BashCodeExecutionToolResultBlock\|Anthropic\\Messages\\CodeExecutionToolResultBlock\|Anthropic\\Messages\\ContainerUploadBlock\|Anthropic\\Messages\\RedactedThinkingBlock\|Anthropic\\Messages\\ServerToolUseBlock\|Anthropic\\Messages\\TextBlock\|Anthropic\\Messages\\TextEditorCodeExecutionToolResultBlock\|Anthropic\\Messages\\ThinkingBlock\|Anthropic\\Messages\\ToolSearchToolResultBlock\|Anthropic\\Messages\\ToolUseBlock\|Anthropic\\Messages\\WebFetchToolResultBlock\|Anthropic\\Messages\\WebSearchToolResultBlock\:\:\$text\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Claude/ClaudeClient.php
+
+		-
+			message: '#^Argument of an invalid type array\|string supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 2
+			path: app/Services/Coverage/CoverageService.php
+
+		-
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
+			count: 2
+			path: app/Services/Coverage/CoverageService.php
+
+		-
+			message: '#^Method App\\Services\\Coverage\\CoverageService\:\:summary\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Coverage/CoverageService.php
+
+		-
+			message: '#^Property App\\Models\\MyVerb\:\:\$interval_days \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Services/Srs/MyVerbScheduler.php
+
+		-
+			message: '#^Property App\\Models\\ReviewState\:\:\$interval_days \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Services/Srs/Scheduler.php
+
+		-
+			message: '#^Property App\\Models\\ReviewState\:\:\$last_result \(string\|null\) does not accept App\\Enums\\ReviewResult\:\:NeedsWork\|App\\Enums\\ReviewResult\:\:Pass\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Services/Srs/Scheduler.php
+
+		-
+			message: '#^Offset ''id'' on non\-empty\-string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Vocab/VocabCardService.php
+
+		-
+			message: '#^Offset ''type'' on non\-empty\-string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Vocab/VocabCardService.php
+
+		-
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/migrations/2026_08_26_000001_create_my_verbs_table.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/migrations/2026_08_26_000001_create_my_verbs_table.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/migrations/2026_08_26_000001_create_my_verbs_table.php
+
+		-
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/VerbSeeder.php
+
+		-
+			message: '#^Offset ''type'' on non\-empty\-string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: routes/web.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between null and ''verb'' will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: routes/web.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between null and ''word'' will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: routes/web.php
