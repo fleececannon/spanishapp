@@ -33,8 +33,8 @@
             <flux:card wire:key="card-{{ $card->id }}" class="py-3">
                 <div class="flex items-start gap-3">
                     <div class="flex-1 min-w-0">
-                        <div class="font-medium">{{ $direction->prompt($card) }}</div>
-                        <div class="text-zinc-500 text-sm">{{ $direction->answer($card) }}</div>
+                        <x-card-text :text="$direction->prompt($card)" size="sm" class="font-medium" />
+                        <x-card-text :text="$direction->answer($card)" size="sm" class="mt-1 text-zinc-500" />
                         <div class="mt-1 text-xs text-zinc-400">
                             @php $mm = $card->must_match ?? []; @endphp
                             <flux:badge size="sm" :color="match ($card->status->value) { 'active' => 'green', 'draft' => 'amber', default => 'zinc' }">{{ $card->status->value }}</flux:badge>

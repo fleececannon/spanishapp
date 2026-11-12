@@ -19,7 +19,7 @@
             </div>
 
             <div class="rounded-xl bg-zinc-100 dark:bg-zinc-800 p-6 text-center">
-                <span class="text-2xl font-semibold">{{ $deck->prompt($card) }}</span>
+                <x-card-text :text="$deck->prompt($card)" size="xl" />
             </div>
 
             {{-- Say it out loud, reveal, then a grown-up marks it. --}}
@@ -28,7 +28,7 @@
             @else
                 <div class="text-center">
                     <flux:text class="text-zinc-500 text-sm">{{ $deck->answerLabel() }}</flux:text>
-                    <div class="font-medium text-lg">{{ $deck->answer($card) }}</div>
+                    <x-card-text :text="$deck->answer($card)" class="mt-1" />
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <flux:button wire:click="mark(false)" variant="danger" icon="x-mark">Missed it</flux:button>

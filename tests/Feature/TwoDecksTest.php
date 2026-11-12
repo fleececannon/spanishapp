@@ -92,6 +92,29 @@ class TwoDecksTest extends TestCase
         $this->assertSame(1, ReviewState::count(), 'the Spanish → English card is untouched');
     }
 
+    public function test_a_question_and_reply_card_is_shown_on_separate_lines(): void
+    {
+        $this->assertSame(['¿Tienes agua?', 'Sí, tengo agua.'], Direction::lines('¿Tienes agua? — Sí, tengo agua.'));
+        $this->assertSame(['¿Tienes agua?', 'Sí, tengo agua.'], Direction::lines("¿Tienes agua?\nSí, tengo agua."));
+        $this->assertSame(['Tengo hambre'], Direction::lines('Tengo hambre'));
+        // A hyphen inside a word or phrase is not a separator.
+        $this->assertSame(['Ex-presidente - hoy'], Direction::lines('Ex-presidente - hoy'));
+
+        $kid = $this->kid();
+        $this->card(Direction::EnToEs, '¿Tienes agua? — Sí, tengo agua.', 'Do you have water? — Yes, I have water.');
+        $this->actingAs($kid, 'kid');
+
+        Livewire::withQueryParams(['direction' => 'en_to_es'])
+            ->test(Review::class)
+            ->assertSee('Do you have water?')
+            ->assertSee('Yes, I have water.')
+            ->assertDontSee('Do you have water? — Yes, I have water.')
+            ->call('reveal')
+            ->assertSee('¿Tienes agua?')
+            ->assertSee('Sí, tengo agua.')
+            ->assertDontSee('¿Tienes agua? — Sí, tengo agua.');
+    }
+
     public function test_an_unknown_direction_falls_back_to_spanish_to_english(): void
     {
         $kid = $this->kid();

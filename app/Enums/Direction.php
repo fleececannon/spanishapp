@@ -39,6 +39,20 @@ enum Direction: string
         return $this === self::EsToEn ? $card->english : $card->spanish;
     }
 
+    /**
+     * A card side can hold a short exchange — a question and its reply —
+     * written either on separate lines or as "question — reply". Split it so
+     * each part can be shown on its own line.
+     *
+     * @return list<string>
+     */
+    public static function lines(string $text): array
+    {
+        $parts = preg_split('/\R|\s+—\s+/u', $text) ?: [$text];
+
+        return array_values(array_filter(array_map('trim', $parts), fn (string $part) => $part !== ''));
+    }
+
     public function answerLabel(): string
     {
         return $this === self::EsToEn ? 'In English' : 'In Spanish';
