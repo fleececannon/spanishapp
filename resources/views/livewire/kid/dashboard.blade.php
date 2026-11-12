@@ -12,9 +12,30 @@
         <flux:button wire:click="logout" variant="ghost" size="sm" icon="arrow-right-start-on-rectangle">Sign out</flux:button>
     </div>
 
+    {{-- One tab per deck. Each is tracked and practised on its own. --}}
+    <div class="mb-4 grid grid-cols-2 gap-1 rounded-2xl bg-zinc-200/70 p-1 dark:bg-zinc-800" role="tablist" aria-label="Decks">
+        @foreach ($tabs as $t)
+            <button type="button" role="tab" wire:key="tab-{{ $t['value'] }}" wire:click="$set('tab', '{{ $t['value'] }}')"
+                aria-selected="{{ $t['value'] === $deck->value ? 'true' : 'false' }}"
+                class="flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold transition {{ $t['value'] === $deck->value
+                    ? 'bg-white text-zinc-900 shadow-sm dark:bg-zinc-600 dark:text-white'
+                    : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200' }}">
+                <span>{{ $t['label'] }}</span>
+                @if ($t['todo'] > 0)
+                    <span class="rounded-full bg-indigo-500 px-2 py-0.5 text-xs font-bold leading-none text-white">{{ $t['todo'] }}</span>
+                @endif
+            </button>
+        @endforeach
+    </div>
+
     {{-- Today's work --}}
     <flux:card class="space-y-6 rounded-3xl border-none shadow-xl">
-        @if ($todo > 0)
+        @if ($total === 0)
+            <div class="py-6 text-center space-y-2">
+                <flux:heading size="xl">No cards here yet</flux:heading>
+                <flux:text>Ask a grown-up to add some {{ $deck->label() }} cards.</flux:text>
+            </div>
+        @elseif ($todo > 0)
             <div class="text-center">
                 <div class="text-6xl font-extrabold text-zinc-900 dark:text-white">{{ $todo }}</div>
                 <flux:text class="mt-1 text-lg">card{{ $todo === 1 ? '' : 's' }} ready to practice</flux:text>

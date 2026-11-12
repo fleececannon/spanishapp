@@ -7,6 +7,13 @@
         </div>
     </div>
 
+    {{-- The two directions are separate decks; everything below is for the selected one. --}}
+    <flux:radio.group wire:model.live="deck" variant="segmented">
+        @foreach (\App\Enums\Direction::cases() as $d)
+            <flux:radio :value="$d->value" :label="$d->label()" />
+        @endforeach
+    </flux:radio.group>
+
     <div class="flex flex-wrap items-center justify-between gap-3">
         <flux:radio.group wire:model.live="filter" variant="segmented">
             <flux:radio value="draft" :label="'Drafts'.($draftCount > 0 ? ' ('.$draftCount.')' : '')" />
@@ -26,13 +33,15 @@
             <flux:card wire:key="card-{{ $card->id }}" class="py-3">
                 <div class="flex items-start gap-3">
                     <div class="flex-1 min-w-0">
-                        <div class="font-medium">{{ $card->spanish }}</div>
-                        <div class="text-zinc-500 text-sm">{{ $card->english }}</div>
+                        <div class="font-medium">{{ $direction->prompt($card) }}</div>
+                        <div class="text-zinc-500 text-sm">{{ $direction->answer($card) }}</div>
                         <div class="mt-1 text-xs text-zinc-400">
                             @php $mm = $card->must_match ?? []; @endphp
                             <flux:badge size="sm" :color="match ($card->status->value) { 'active' => 'green', 'draft' => 'amber', default => 'zinc' }">{{ $card->status->value }}</flux:badge>
                             <flux:badge size="sm" color="zinc">{{ $card->source->value }}</flux:badge>
-                            tense: {{ $mm['tense'] ?? '—' }} · subject: {{ $mm['subject'] ?? '—' }} · gender: {{ $mm['gender'] ?? '—' }}
+                            @if ($direction === \App\Enums\Direction::EsToEn)
+                                tense: {{ $mm['tense'] ?? '—' }} · subject: {{ $mm['subject'] ?? '—' }} · gender: {{ $mm['gender'] ?? '—' }}
+                            @endif
                         </div>
                     </div>
                     <div class="flex items-center gap-1">
@@ -58,14 +67,19 @@
     <flux:modal name="card-form" class="md:w-[32rem]">
         <form wire:submit="save" class="space-y-4">
             <flux:heading size="lg">{{ $editingId ? 'Edit card' : 'Add a manual card' }}</flux:heading>
-            <flux:textarea wire:model="cSpanish" label="Spanish" rows="2" />
-            <flux:textarea wire:model="cEnglish" label="English" rows="2" />
-            <flux:heading size="sm" class="text-zinc-500">Must match (leave blank to not enforce)</flux:heading>
-            <div class="grid grid-cols-3 gap-3">
-                <flux:input wire:model="mmTense" label="Tense" placeholder="present" />
-                <flux:input wire:model="mmSubject" label="Subject" placeholder="1st_singular" />
-                <flux:input wire:model="mmGender" label="Gender" placeholder="" />
-            </div>
+            @if ($direction === \App\Enums\Direction::EsToEn)
+                <flux:textarea wire:model="cSpanish" label="Spanish" rows="2" />
+                <flux:textarea wire:model="cEnglish" label="English" rows="2" />
+                <flux:heading size="sm" class="text-zinc-500">Must match (leave blank to not enforce)</flux:heading>
+                <div class="grid grid-cols-3 gap-3">
+                    <flux:input wire:model="mmTense" label="Tense" placeholder="present" />
+                    <flux:input wire:model="mmSubject" label="Subject" placeholder="1st_singular" />
+                    <flux:input wire:model="mmGender" label="Gender" placeholder="" />
+                </div>
+            @else
+                <flux:textarea wire:model="cEnglish" label="English (shown first)" rows="2" />
+                <flux:textarea wire:model="cSpanish" label="Spanish (the answer)" rows="2" />
+            @endif
             <div class="flex justify-end">
                 <flux:button type="submit" variant="primary">{{ $editingId ? 'Save' : 'Add' }}</flux:button>
             </div>
@@ -77,11 +91,17 @@
             <div>
                 <flux:heading size="lg">Paste cards</flux:heading>
                 <flux:text class="mt-1 text-zinc-500">
-                    One card per line: Spanish, then English, separated by a Tab or a <code class="rounded bg-zinc-100 px-1 dark:bg-zinc-800">|</code>.
+                    Adding to the <strong>{{ $direction->label() }}</strong> deck.
+                    One card per line: {{ $direction === \App\Enums\Direction::EsToEn ? 'Spanish, then English' : 'English, then Spanish' }}, separated by a Tab or a <code class="rounded bg-zinc-100 px-1 dark:bg-zinc-800">|</code>.
                     Paste straight from a spreadsheet's two columns and it just works.
                 </flux:text>
             </div>
-            <flux:textarea wire:model="bulkText" rows="10" placeholder="Yo tengo agua | I have water&#10;Ella corre rápido | She runs fast" />
+            @php
+                $bulkPlaceholder = $direction === \App\Enums\Direction::EsToEn
+                    ? "Yo tengo agua | I have water\nElla corre rápido | She runs fast"
+                    : "I have water | Yo tengo agua\nShe runs fast | Ella corre rápido";
+            @endphp
+            <flux:textarea wire:model="bulkText" rows="10" :placeholder="$bulkPlaceholder" />
             <flux:error name="bulkText" />
             <div class="flex justify-end">
                 <flux:button wire:click="importBulk" variant="primary">Add cards</flux:button>

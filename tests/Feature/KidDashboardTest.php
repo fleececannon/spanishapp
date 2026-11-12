@@ -140,6 +140,6 @@ class KidDashboardTest extends TestCase
         Livewire::actingAs($kid, 'kid')
             ->test(Dashboard::class)
             ->call('startLearning')
-            ->assertRedirect(route('kid.review'));
+            ->assertRedirect(route('kid.review', ['direction' => 'es_to_en']));
     }
 }

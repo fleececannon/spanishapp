@@ -8,8 +8,8 @@ use App\Models\Setting;
 use Illuminate\Support\Carbon;
 
 /**
- * SM-2-lite. The AI verdict (pass / needs_work) is the only input — there is
- * no kid self-rating. Pass grows the interval by the ease factor; a miss resets
+ * SM-2-lite. The grown-up's verdict on the spoken answer (pass / needs_work)
+ * is the only input. Pass grows the interval by the ease factor; a miss resets
  * the card to "due today" and nudges ease down.
  */
 class Scheduler

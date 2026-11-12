@@ -114,6 +114,13 @@
             <flux:text class="text-zinc-500">No kids yet — add one and their progress will show up here.</flux:text>
         </flux:card>
     @else
+        {{-- One deck at a time: the two directions are tracked independently. --}}
+        <flux:radio.group wire:model.live="deck" variant="segmented">
+            @foreach (\App\Enums\Direction::cases() as $d)
+                <flux:radio :value="$d->value" :label="$d->label()" />
+            @endforeach
+        </flux:radio.group>
+
         {{-- Stat tiles --}}
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             <flux:card class="py-4 text-center">
@@ -192,7 +199,8 @@
             </div>
         </flux:card>
 
-        {{-- Concept mastery --}}
+        {{-- Concept mastery (Spanish → English deck only) --}}
+        @if ($concepts !== null)
         <div class="grid gap-4 lg:grid-cols-2">
             @foreach (['verbs' => 'Verbs', 'words' => 'Words'] as $group => $label)
                 <flux:card class="space-y-4">
@@ -246,6 +254,7 @@
                 </flux:card>
             @endforeach
         </div>
+        @endif
 
         {{-- Trouble spots --}}
         <flux:card class="space-y-3">

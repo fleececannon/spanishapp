@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use App\Enums\CardSource;
 use App\Enums\CardStatus;
+use App\Enums\Direction;
 use App\Models\Card;
 use Flux\Flux;
 use Livewire\Attributes\Title;
@@ -19,6 +20,10 @@ class Cards extends Component
 
     #[Url]
     public string $filter = 'active';
+
+    /** Which deck is on screen (a Direction value). New cards are added to it. */
+    #[Url]
+    public string $deck = Direction::EsToEn->value;
 
     public ?int $editingId = null;
 
@@ -44,6 +49,16 @@ class Cards extends Component
         $this->resetPage();
     }
 
+    public function updatedDeck(): void
+    {
+        $this->resetPage();
+    }
+
+    private function direction(): Direction
+    {
+        return Direction::fromInput($this->deck);
+    }
+
     public function openBulk(): void
     {
         $this->reset(['bulkText']);
@@ -51,7 +66,11 @@ class Cards extends Component
         Flux::modal('card-bulk')->show();
     }
 
-    /** Paste many cards at once: one per line, "Spanish <tab or |> English". */
+    /**
+     * Paste many cards at once into the current deck: one per line, prompt side
+     * first — "Spanish <tab or |> English" for Spanish → English, and the other
+     * way round for English → Spanish.
+     */
     public function importBulk(): void
     {
         $created = 0;
@@ -70,9 +89,10 @@ class Cards extends Component
                 continue;
             }
 
-            [$spanish, $english] = array_pad(explode($delim, $line, 2), 2, '');
-            $spanish = trim($spanish);
-            $english = trim($english);
+            [$first, $second] = array_pad(explode($delim, $line, 2), 2, '');
+            [$spanish, $english] = $this->direction() === Direction::EsToEn
+                ? [trim($first), trim($second)]
+                : [trim($second), trim($first)];
 
             if ($spanish === '' || $english === '') {
                 $skipped++;
@@ -84,7 +104,7 @@ class Cards extends Component
                 'source' => CardSource::Manual,
                 'spanish' => mb_substr($spanish, 0, 300),
                 'english' => mb_substr($english, 0, 300),
-                'test_direction' => 'es_to_en',
+                'test_direction' => $this->direction(),
                 'uses_concepts' => [],
                 'must_match' => ['tense' => null, 'subject' => null, 'gender' => null],
                 'status' => CardStatus::Active,
@@ -93,7 +113,8 @@ class Cards extends Component
         }
 
         if ($created === 0) {
-            $this->addError('bulkText', 'No valid rows found. Put Spanish then English on each line, separated by a Tab or a |.');
+            $order = $this->direction() === Direction::EsToEn ? 'Spanish then English' : 'English then Spanish';
+            $this->addError('bulkText', "No valid rows found. Put {$order} on each line, separated by a Tab or a |.");
 
             return;
         }
@@ -146,7 +167,7 @@ class Cards extends Component
                 'source' => CardSource::Manual,
                 'spanish' => trim($this->cSpanish),
                 'english' => trim($this->cEnglish),
-                'test_direction' => 'es_to_en',
+                'test_direction' => $this->direction(),
                 'uses_concepts' => [],
                 'must_match' => $mustMatch,
                 'status' => CardStatus::Active,
@@ -164,7 +185,7 @@ class Cards extends Component
 
     public function approveAllDrafts(): void
     {
-        $count = Card::draft()->update(['status' => CardStatus::Active]);
+        $count = Card::draft()->direction($this->direction())->update(['status' => CardStatus::Active]);
         Flux::toast(variant: 'success', text: "Approved {$count} draft card(s).");
         $this->resetPage();
     }
@@ -187,7 +208,10 @@ class Cards extends Component
 
     public function render()
     {
-        $query = Card::query()->latest();
+        $direction = $this->direction();
+        $this->deck = $direction->value;
+
+        $query = Card::query()->direction($direction)->latest();
 
         if ($this->filter === 'draft') {
             $query->where('status', CardStatus::Draft->value);
@@ -199,7 +223,8 @@ class Cards extends Component
 
         return view('livewire.admin.cards', [
             'cards' => $query->paginate(20),
-            'draftCount' => Card::draft()->count(),
+            'draftCount' => Card::draft()->direction($direction)->count(),
+            'direction' => $direction,
         ]);
     }
 }

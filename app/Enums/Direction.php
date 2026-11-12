@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Enums;
+
+use App\Models\Card;
+
+/**
+ * Which side of a card is the prompt. The two directions are separate decks:
+ * a card belongs to exactly one, and is scheduled only within it.
+ */
+enum Direction: string
+{
+    case EsToEn = 'es_to_en';
+    case EnToEs = 'en_to_es';
+
+    /** Anything unrecognised (a stale link, a typo'd query string) is the original deck. */
+    public static function fromInput(?string $value): self
+    {
+        return self::tryFrom((string) $value) ?? self::EsToEn;
+    }
+
+    public function label(): string
+    {
+        return match ($this) {
+            self::EsToEn => 'Spanish → English',
+            self::EnToEs => 'English → Spanish',
+        };
+    }
+
+    /** The side shown first. */
+    public function prompt(Card $card): string
+    {
+        return $this === self::EsToEn ? $card->spanish : $card->english;
+    }
+
+    /** The side revealed after the kid has said their answer. */
+    public function answer(Card $card): string
+    {
+        return $this === self::EsToEn ? $card->english : $card->spanish;
+    }
+
+    public function answerLabel(): string
+    {
+        return $this === self::EsToEn ? 'In English' : 'In Spanish';
+    }
+}

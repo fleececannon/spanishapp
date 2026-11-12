@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\CardSource;
 use App\Enums\CardStatus;
+use App\Enums\Direction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -19,6 +20,7 @@ class Card extends Model
             'must_match' => 'array',
             'source' => CardSource::class,
             'status' => CardStatus::class,
+            'test_direction' => Direction::class,
         ];
     }
 
@@ -30,6 +32,12 @@ class Card extends Model
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('status', CardStatus::Active->value);
+    }
+
+    /** One deck: the cards prompted in the given direction. */
+    public function scopeDirection(Builder $query, Direction $direction): Builder
+    {
+        return $query->where('test_direction', $direction->value);
     }
 
     public function scopeDraft(Builder $query): Builder

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\CardStatus;
+use App\Enums\Direction;
 use App\Enums\ReviewResult;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -37,8 +38,10 @@ class ReviewState extends Model
      * progress survives if it comes back — but every count shown to a kid or a
      * grown-up must ignore it, or archived cards keep showing up as due.
      */
-    public function scopeOnActiveCards(Builder $query): Builder
+    public function scopeOnActiveCards(Builder $query, ?Direction $direction = null): Builder
     {
-        return $query->whereHas('card', fn (Builder $q) => $q->where('status', CardStatus::Active->value));
+        return $query->whereHas('card', fn (Builder $q) => $q
+            ->where('status', CardStatus::Active->value)
+            ->when($direction, fn (Builder $q) => $q->where('test_direction', $direction->value)));
     }
 }

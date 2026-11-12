@@ -9,8 +9,6 @@ use App\Livewire\Kid\Review;
 use App\Models\Card;
 use App\Models\Kid;
 use App\Models\ReviewState;
-use App\Services\Claude\AnswerGrader;
-use App\Services\Claude\GradeResult;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Livewire\Livewire;
@@ -38,53 +36,40 @@ class ReviewTest extends TestCase
         ]);
     }
 
-    private function fakeGrader(ReviewResult $verdict, ?string $nudge = null): void
-    {
-        $this->mock(AnswerGrader::class, function ($mock) use ($verdict, $nudge) {
-            $mock->shouldReceive('grade')
-                ->andReturn(new GradeResult($verdict, 'I have water', $nudge));
-        });
-    }
-
     public function test_guest_kid_is_redirected_to_kid_login(): void
     {
         $this->get(route('kid.review'))->assertRedirect(route('home'));
     }
 
-    public function test_pass_advances_schedule_and_records_state(): void
+    public function test_review_is_spoken_only_with_no_typing_box(): void
     {
-        $kid = $this->kid();
-        $card = $this->card();
-        $this->fakeGrader(ReviewResult::Pass);
-        $this->actingAs($kid, 'kid');
+        $this->card();
+        $this->actingAs($this->kid(), 'kid');
 
         Livewire::test(Review::class)
-            ->set('answer', 'i have water')
-            ->call('submit')
-            ->assertSet('showResult', true)
-            ->assertSet('lastPassed', true);
-
-        $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
-        $this->assertNotNull($state);
-        $this->assertSame(1, $state->reps);
-        $this->assertSame(ReviewResult::Pass, $state->last_result);
+            ->assertSee('Yo tengo agua')
+            ->assertSee('Show answer')
+            ->assertDontSee('I have water')
+            ->assertDontSee('Type what it means')
+            ->assertDontSee('Check')
+            ->call('reveal')
+            ->assertSee('I have water')
+            ->assertSee('Got it')
+            ->assertSee('Missed it');
     }
 
-    public function test_out_loud_got_it_marks_pass_without_ai(): void
+    public function test_got_it_marks_pass_and_moves_on(): void
     {
         $kid = $this->kid();
         $card = $this->card();
-        // No grader mock — out-loud must not call the AI.
-        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
         $this->actingAs($kid, 'kid');
 
         Livewire::test(Review::class)
-            ->set('outLoud', true)
             ->call('reveal')
             ->assertSet('revealed', true)
             ->call('mark', true)
-            // No result screen out loud — straight to the next card (here: done).
-            ->assertSet('showResult', false)
+            // Straight to the next card (here: done).
+            ->assertSet('revealed', false)
             ->assertSet('done', true);
 
         $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
@@ -92,30 +77,21 @@ class ReviewTest extends TestCase
         $this->assertSame(ReviewResult::Pass, $state->last_result);
     }
 
-    public function test_skip_button_is_offered_in_both_answer_modes(): void
+    public function test_skip_button_is_offered_before_and_after_the_reveal(): void
     {
-        $this->kid();
         $this->card();
-        $this->actingAs(Kid::first(), 'kid');
+        $this->actingAs($this->kid(), 'kid');
 
-        $component = Livewire::test(Review::class)->assertSee('Skip for now');
-
-        $component->set('outLoud', true)->assertSee('Skip for now');
-
-        // ...but not on the result screen, where "Next" is the only way on.
-        $this->fakeGrader(ReviewResult::Pass);
         Livewire::test(Review::class)
-            ->set('answer', 'I have water')
-            ->call('submit')
-            ->assertSet('showResult', true)
-            ->assertDontSee('Skip for now');
+            ->assertSee('Skip for now')
+            ->call('reveal')
+            ->assertSee('Skip for now');
     }
 
     public function test_skip_moves_on_without_recording_anything(): void
     {
         $kid = $this->kid();
         $card = $this->card();
-        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
         $this->actingAs($kid, 'kid');
 
         Livewire::test(Review::class)
@@ -123,7 +99,6 @@ class ReviewTest extends TestCase
             ->call('skip')
             // Only card in the queue, so skipping finishes the session — and
             // crucially it is not requeued the way a miss would be.
-            ->assertSet('showResult', false)
             ->assertSet('currentId', null)
             ->assertSet('done', true);
 
@@ -137,7 +112,6 @@ class ReviewTest extends TestCase
     {
         $kid = $this->kid();
         $card = $this->card();
-        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
 
         $state = ReviewState::create([
             'kid_id' => $kid->id, 'card_id' => $card->id, 'due' => Carbon::yesterday(),
@@ -155,40 +129,17 @@ class ReviewTest extends TestCase
         $this->assertTrue($fresh->due->isSameDay(Carbon::yesterday()), 'still due, so it returns next session');
     }
 
-    public function test_out_loud_missed_it_requeues_and_penalizes(): void
+    public function test_missed_it_requeues_and_penalizes(): void
     {
         $kid = $this->kid();
         $card = $this->card();
-        $this->mock(AnswerGrader::class, fn ($m) => $m->shouldNotReceive('grade'));
         $this->actingAs($kid, 'kid');
 
-        $component = Livewire::test(Review::class)
-            ->set('outLoud', true)
+        Livewire::test(Review::class)
             ->call('mark', false)
             // Advanced immediately; the missed (only) card cycled back as current.
-            ->assertSet('showResult', false)
             ->assertSet('currentId', $card->id)
             ->assertSet('done', false);
-
-        $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
-        $this->assertSame(1, $state->lapses);
-    }
-
-    public function test_miss_requeues_card_and_penalizes_ease(): void
-    {
-        $kid = $this->kid(pace: 1);
-        $card = $this->card();
-        $this->fakeGrader(ReviewResult::NeedsWork, 'Close — this one is present tense.');
-        $this->actingAs($kid, 'kid');
-
-        $component = Livewire::test(Review::class)
-            ->set('answer', 'i had water')
-            ->call('submit')
-            ->assertSet('lastPassed', false)
-            ->assertSet('nudge', 'Close — this one is present tense.');
-
-        // The missed card was re-appended to the in-session queue.
-        $this->assertContains($card->id, $component->get('queue'));
 
         $state = ReviewState::where('kid_id', $kid->id)->where('card_id', $card->id)->first();
         $this->assertSame(1, $state->lapses);

@@ -4,6 +4,7 @@ namespace App\Services\Coverage;
 
 use App\Enums\CardSource;
 use App\Enums\CardStatus;
+use App\Enums\Direction;
 use App\Enums\Subject;
 use App\Enums\Tense;
 use App\Models\Card;
@@ -96,6 +97,7 @@ class CoverageService
         $cards = Card::query()
             ->whereIn('status', array_map(fn (CardStatus $s) => $s->value, $statuses))
             ->where('source', '!=', CardSource::Vocab->value)
+            ->direction(Direction::EsToEn)
             ->get(['uses_concepts']);
 
         foreach ($cards as $card) {

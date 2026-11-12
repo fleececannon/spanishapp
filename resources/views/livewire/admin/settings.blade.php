@@ -4,7 +4,7 @@
     <form wire:submit="save" class="space-y-6">
         <flux:card class="space-y-3">
             <flux:heading size="lg">House style</flux:heading>
-            <flux:text class="text-zinc-500">The voice and forgiveness rules sent to the AI for both generating and grading. This is the lever for how strict grading feels.</flux:text>
+            <flux:text class="text-zinc-500">The voice and style rules sent to the AI when it generates cards.</flux:text>
             <flux:textarea wire:model="houseStyle" rows="8" />
             <flux:error name="houseStyle" />
         </flux:card>

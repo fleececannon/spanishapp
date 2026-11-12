@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\Direction;
 use App\Enums\ReviewResult;
 use App\Models\Card;
 use App\Models\Kid;
@@ -24,6 +25,10 @@ class Dashboard extends Component
     #[Url]
     public $kid = null;
 
+    /** Selected deck (a Direction value). Each kid's numbers are shown one deck at a time. */
+    #[Url]
+    public string $deck = Direction::EsToEn->value;
+
     public function render()
     {
         $kids = Kid::orderBy('name')->get();
@@ -40,11 +45,15 @@ class Dashboard extends Component
         $selected = $kids->firstWhere('id', (int) $this->kid) ?? $kids->first();
         $this->kid = $selected?->id;
 
+        $direction = Direction::fromInput($this->deck);
+        $this->deck = $direction->value;
+
         return view('livewire.dashboard', [
             'kids' => $kids,
             'selected' => $selected,
             'mode' => 'kid',
-            ...($selected ? $this->metricsFor($selected) : []),
+            'direction' => $direction,
+            ...($selected ? $this->metricsFor($selected, $direction) : []),
         ]);
     }
 
@@ -98,14 +107,15 @@ class Dashboard extends Component
     }
 
     /** @return array<string, mixed> */
-    private function metricsFor(Kid $kid): array
+    private function metricsFor(Kid $kid, Direction $direction): array
     {
         $today = Carbon::today();
-        $cards = Card::active()->get(['id', 'spanish', 'english', 'uses_concepts']);
+        $cards = Card::active()->direction($direction)->get(['id', 'spanish', 'english', 'uses_concepts']);
 
         // History for cards that have since been retired or sent back to draft
         // still exists — keep it out, or it inflates every metric below (a
-        // retired card would still read as due, seen, and mastered).
+        // retired card would still read as due, seen, and mastered). The same
+        // intersection keeps the other deck's history out.
         $states = ReviewState::where('kid_id', $kid->id)->get()
             ->keyBy('card_id')
             ->intersectByKeys($cards->keyBy('id'));
@@ -141,7 +151,9 @@ class Dashboard extends Component
             'masteryPct' => $cards->count() > 0 ? (int) round($masteredCards / $cards->count() * 100) : 0,
             'upcoming' => $upcoming,
             'upcomingMax' => max(1, $upcoming->max('count')),
-            'concepts' => $this->conceptMastery($cards, $states),
+            // Verbs and words are tracked through the Spanish → English deck only;
+            // English → Spanish cards are free-standing and tied to no concept.
+            'concepts' => $direction === Direction::EsToEn ? $this->conceptMastery($cards, $states) : null,
             'trouble' => $this->troubleCards($cards, $states),
         ];
     }

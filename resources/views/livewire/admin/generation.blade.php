@@ -24,8 +24,8 @@
         </div>
 
         <div class="flex flex-wrap items-center gap-3">
-            <flux:button wire:click="rebuild" wire:confirm="This deletes EVERY card and resets ALL of the kids' progress. Continue?" variant="danger" icon="trash">Rebuild deck</flux:button>
-            <flux:text class="text-zinc-500 text-sm">Nuclear reset — wipes all cards and schedules, then builds a fresh batch of the size above.</flux:text>
+            <flux:button wire:click="rebuild" wire:confirm="This deletes EVERY Spanish → English card and resets ALL of the kids' progress on them. Continue?" variant="danger" icon="trash">Rebuild deck</flux:button>
+            <flux:text class="text-zinc-500 text-sm">Nuclear reset — wipes all Spanish → English cards and their schedules, then builds a fresh batch of the size above. English → Spanish cards are not touched.</flux:text>
         </div>
 
         <div wire:loading wire:target="generate,refresh,rebuild">

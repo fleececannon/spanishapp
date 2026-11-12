@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use App\Enums\CardSource;
 use App\Enums\CardStatus;
+use App\Enums\Direction;
 use App\Models\Card;
 use App\Models\ReviewState;
 use App\Models\Verb;
@@ -43,7 +44,9 @@ class Generation extends Component
     public function refresh(CardGenerator $generator): void
     {
         // Vocab cards are pinned by their checkbox — SRS repeats them; refresh never culls them.
+        // English → Spanish cards are hand-made, not generated — never cull them here.
         $weakIds = Card::active()
+            ->direction(Direction::EsToEn)
             ->where('source', '!=', CardSource::Vocab->value)
             ->withSum('reviewStates as total_lapses', 'lapses')
             ->withSum('reviewStates as total_reps', 'reps')
@@ -71,13 +74,18 @@ class Generation extends Component
         Flux::toast(variant: 'success', text: "Retired {$weakIds->count()} weak card(s) and drafted {$created} replacement(s) — approve them on the Cards page.");
     }
 
-    /** Nuclear: wipe every card AND all kids' schedules, then build a fresh batch. */
+    /**
+     * Nuclear: wipe every Spanish → English card AND the kids' schedules for
+     * them, then build a fresh batch. The English → Spanish deck is hand-made
+     * and cannot be regenerated, so it is left alone.
+     */
     public function rebuild(CardGenerator $generator, VocabCardService $vocabCards): void
     {
         $this->validate();
 
-        ReviewState::query()->delete();
-        Card::query()->delete();
+        $cardIds = Card::query()->direction(Direction::EsToEn)->pluck('id');
+        ReviewState::whereIn('card_id', $cardIds)->delete();
+        Card::whereIn('id', $cardIds)->delete();
 
         // The vocab-card checkboxes still say these cards should exist — bring them back.
         $vocabCards->resyncAll();
@@ -106,9 +114,9 @@ class Generation extends Component
     public function render()
     {
         return view('livewire.admin.generation', [
-            'recent' => Card::query()->where('status', '!=', CardStatus::Retired->value)->latest()->limit(15)->get(),
-            'activeCount' => Card::active()->count(),
-            'draftCount' => Card::draft()->count(),
+            'recent' => Card::query()->direction(Direction::EsToEn)->where('status', '!=', CardStatus::Retired->value)->latest()->limit(15)->get(),
+            'activeCount' => Card::active()->direction(Direction::EsToEn)->count(),
+            'draftCount' => Card::draft()->direction(Direction::EsToEn)->count(),
             'unlockedVerbs' => Verb::unlocked()->count(),
         ]);
     }

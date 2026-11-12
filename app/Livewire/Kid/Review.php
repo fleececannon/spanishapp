@@ -2,84 +2,46 @@
 
 namespace App\Livewire\Kid;
 
+use App\Enums\Direction;
 use App\Enums\ReviewResult;
 use App\Models\Card;
 use App\Models\ReviewState;
 use App\Models\Setting;
-use App\Services\Claude\AnswerGrader;
-use App\Services\Claude\ClaudeException;
 use App\Services\Srs\DueCardService;
 use App\Services\Srs\Scheduler;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
+/**
+ * The review loop is spoken, not typed: the kid says the answer out loud, the
+ * card is revealed, and a grown-up marks it right or wrong. That verdict is
+ * the only input to the schedule.
+ */
 #[Layout('components.layouts.kid')]
 #[Title('Practice')]
 class Review extends Component
 {
+    /** Which deck this session is drilling (a Direction value). */
+    #[Url]
+    public string $direction = Direction::EsToEn->value;
+
     /** Remaining card ids to review this session (FIFO). */
     public array $queue = [];
 
     public ?int $currentId = null;
 
-    public string $answer = '';
-
-    /** "Out loud" mode: reveal + tap correct/incorrect instead of typing. */
-    public bool $outLoud = false;
-
     public bool $revealed = false;
-
-    public bool $showResult = false;
-
-    public bool $lastPassed = false;
-
-    public ?string $acceptedEnglish = null;
-
-    public ?string $nudge = null;
 
     public bool $done = false;
 
     public function mount(DueCardService $dueCards): void
     {
-        $this->queue = $dueCards->queueFor($this->kid())->pluck('id')->all();
+        $this->direction = $this->deck()->value;
+        $this->queue = $dueCards->queueFor($this->kid(), $this->deck())->pluck('id')->all();
         $this->advance();
-    }
-
-    public function submit(AnswerGrader $grader, Scheduler $scheduler): void
-    {
-        if ($this->currentId === null || trim($this->answer) === '' || $this->showResult) {
-            return;
-        }
-
-        $card = Card::find($this->currentId);
-        if (! $card) {
-            $this->advance();
-
-            return;
-        }
-
-        try {
-            $result = $grader->grade($card, $this->answer);
-        } catch (ClaudeException $e) {
-            $this->addError('answer', 'Could not check that just now — try again.');
-
-            return;
-        }
-
-        $state = $this->reviewStateFor($card->id);
-        $scheduler->apply($state, $result->verdict);
-
-        $this->showResult = true;
-        $this->lastPassed = $result->passed();
-        $this->acceptedEnglish = $result->acceptedEnglish;
-        $this->nudge = $result->nudge;
-
-        // A miss comes back later this session.
-        if (! $result->passed()) {
-            $this->queue[] = $card->id;
-        }
     }
 
     public function reveal(): void
@@ -87,10 +49,10 @@ class Review extends Component
         $this->revealed = true;
     }
 
-    /** Out-loud mode: a grown-up marks the spoken answer right or wrong — no AI call. */
+    /** A grown-up marks the spoken answer right or wrong. */
     public function mark(Scheduler $scheduler, bool $correct): void
     {
-        if ($this->currentId === null || $this->showResult) {
+        if ($this->currentId === null) {
             return;
         }
 
@@ -109,8 +71,6 @@ class Review extends Component
             $this->queue[] = $card->id;
         }
 
-        // No result screen out loud — the grown-up already saw the answer
-        // and made the call. Straight to the next card.
         $this->advance();
     }
 
@@ -122,21 +82,16 @@ class Review extends Component
      */
     public function skip(): void
     {
-        if ($this->currentId === null || $this->showResult) {
+        if ($this->currentId === null) {
             return;
         }
 
         $this->advance();
     }
 
-    public function next(): void
-    {
-        $this->advance();
-    }
-
     private function advance(): void
     {
-        $this->reset(['answer', 'revealed', 'showResult', 'lastPassed', 'acceptedEnglish', 'nudge']);
+        $this->reset(['revealed']);
 
         if (empty($this->queue)) {
             $this->currentId = null;
@@ -167,6 +122,11 @@ class Review extends Component
         return $state;
     }
 
+    private function deck(): Direction
+    {
+        return Direction::fromInput($this->direction);
+    }
+
     private function kid()
     {
         return auth('kid')->user();
@@ -185,7 +145,8 @@ class Review extends Component
     {
         return view('livewire.kid.review', [
             'card' => $this->currentId ? Card::find($this->currentId) : null,
-            'remaining' => count($this->queue) + ($this->currentId && ! $this->showResult ? 1 : 0),
+            'deck' => $this->deck(),
+            'remaining' => count($this->queue) + ($this->currentId ? 1 : 0),
         ]);
     }
 }
